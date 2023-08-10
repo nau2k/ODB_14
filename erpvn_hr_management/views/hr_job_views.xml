@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+
+        <record id="hr_job_form_view_inherit" model="ir.ui.view">
+            <field name="name">hr.job.form.view.inherit</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Job Title">
+                        <field name="title_ids" context="{'default_job_id': active_id}">
+                            <tree editable="top">
+                                <field name="name"/>
+                                <field name="job_id" readonly="1"/>
+                                <field name="department_id" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

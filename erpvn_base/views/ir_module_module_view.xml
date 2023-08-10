@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="view_module_filter_inherit" model="ir.ui.view">
+            <field name="name">ir.module.module.filter.inherit</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.view_module_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/filter[@name='app']" position="before">
+                    <filter name='odoobase' string="OdooBase" domain="['|', '|', '|', '|', ('name', 'ilike', 'odb'), ('name', 'ilike', 'odoobase'), ('name', 'ilike', 'erpvn'), ('website', 'ilike', 'https://www.odoobase.com/'), ('shortdesc','ilike', 'odb')]"/>
+                </xpath>
+                <xpath expr="//search/group" position="inside">
+                    <filter name='group_odoobase' string="Group OdooBase" domain="['|', '|', '|', '|', ('name', 'ilike', 'odb'), ('name','ilike', 'odoobase') ('name','ilike', 'erpvn'), ('website', 'ilike', 'https://www.odoobase.com/'), ('shortdesc', 'ilike', 'odb')]" context="{'group_by': 'category_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_module_tree_inherit" model="ir.ui.view">
+            <field name="name">view.module.tree.inherit</field>
+            <field name="model">ir.module.module</field>
+            <field name="inherit_id" ref="base.module_tree"/>
+            <field name="arch" type="xml">
+                <field name="category_id" position="after">
+                    <button name="button_immediate_install" states="uninstalled" string="Install" type="object" class="oe_highlight"/>
+                    <button name="button_immediate_upgrade" states="installed" string="Upgrade" type="object" class="oe_highlight"/>
+                    <button name="button_uninstall" states="installed" string="Uninstall" type="object"/>
+                    <button name="button_uninstall_cancel" states="to remove" string="Cancel Uninstall" type="object"/>
+                    <button name="button_upgrade_cancel" states="to upgrade" string="Cancel Upgrade" type="object"/>
+                    <button name="button_install_cancel" states="to install" string="Cancel Install" type="object"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="base.open_module_tree" model="ir.actions.act_window">
+            <field name="name">Apps</field>
+            <field name="res_model">ir.module.module</field>
+            <field name="binding_type">action</field>
+            <field name="binding_view_types">list,form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" ref="view_module_tree_inherit"/>
+            <field name="search_view_id" ref="view_module_filter_inherit"/>
+            <field name="context">{'search_default_group_odoobase':1,'search_default_odoobase':1}</field>
+            <field name="target">current</field>
+            <field eval="[(6, 0, [])]" name="groups_id"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                No module found!
+                </p>
+                <p>
+                You should try other search criteria.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

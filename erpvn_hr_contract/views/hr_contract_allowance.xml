@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="hr_contract_allowance_tree" model="ir.ui.view">
+            <field name="name">hr.contract.allowance.tree</field>
+            <field name="model">hr.contract.allowance</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="amount"/>
+                    <field name="apply_on"/>
+                    <field name="contract_id"/>
+                    <field name="subcontract_id"/>
+                    <field name="contract_type_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_contract_allowance_form" model="ir.ui.view">
+            <field name="name">hr.contract.allowance.form</field>
+            <field name="model">hr.contract.allowance</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <div class="oe_title">
+                            <span class="o_form_label">Code</span>
+                            <h1>
+                                <field name="code"/>
+                            </h1>
+                        </div>
+                        <group >
+                            <group>
+                                <field name="amount"/>
+                                <field name="apply_on"/>
+                                <field name="contract_id"/>
+                            </group>
+                            <group>
+                                <field name="subcontract_id"/>
+                                <field name="contract_type_id"/>
+                            </group>
+                            <field name="description"/>
+                        </group>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        
+        <record id="hr_contract_allowance_action" model="ir.actions.act_window">
+            <field name="name">Allowance List</field>
+            <field name="res_model">hr.contract.allowance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="timesheet_adjustment_request_tree_view" model="ir.ui.view">
+            <field name="name">timesheet.adjustment.request.tree.view</field>
+            <field name="model">timesheet.adjustment.request</field>
+            <field name="arch" type="xml">
+                <tree string="Adjustment Requests">
+                    <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                    <field name="note"/>
+                    <field name="state" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="timesheet_adjustment_request_form_view" model="ir.ui.view">
+            <field name="name">timesheet.adjustment.request.form.view</field>
+            <field name="model">timesheet.adjustment.request</field>
+            <field name="arch" type="xml">
+                <form string="Adjustment Request">
+                    <header>
+                        <button name="action_set_to_draft" type="object" string="Set to Draft"
+                            attrs="{'invisible': [('state', '!=', 'cancelled')]}"
+                            class="btn-secondary" groups="base.group_user"/>
+                        <button name="action_cancel" type="object" string="Cancel"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"
+                            confirm="Are you sure you want to cancel the request? This action also cancel all request lines in state 'Draft'."
+                            class="btn-secondary" groups="base.group_user"/>
+                        <button name="action_validate" type="object" string="Validate"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"
+                            confirm="Are you sure you want to validate the request? This action also validate all request lines in state 'Draft'."
+                            class="btn-primary" groups="hr_attendance.group_hr_attendance_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,validated,cancelled"/>
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="company_id" invisible="1"/>
+                                <field name="name" placeholder="Adjustment Name" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                            </h1>
+                        </div>
+                        <group>
+
+                            <group>
+                                <field name="create_uid"/>
+                                <field name="create_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                        <notebook>
+                            <page string="Request Lines" name="request_line_ids">
+                                <field name="line_ids" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}">
+                                    <tree string="Request lines" editable="bottom" limit="500"
+                                        decoration-muted="state == 'cancelled'"
+                                        decoration-info="state == 'draft'"
+                                        decoration-success="state == 'validated'">
+
+                                        <!-- Invisible fields -->
+                                        <field name="company_id" invisible="1"/>
+
+                                        <!-- Visible fields -->
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="employee_id" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="employee_code"/>
+                                        <field name="work_entry_id" domain="[('employee_id', '=', employee_id), ('state', '=', 'confirm')]" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="old_date_start" string="From" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="old_date_stop" string="To" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="old_duration" widget="float_time" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+
+                                        <field name="new_date_start" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="new_date_stop" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="new_duration" string="New Period" widget="float_time" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="note" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+                                        <field name="state" widget="badge" attrs="{'readonly': [('state', 'in', ('validated', 'cancelled'))]}"/>
+
+                                        <!-- Buttons -->
+                                        <button name="action_confirm" type="object"
+                                            attrs="{'invisible': [('state', '!=', 'draft')], 'column_invisible': [('parent.state', '!=', 'draft')]}"
+                                            string="Confirm" icon="fa-check"/>
+                                        <button name="action_validate" type="object"
+                                            attrs="{'invisible': [('state', '!=', 'confirm')], 'column_invisible': [('parent.state', '!=', 'draft')]}"
+                                            string="Validate" icon="fa-check"/>
+                                        <button name="action_cancel" type="object"
+                                            attrs="{'invisible': [('state', 'not in', ('draft', 'confirm'))], 'column_invisible': [('parent.state', '!=', 'draft')]}"
+                                            string="Cancel" icon="fa-times"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="timesheet_adjustment_request_action" model="ir.actions.act_window">
+            <field name="name">Timesheet Adjustment</field>
+            <field name="res_model">timesheet.adjustment.request</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

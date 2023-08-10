@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mrp_operation_action_tree_form_view" model="ir.actions.act_window">
+        <field name="name">MRP Operation</field>
+        <field name="res_model">mrp.operation</field>
+        <field name="view_mode">tree,form</field>        
+    </record>
+
+    <record id="mrp_operation_view_tree" model="ir.ui.view">
+        <field name="name">MRP Operation List</field>
+        <field name="model">mrp.operation</field>
+        <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="sequence"/>
+            <field name="workcenter_id"/>
+            <field name="department_name"/>                       
+        </tree>
+        </field>
+    </record>
+
+    <record id="mrp_operation_view_form" model="ir.ui.view">
+        <field name="name">MRP Operation Form</field>
+        <field name="model">mrp.operation</field>
+        <field name="arch" type="xml">
+        <form>            
+            <group>                        
+                <field name="name"/>
+                <field name="sequence"/>
+                <field name="workcenter_id"/>
+                <field name="department_name"/>  
+                <field name="company_id"/>                
+            </group>            
+        </form>
+        </field>
+    </record>
+
+  
+    
+</odoo>

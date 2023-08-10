@@ -1,0 +1,569 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* erpvn_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-13 17:21+0000\n"
+"PO-Revision-Date: 2022-11-13 17:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__action
+msgid "Action"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__name
+msgid "Action Name"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_attachment_search
+msgid "All Data"
+msgstr "Tất cả dữ liệu"
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_attachment_search
+msgid "Attached Document Field"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_attachment_search
+msgid "Attached Document Model"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_ir_attachment
+msgid "Attachment"
+msgstr "Đính kèm"
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.res_config_settings_view_form
+msgid "Attachment storage location"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,help:erpvn_base.field_res_config_settings__attachment_location
+msgid "Attachment storage location."
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_attachment_search
+msgid "Attachments"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__command_backup_data
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote_history__action__backup_data
+msgid "Backup Data"
+msgstr "Sao lưu dữ liệu"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__command_backup_sql
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote_history__action__backup_sql
+msgid "Backup SQL"
+msgstr "Sao lưu SQL"
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_base
+msgid "Base"
+msgstr "Cơ bản"
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_erpvn_base
+msgid "Base Model"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_tree_inherit
+msgid "Cancel Install"
+msgstr "Hủy cài đặt"
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_tree_inherit
+msgid "Cancel Uninstall"
+msgstr "Hủy xóa"
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_tree_inherit
+msgid "Cancel Upgrade"
+msgstr "Hủy Nâng cấp"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__child_groups
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_mixins_groups_form
+msgid "Child Groups"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__auto_delete_history_rotation
+msgid "Clean History Rotation"
+msgstr "Xóa lịch sử"
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_res_config_settings
+msgid "Config Settings"
+msgstr "Thiết lập cấu hình"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__connection_type
+msgid "Connection Type"
+msgstr "Loại kết nối"
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard__create_uid
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__create_uid
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard__create_date
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__create_date
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__create_date
+msgid "Created on"
+msgstr "Tạo lúc"
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_res_currency
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_res_currency__currency_name
+msgid "Currency Name"
+msgstr "Tên tiền tệ"
+
+#. module: erpvn_base
+#: model:ir.model.fields,help:erpvn_base.field_res_currency__currency_name
+msgid "Currency full name e.g US Dollars"
+msgstr "Tên đầy đủ ví dụ: Việt Nam Đồng"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_res_partner__delivery_instructions
+#: model:ir.model.fields,field_description:erpvn_base.field_res_users__delivery_instructions
+msgid "Delivery Instructions"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.partner_form_view_inherit
+msgid "Delivery Instructions..."
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_base__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_hierarchy__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_scss_editor__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_config_parameter__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_qweb_field_float__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_qweb_field_monetary__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_res_currency__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_res_partner__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_res_users__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__display_name
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__explicit_users
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_mixins_groups_form
+msgid "Explicit Users"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_attachment_search
+msgid "Field Data"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.res_config_settings_view_form
+msgid "Force Storage Migration"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__command_git_pull
+msgid "Git Pull"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote_history__action__pulled
+msgid "Git Pulled"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_mixins_groups_form
+msgid "Group"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_erpvn_utils_mixins_groups
+msgid "Group Mixin"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__name
+msgid "Group Name"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_filter_inherit
+msgid "Group OdooBase"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__users
+msgid "Group Users"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__groups
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_mixins_groups_form
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_mixins_groups_search
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_mixins_groups_tree
+msgid "Groups"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_erpvn_utils_mixins_hierarchy
+msgid "Hierarchy Mixin"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,help:erpvn_base.field_server_action_remote__auto_delete_history_rotation
+msgid "Histories will be deleted automaticlly if the number exceeds"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__history_ids
+msgid "History"
+msgstr "Lịch sử"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_base__id
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__id
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_hierarchy__id
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_scss_editor__id
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_attachment__id
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_config_parameter__id
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_qweb_field_float__id
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_qweb_field_monetary__id
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard__id
+#: model:ir.model.fields,field_description:erpvn_base.field_res_config_settings__id
+#: model:ir.model.fields,field_description:erpvn_base.field_res_currency__id
+#: model:ir.model.fields,field_description:erpvn_base.field_res_partner__id
+#: model:ir.model.fields,field_description:erpvn_base.field_res_users__id
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__id
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__id
+msgid "ID"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_tree_inherit
+msgid "Install"
+msgstr ""
+
+#. module: erpvn_base
+#: code:addons/erpvn_base/models/base.py:0
+#, python-format
+msgid "Invalid input base number for EAN13 code"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_res_partner__is_customer
+#: model:ir.model.fields,field_description:erpvn_base.field_res_users__is_customer
+msgid "Is Customer"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_res_partner__is_vendor
+#: model:ir.model.fields,field_description:erpvn_base.field_res_users__is_vendor
+msgid "Is Vendor"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_base____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_hierarchy____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_scss_editor____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_config_parameter____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_qweb_field_float____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_ir_qweb_field_monetary____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_res_currency____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_res_partner____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_res_users____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote____last_update
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard__write_uid
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__write_uid
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard__write_date
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__write_date
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: erpvn_base
+#: code:addons/erpvn_base/models/base.py:0
+#: code:addons/erpvn_base/models/base.py:0
+#, python-format
+msgid ""
+"Local time zone is not defined. You may need to set a time zone in your "
+"user's Preferences."
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_message_wizard__message
+msgid "Message"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_message_wizard
+msgid "Message Wizard"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.actions.server,name:erpvn_base.action_attachment_migrate
+msgid "Migrate"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_filter_inherit
+msgid "OdooBase"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.message_wizard_form_view
+msgid "Ok"
+msgstr ""
+
+#. module: erpvn_base
+#: code:addons/erpvn_base/models/ir_attachment.py:0
+#, python-format
+msgid "Only administrators can execute this action."
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__parent_group
+msgid "Parent Group"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__parent_path
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_hierarchy__parent_path
+msgid "Parent Path"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__password
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote__connection_type__pass
+msgid "Password"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_hierarchy__parent_path_json
+msgid "Path Json"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__path_key
+msgid "Path Key"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_hierarchy__parent_path_names
+msgid "Path Names"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__port
+msgid "Port Protocol"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_ir_qweb_field_float
+msgid "Qweb Field Float"
+msgstr "Qweb trường Float"
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_ir_qweb_field_monetary
+msgid "Qweb Field Monetary"
+msgstr "Qweb trường Monetary"
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__command_restart
+msgid "Restart Command"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote_history__action__restarted
+msgid "Restarted"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote__connection_type__key
+msgid "SSH Key"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_erpvn_utils_scss_editor
+msgid "Scss Editor"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote_history__server_id
+msgid "Server"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_server_action_remote
+msgid "Server Action"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_server_action_remote_history
+msgid "Server Action Remote History"
+msgstr ""
+
+#. module: erpvn_base
+#: model:res.groups,name:erpvn_base.group_server_action_remote
+msgid "Server Actions"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__host
+msgid "Server URL"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__command_start
+msgid "Start Command"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote_history__action__started
+msgid "Started"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__command_stop
+msgid "Stop Command"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields.selection,name:erpvn_base.selection__server_action_remote_history__action__stopped
+msgid "Stopped"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_attachment_form
+msgid "Storage"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_res_config_settings__attachment_location
+msgid "Storage Location"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_ir_config_parameter
+msgid "System Parameter"
+msgstr ""
+
+#. module: erpvn_base
+#: code:addons/erpvn_base/models/base.py:0
+#, python-format
+msgid ""
+"The `start_day_offset` passed to the method `period_iter` must be greater "
+"than or equal to zero!"
+msgstr ""
+
+#. module: erpvn_base
+#: code:addons/erpvn_base/models/base.py:0
+#, python-format
+msgid ""
+"The method get_weekdays_for_period(dt_from, dt_to) does not support the "
+"periods having more than 7 days"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.constraint,message:erpvn_base.constraint_erpvn_utils_mixins_groups_name_uniq
+msgid "The name of the group must be unique!"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__timeout
+msgid "Timeout"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_tree_inherit
+msgid "Uninstall"
+msgstr ""
+
+#. module: erpvn_base
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_module_tree_inherit
+msgid "Upgrade"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model.fields,field_description:erpvn_base.field_server_action_remote__username
+msgid "Username"
+msgstr ""
+
+#. module: erpvn_base
+#: model:ir.model,name:erpvn_base.model_res_users
+#: model:ir.model.fields,field_description:erpvn_base.field_erpvn_utils_mixins_groups__count_users
+#: model_terms:ir.ui.view,arch_db:erpvn_base.view_mixins_groups_form
+msgid "Users"
+msgstr "Người dùng"
+
+#. module: erpvn_base
+#: code:addons/erpvn_base/models/base.py:0
+#: code:addons/erpvn_base/models/base.py:0
+#, python-format
+msgid ""
+"Wrong value passed to the argument `period_name` of the method "
+"`find_last_date_of_period`. The value for `period_name` should be either "
+"'weekly' or 'monthly' or 'quarterly' or 'biannually' or 'annually'"
+msgstr ""
+
+#. module: erpvn_base
+#: code:addons/erpvn_base/models/base.py:0
+#, python-format
+msgid "the method guess_lang has not been implemented yet"
+msgstr ""

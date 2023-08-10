@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="resource_calendar_form_view_inherit" model="ir.ui.view">
+            <field name="name">resource.calendar.form.view.inherit</field>
+            <field name="model">resource.calendar</field>
+            <field name="inherit_id" ref="erpvn_hr_management.resource_calendar_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="after">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </xpath>
+
+                <xpath expr="//group[@name='resource_details']" position="before">
+                    <group>
+                        <group>
+                            <label for="full_time_required_hours" string="Full Time"/>
+                            <div class="o_row">
+                                <field name="full_time_required_hours" nolabel="1"/>
+                                <span> hours/week</span>
+                            </div>
+                            <label for="work_time_rate" string="Work Time Rate"/>
+                            <div class="o_row">
+                                <field name="work_time_rate" nolabel="1"/>
+                                <span> %</span>
+                            </div>
+                            <field name="is_fulltime" widget="boolean_toggle" readonly="True"/>
+
+                            <field name="is_flexible_time" widget="boolean_toggle"/>
+                            <label for="flex_hour_from" string="Flexible From" attrs="{'invisible': [('is_flexible_time', '=', False)]}"/>
+                            <div class="oe_inline" attrs="{'invisible': [('is_flexible_time', '=', False)]}">
+                                <field name="flex_hour_from" widget="float_time" class="mr8 oe_inline"/>
+                                <strong class="mr8 oe_inline">to</strong>
+                                <field name="flex_hour_to" widget="float_time" class="oe_inline"/>
+                            </div>
+
+                            <label for="flex_hour_out" string="Flexible Out" attrs="{'invisible': [('is_flexible_time', '=', False)]}"/>
+                            <div class="oe_inline" attrs="{'invisible': [('is_flexible_time', '=', False)]}">
+                                <field name="flex_hour_out" widget="float_time" class="mr8 oe_inline"/>
+                                <strong class="mr8 oe_inline">to</strong>
+                                <field name="flex_hour_limit_out" widget="float_time" class="oe_inline"/>
+                            </div>
+
+                        </group>
+
+                        <group name="resource_detail_inherit">
+                            <field name="sequence" string="Sequence"/>
+                            <field name="color" invisible="1"/>
+                        </group>
+                    </group>
+                </xpath>
+
+                <xpath expr="//group[@name='resource_details']" position="after">
+                    <group name="description">
+                        <field name="note" nolabel="1" placeholder="Add description..."/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//field[@name='attendance_ids']" position="after">
+                    <group class="oe_subtotal_footer oe_right">
+                        <label for="hours_per_week" string="Total"/>
+                        <div class="d-flex">
+                            <field name="hours_per_week" nolabel="1"/>
+                            <span class="ml-2"> hours/week</span>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="shift_template_kanban_view" model="ir.ui.view">
+            <field name="name">employee.shift.kanban</field>
+            <field name="model">resource.calendar</field>
+            <field name="arch" type="xml">
+                <kanban class="oe_background_grey o_kanban_dashboard o_shift_kanban">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click ">
+                                <div class="o_dropdown_kanban dropdown">
+                                    <!-- <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                        <span class="fa fa-bars fa-lg"/>
+                                    </a> -->
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                        <t t-if="widget.editable">
+                                            <li>
+                                                <a type="edit">Edit</a>
+                                            </li>
+                                        </t>
+                                        <t t-if="widget.deletable">
+                                            <li>
+                                                <a type="delete">Delete</a>
+                                            </li>
+                                        </t>
+                                        <li>
+                                            <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="oe_kanban_content">
+                                    <div class="row">
+                                        <div class="o_primary style_shift">
+                                            <div class="text-center">
+                                                <span style="margin-left:25px;">
+                                                    <strong>
+                                                        <field name="name"/>
+                                                    </strong>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- <div class="oe_kanban_details">
+                                    <strong>
+                                        <div class="text-center">
+                                            <span t-if="record.department_id.value">[<field name="department_id"/>]
+                                            </span>
+                                        </div>
+                                    </strong>
+                                </div> -->
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="resource.action_resource_calendar_form" model="ir.actions.act_window">
+            <field name="name">Shift Working Time</field>
+            <field name="res_model">resource.calendar</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" eval="False"/>
+            <field name="search_view_id" ref="resource.view_resource_calendar_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Define working hours and time table that could be scheduled to your project members
+                </p>
+            </field>
+        </record>
+
+        <record id="resource_calendar_attendance_tree_view_inherit" model="ir.ui.view">
+            <field name="name">resource_calendar_attendance_tree_view_inherit</field>
+            <field name="model">resource.calendar.attendance</field>
+            <field name="inherit_id" ref="resource.view_resource_calendar_attendance_tree"/>
+            <field name="arch" type="xml">
+                <field name="work_entry_type_id" position="after">
+                    <field name="break_time_ids" string="Break Time" widget="many2many_tags"/>
+                    <field name="estimated_hours" string="Estimated Hours" widget="float_time"/>
+                    <field name="no_fingerprint_required" string="No Fingerprint Required" widget="boolean_toggle"/>
+                </field>
+                <field name="hour_to" position="before">
+                    <field name="dayofweek_to" string="Day of Week To"/>
+                </field>
+                <field name="dayofweek" position="attributes">
+                    <attribute name="string">Day of Week From</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="resource_calendar_view_tree" model="ir.ui.view">
+            <field name="name">resource.calendar.view.tree.inherit</field>
+            <field name="model">resource.calendar</field>
+            <field name="inherit_id" ref="resource.view_resource_calendar_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="work_time_rate"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

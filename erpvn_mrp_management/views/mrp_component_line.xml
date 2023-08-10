@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_component_line_tree_view" model="ir.ui.view">
+            <field name="name">mrp.component.line.tree.view</field>
+            <field name="model">mrp.component.line</field>
+            <field name="arch" type="xml">
+                <tree string="Component Line">
+                    <field name="sequence"/>
+                    <field name="product_id"/>
+                    <field name="unit_product_price"/>
+                    <field name="line_qty"/>
+                    <field name="uom_id"/>
+                    <field name="bom_product_price"/>
+                    <field name="bom_qty"/>
+                    <field name="need_product_price"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

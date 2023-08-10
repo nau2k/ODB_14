@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_break_time_base_user,break.time.all.user,model_hr_break_time,base.group_user,1,0,0,0
+access_break_time_user,break.time.hr.user,model_hr_break_time,hr.group_hr_user,1,1,1,0
+access_break_time_manager,break.time.hr.manager,model_hr_break_time,hr.group_hr_manager,1,1,1,1
+
+access_break_time_line_base_user,break.time.line.all.user,model_hr_break_time_line,base.group_user,1,0,0,0
+access_break_time_line_user,break.time.line.hr.user,model_hr_break_time_line,hr.group_hr_user,1,1,1,0
+access_break_time_line_manager,break.time.line.hr.manager,model_hr_break_time_line,hr.group_hr_manager,1,1,1,1

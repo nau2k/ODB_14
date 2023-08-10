@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- VIEWS USED FOR MESSAGING -->
+        <template id="message_head">
+            <t><strong>The <t t-if="vals.get('model') == 'extra'">BOM Extra Plans</t><t t-else="">BOM Components</t> have been changed:</strong></t>
+        </template>
+
+
+        <template id="message_body">
+            <ul>
+                <t t-if="vals.get('action') == 'write'">
+                    <li>
+                        <t t-esc="bom_line.product_id.display_name"/>:
+                    </li>
+                    <t t-if="vals.get('action') == 'write'">
+                        <t t-if="'product_qty' in vals">
+                            <li>
+                                Quantity: <t t-esc="bom_line.product_qty"/> -&gt; <t t-esc="float(vals.get('product_qty'))"/>
+                            </li>
+                        </t>
+                        <t t-if="'multiple_qty' in vals">
+                            <li>
+                                Quantity: <t t-esc="bom_line.multiple_qty"/> -&gt; <t t-esc="float(vals.get('multiple_qty'))"/>
+                            </li>
+                        </t>
+                        <t t-if="'product_uom_id' in vals">
+                            <li>
+                                UoM: <t t-esc="bom_line.product_uom_id.name"/> -&gt; <t t-esc="vals.get('product_uom_id')"/>
+                            </li>
+                        </t>
+                        <t t-if="'product_loss' in vals">
+                            <li>
+                                Recovery (%): <t t-esc="bom_line.product_loss"/> -&gt; <t t-esc="float(vals.get('product_loss'))"/>
+                            </li>
+                        </t>
+                        <t t-if="'product_id' in vals">
+                            <li>
+                                <t t-esc="bom_line.product_id.display_name"/> -&gt; <t t-esc="vals.get('product_id')"/>
+                            </li>
+                        </t>
+                    </t>
+                </t>
+                <t t-elif="vals.get('action') == 'unlink'">
+                    <li>
+                        Remove: <t t-esc="vals.get('product_id')"/>
+                        <li>
+                            Technical Qty: <t t-esc="float(vals.get('technical_qty'))"/>
+                        </li>
+                        <li>
+                            UoM: <t t-esc="vals.get('product_uom_id')"/>
+                        </li>
+                    </li>
+                </t>
+                <t t-elif="vals.get('action') == 'create'">
+                    <li>
+                        Add: <t t-esc="vals.get('product_id')"/>
+                        <li>
+                            Technical Qty: <t t-esc="float(vals.get('technical_qty'))"/>
+                        </li>
+                        <li>
+                            UoM: <t t-esc="vals.get('product_uom_id')"/>
+                        </li>
+                    </li>
+                </t>
+            </ul>
+        </template>
+
+        <template id="mail_message_update_bom_value">
+            <div>
+                <t t-call="erpvn_mrp_management.message_head"/>
+                <t t-call="erpvn_mrp_management.message_body"/>
+            </div>
+        </template>
+    </data>
+</odoo>

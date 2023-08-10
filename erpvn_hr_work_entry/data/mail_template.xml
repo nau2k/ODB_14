@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="notify_invalid_attendance_mail_template" model="mail.template">
+            <field name="name">Notification Invalid Attendances</field>
+            <field name="subject">Notification for invalid attendances</field>
+            <field name="email_from">"${object.company_id.name | safe}" &lt;${(object.company_id.email or user.email) | safe}&gt;</field>
+            <field name="lang">${user.lang}</field>
+            <field name="model_id" ref="hr_work_entry.model_hr_work_entry"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+                <p>THIS IS AN AUTOMATED EMAIL. DO NOT REPLY.</p>
+                <p>List of employee did not enter in their shifts:</p>
+                <br/>
+                <div>
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="text-center" style="vertical-align:middle;" width="150px">
+                                    <strong>Shift Name</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="200px">
+                                    <strong>Employee</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>Time Start</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>Time End</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            %if ctx.get('data', False):
+                                <% set entries = ctx.get('data') %>
+                                %for entry in entries:
+                                    <tr>
+                                        <td class="text-center" style="vertical-align:middle;">${entry.name}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${entry.employee_id.name}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${entry.get_format_timezone_start()}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${entry.get_format_timezone_stop()}</td>
+                                    </tr>
+                                %endfor
+                            %endif
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+
+                <p>Thank you!</p>
+            ]]>
+
+            </field>
+        </record>
+
+        <!-- notify when create timesheet adjustment request line -->
+        <record id="mail_create_timesheet_adjustment_request_line" model="mail.template">
+            <field name="name">Notify for Approve The timesheet adjustment request</field>
+            <field name="subject">Notify for Approve The timesheet adjustment request</field>
+            <field name="email_to">${object.employee_id.department_id.manager_id.work_email | safe}</field>
+            <field name="lang">${user.lang}</field>
+            <field name="model_id" ref="erpvn_hr_work_entry.model_wizard_timesheet_adjustment_request_line"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+                <![CDATA[
+
+                Hi <strong> Dear ${object.employee_id.department_id.manager_id.name} </strong>  <br/>
+                <p>
+                    Here is  the content timesheet adjustment request the : <strong>${object.work_entry_id.name}</strong>
+                </p>
+                <br/>
+                 From user  ${object.employee_id.name}
+              ]]>
+
+            </field>
+        </record>
+
+        <record id="approve_timesheet_adjustment_request_line_mail_template" model="mail.template">
+            <field name="name">Approve Timesheet Adjustment Request</field>
+            <field name="subject">Approve Timesheet Adjustment Request: ${object.employee_id.name}</field>
+            <field name="email_to">${object.employee_id.leave_manager_id.work_email | safe}</field>
+            <field name="model_id" ref="erpvn_hr_work_entry.model_timesheet_adjustment_request_line"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="xml">
+
+            <div>
+                Dear ${object.employee_id.leave_manager_id.employee_id.name},<br/>
+                Your have a timesheet adjustment request.<br/>
+                <br/><br/>
+
+                <table style="border-collapse: collapse; width: 100%; height: 36px;" border="1">
+                    <tbody>
+                        <tr style="text-align: center;height:50px">
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">Badge ID</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">Employee</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">Work Entry</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">Old Start Date</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">Old End Date</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">Old Duration</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">New Start Date</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">New End Date</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">New Duration</td>
+                        </tr>
+                        <tr style="text-align: center;height:50px">
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.employee_code or ''}</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.employee_id.name or ''}</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.work_entry_id.name or ''}</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.old_date_start.strftime('%d/%m/%Y %H:%M:%S') or ''}</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.old_date_stop.strftime('%d/%m/%Y %H:%M:%S') or ''}</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.change_duration_old_in_mail() or ''} Hours</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.new_date_start.strftime('%d/%m/%Y %H:%M:%S') or ''}</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.new_date_stop.strftime('%d/%m/%Y %H:%M:%S') or ''}</td>
+                            <td style="width: 11.1111%; height: 18px; font-size: 10px;">${object.change_duration_new_in_mail() or ''} Hours</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br/>
+                You will find more details here:
+                <div style="margin: 16px 0px 16px 0px;">
+                    <a href="/erpvn_hr_work_entry/timesheet_adjustment_request_line/view?id=${object.id}"
+                        style="padding: 2px 6px; color: #FFFFFF; text-decoration: none; background-color: #5D8DA8; border: 1px solid #5D8DA8;">
+                        View Timesheet Adjustment</a>
+                </div>
+
+                <br/><br/>
+                Regards,
+                % if user.employee_id
+                    <br/>
+                    <p>${user.employee_id.name}</p>
+                % else:
+                    <br/>
+                    <p>${user.name}</p>
+                % endif
+            </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

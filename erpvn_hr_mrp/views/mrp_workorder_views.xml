@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+
+        <record id="mrp_workorder_inherit_replace_block_unblock_btn" model="ir.ui.view">
+            <field name="name">mrp.production.work.order.tree.editable.inherit.mrp.workorder</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='date_planned_start']" position="replace">
+                    <field name="date_planned_start" optional="show" widget="remaining_days"/>
+                </xpath>
+                <xpath expr="//tree/button[@name='button_start']" position="replace">
+                    <button name="button_start" type="object" string="Start" class="btn-success"
+                        attrs="{'invisible': ['|', ('production_state','in', ('draft', 'done')), ('state', 'in', ('cancel', 'progress', 'done'))]}"/>
+                </xpath>
+                <xpath expr="//tree/button[@name='button_pending']" position="replace">
+                    <button name="button_pending" type="object" string="Pause" class="btn-warning"
+                        attrs="{'invisible': ['|', ('production_state', 'in', ('draft', 'done')), ('state', '!=', 'progress')]}"/>
+                </xpath>
+                <xpath expr="//tree/button[@name='button_finish']" position="replace">
+                    <button name="button_finish" type="object" string="Done" class="btn-success"
+                        attrs="{'invisible': ['|', ('production_state', 'in', ('draft', 'done')), ('state', '!=', 'progress')]}"/>
+                </xpath>
+                <xpath expr="//tree/button[@name='%(mrp.act_mrp_block_workcenter_wo)d']" position="replace">
+                    <button name="show_block_reason_wizard_form" type="object" string="Block" class="btn-danger" groups="mrp.group_mrp_manager"
+                        attrs="{'invisible': ['|', ('production_state', 'in', ('draft', 'done')), ('state', 'in', ('cancel', 'progress', 'done'))]}"/>
+                </xpath>
+                <xpath expr="//tree/button[@name='button_unblock']" position="replace">
+                    <button name="button_unblock" type="object" string="Unblock" class="btn-danger" groups="mrp.group_mrp_manager"
+                        attrs="{'invisible': ['|', ('production_state', 'in', ('draft', 'done')), ('state', '!=', 'cancel')]}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="mrp.mrp_workorder_todo">
+            <field name="context">{'search_default_ready': True, 'search_default_progress': True, 'search_default_pending': True,'search_default_scheduled_month':True,'search_default_group_department_id':True}</field>
+        </record>
+
+        <!-- <record id="hr_mrp_workorder_form_view_inherit" model="ir.ui.view">
+            <field name="name">hr.mrp.workorder.form.inherit</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="erpvn_mrp_management.mrp_ext__workorder_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[@name='time_tracking']/group/field[@name='time_ids']/tree/field[@name='qty_produced']" position="after">
+                    <field name="worker_id"/>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='time_tracking']/group/field[@name='time_ids']/form/group/group[2]/field[@name='workcenter_id']" position="before">
+                    <field name="worker_id"/>
+                </xpath>
+            </field>
+        </record> -->
+        <!-- <record id="hr_mrp_workorder_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.work.order.form.view.inherit</field>
+            <field name="model">mrp.workorder</field>
+            <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[@name='time_tracking']/group/field[@name='time_ids']/tree/field[@name='user_id']" position="replace">
+                    <field name="worker_id"/>
+                </xpath>
+
+                <xpath expr="//form/sheet/notebook/page[@name='time_tracking']/group/field[@name='time_ids']/form/group/group[2]/field[@name='user_id']" position="replace">
+                    <field name="worker_id"/>
+                </xpath>
+            </field>
+        </record> -->
+
+    </data>
+</odoo>

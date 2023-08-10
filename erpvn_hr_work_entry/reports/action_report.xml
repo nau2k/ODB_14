@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_report_timesheet" model="ir.actions.report">
+        <field name="name">Report Timesheet</field>
+        <field name="model">hr.work.entry</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">erpvn_hr_work_entry.report_timsheet</field>
+        <field name="report_file">erpvn_hr_work_entry.report_timsheet</field>
+        <field name="print_report_name">'Report Timesheet'</field>
+        <field name="binding_model_id" ref="erpvn_hr_work_entry.model_hr_work_entry"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

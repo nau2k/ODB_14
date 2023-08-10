@@ -1,0 +1,144 @@
+<?xml version="1.0" ?>
+<odoo>
+
+        <record id="hr_subcontract_search_view" model="ir.ui.view">
+            <field name="name">hr.subcontract.search.view</field>
+            <field name="model">hr.subcontract</field>
+            <field name="arch" type="xml">
+                <search string="SubContract">
+                    <field name="name"/>
+                    <field name="contract_id"/>
+                    <field name="employee_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="hr_subcontract_tree_view" model="ir.ui.view">
+            <field name="name">hr.subcontract.tree.view</field>
+            <field name="model">hr.subcontract</field>
+            <field name="arch" type="xml">
+                <tree string="SubContract">
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="job_id"/>
+                    <field name="contract_id"/>
+                    <field name="contract_type_id"/>
+                    <field name="sub_state" widget="badge"/>
+                    <field name="state" widget="badge"/>
+                    <field name="company_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+    <record id="hr_subcontract_form_view" model="ir.ui.view">
+        <field name="name">hr.subcontract.form.view</field>
+        <field name="model">hr.subcontract</field>
+        <field name="arch" type="xml">
+            <form string="Subcontract">
+                <header position="inside">
+                    <button name="action_confirm" id="action_confirm" string="Confirm" class="btn-primary" type="object" attrs="{'invisible': [('state', 'not in', ['draft'])]}"/>
+                    <button name="action_approve" id="action_approve" string="Approve" class="btn-primary" type="object" attrs="{'invisible': [('state', 'not in', ['wait'])]}"/>
+                    <button name="action_cancel" id="action_cancel" string="Cancel" class="btn-primary" type="object" attrs="{'invisible': [('state', 'not in', ['draft', 'wait'])]}"/>
+                    <button name="print_option" string="Print" type="object" class="btn-primary"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,cancelled"/>
+                </header>
+                <sheet>
+                    <field name="state" invisible="1"/>
+                    <div class="oe_title pr-0" name="title">
+                        <h1 class="d-flex flex-row justify-content-between">
+                            <field name="name" class="text-truncate" placeholder="Contract Reference"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="employee_id"/>
+                            <field name="department_id"/>
+                            <field name="job_id"/>
+                            <field name="job_title_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="company_country_id" invisible="1"/>
+                            <field name="structure_type_id" domain="['|', ('country_id', '=', False), ('country_id', '=', company_country_id)]"/>
+                        </group>
+                        <group name="duration_group">
+                            <field name="date_start"/>
+                            <field name="first_contract_date" invisible="1"/>
+                            <field name="date_end"/>
+                            <field name="calendar_mismatch" invisible="1"/>
+                            <label for="resource_calendar_id"/>
+                            <div>
+                                <field name="resource_calendar_id" required="1" nolabel="1"/>
+                                <span attrs="{'invisible': ['|', ('calendar_mismatch', '=', False), ('state', '!=', 'open')]}"
+                                    class="fa fa-exclamation-triangle text-danger o_calendar_warning pl-3">
+                                </span>
+                                <span class="o_calendar_warning_tooltip text-danger">
+                                    Calendar Mismatch : The employee's calendar does not match this contract's calendar. This could lead to unexpected behaviors.
+                                </span>
+                            </div>
+                            <field name="hr_responsible_id"/>
+                            <field name="no_required_attendance"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Contract Details" name="other">
+                            <group name="notes_group" string="Notes">
+                                <field name="notes" nolabel="1"/>
+                            </group>
+                        </page>
+                        <page string="Salary Information" name="information">
+                            <group name="main_info">
+                                <group name="salary_and_advantages" string="Monthly Advantages in Cash">
+                                    <label for="wage"/>
+                                    <div class="o_row" name="wage">
+                                        <field name="wage" nolabel="1"/>
+                                        <span>/ month</span>
+                                    </div>
+                                </group>
+                                <group string="Yearly Advantages" name="yearly_advantages"/>
+                            </group>
+                        </page>
+                        <page string="Allowance List" name="allowance">
+                            <field name="allowance_ids" col="4" colspan="4" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                <tree string="Allowance" editable="top">
+                                    <!-- <field name="rule_id" invisible="1"/> -->
+                                    <field name="code"/>
+                                    <field name="description"/>
+                                    <field name="amount"/>
+                                    <field name="apply_on"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Overtime" name="overtime">
+                            <group>
+                                <group>
+                                    <label for="over_day"/>
+                                    <div class="o_row" name="day_wage">
+                                        <field name="over_day" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <span>/day</span>
+                                    </div>
+                                </group>
+                                <group>
+                                    <label for="over_hour"/>
+                                    <div class="o_row" name="hour_wage">
+                                        <field name="over_hour" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <span>/hour</span>
+                                    </div>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_subcontract" model="ir.actions.act_window">
+        <field name="name">HR SubContract</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.subcontract</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

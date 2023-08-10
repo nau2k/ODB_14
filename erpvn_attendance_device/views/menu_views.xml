@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<menuitem id="hr_work_entry_attedance_menu" name="Work Entry" parent="hr_attendance.menu_hr_attendance_manage_attendances"
+			action="hr_work_entry.hr_work_entry_action" sequence="11" groups="hr_attendance.group_hr_attendance_user"/>
+
+		<menuitem name="Attendance Device" id="attendance_manager_menu" parent="hr_attendance.menu_hr_attendance_manage_attendances"
+			groups="hr_attendance.group_hr_attendance_manager" sequence="100"/>
+
+			<menuitem id="default_attendace_device_manager_menu" name="Devices Manager" parent="attendance_manager_menu"
+				action="attendance_device_list_action" sequence="10" groups="hr_attendance.group_hr_attendance_manager"/>
+
+			<menuitem name="Work Entry Type" id="menu_hr_work_entry_type_id" parent="attendance_manager_menu"
+				action="hr_work_entry.hr_work_entry_type_action" sequence="20" groups="hr_attendance.group_hr_attendance_manager"/>
+
+			<menuitem id="attendance_state_menu" name="Attendance Status" parent="attendance_manager_menu"
+				action="attendance_state_tree_action" sequence="30" groups="hr_attendance.group_hr_attendance_manager"/>
+
+		<menuitem id="user_attendance_data_attedance_menu" name="User not Employee" parent="attendance_manager_menu"
+			action="action_user_attendance_data" sequence="20" groups="hr_attendance.group_hr_attendance_user"/>
+
+		<menuitem id="finger_template_attedance_menu" name="Finger Template" parent="attendance_manager_menu"
+			action="action_finger_template" sequence="30" groups="hr_attendance.group_hr_attendance_user"/>
+
+		<menuitem id="attendance_device_user_attedance_menu" name="Device User" parent="attendance_manager_menu"
+			action="device_user_list_action" sequence="40" groups="hr_attendance.group_hr_attendance_user"/>
+
+		<menuitem id="employee_upload_attedance_menu" name="Upload Employees" parent="attendance_manager_menu"
+			action="employee_upload_wizard_action" sequence="90" groups="hr_attendance.group_hr_attendance_user"/>
+
+		<menuitem id="sync_device_attendance_menu" name="Synchronize" parent="attendance_manager_menu"
+			action="action_sync_device_attendance" sequence="100" groups="hr_attendance.group_hr_attendance_user"/>
+
+		<menuitem name="Configuration" id="hr_attendance_settings" parent="hr_attendance.menu_hr_attendance_settings"
+			action="hr_attendance.action_hr_attendance_settings" sequence="10" groups="hr_attendance.group_hr_attendance_manager"/>
+
+		<menuitem name="Calendar Resource" id="menu_resource_calendar_view" parent="hr_attendance.menu_hr_attendance_settings"
+			action="resource.action_resource_calendar_form" sequence="20"/>
+
+	</data>
+</odoo>

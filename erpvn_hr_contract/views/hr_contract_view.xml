@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="view_hr_contract_search_inherit" model="ir.ui.view">
+        <field name="name">view.hr.contract.search.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='running']" position="after">
+                <filter string="Expiring" name="expiring" domain="[('state', '=', 'expiring')]"/>
+                <filter string="Draft " name='draft' domain="[('state', '=', 'dfart')]"/>
+                <filter string="Close " name='close' domain="[('state', 'in', ['termination', 'close'])]"/> 
+                <filter string="Cancelled " name='cancelled' domain="[('state', '=', 'cancel')]"/>
+            </xpath>
+            <xpath expr="//group" position="inside">
+                <filter string="Department" name="department" domain="[]" context="{'group_by':'department_id'}"/>
+                <filter string="Payroll Structure Type" name='contract_type' context="{'group_by':'structure_type_id'}"/>
+            </xpath>
+            <!-- <xpath expr="//field[@name='name']" position="before">
+                <filter string="Current" name="current" domain="[('date_start', '&lt;=', context_today().strftime('%%Y-%%m-%%d')), '|', ('date_end','&gt;',context_today().strftime('%%Y-%%m-%%d')), ('date_end','=',False)]"/>
+                <filter string="Future" domain="[('date_start','&gt;', context_today().strftime('%%Y-%%m-%%d'))]"/>
+            </xpath> -->
+        </field>
+    </record>
+
+    <record id="view_hr_contract_tree_inherit_contract_time" model="ir.ui.view">
+        <field name="name">view.hr.contract.tree.inherit.contract.time</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-success">contract_time == 'current'</attribute>
+                <attribute name="decoration-warning">contract_time == 'future'</attribute>
+                <attribute name="decoration-muted">contract_time == 'past'</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='kanban_state']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="after">
+                <field name="department_id"/>
+                <field name="contract_time" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_contract_form_inherit" model="ir.ui.view">
+        <field name="name">view.hr.contract.view.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+        <field name="arch" type="xml">
+            <header position="replace">
+                <header>
+                    <button name="action_run" string="Approve" type="object" states="draft" class="btn-primary"/>
+                    <button name="action_set_draft" string="Set To Draft" type="object" states="cancel" class="btn-secondary"/>
+                    <button name="action_cancel" string="Reject" type="object" states="draft,open,expiring" class="btn-danger"/>
+                    <button name="action_close" string="Close" type="object" states="open,expiring" class="btn-warning"/>
+                    <button string="Create Subcontract" name="action_create_subcontract" states="open,expiring" type="object" class="btn-success"/>
+                    <button string="Create Contract" name="action_create_contract" states="open,expiring" type="object" class="btn-success"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,expiring"/>
+                </header>
+            </header>
+            <xpath expr="//field[@name='employee_id']" position="before">
+                <field name="sub_contract_id"/>
+            </xpath>
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date_end']" position="before">
+                <field name="view_expected_end" invisible="1"/>
+                <field name="expected_end" string="Expected End Date" 
+                    attrs="{'invisible': [('view_expected_end', '!=', True)],
+                            'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+            <xpath expr="//page[2]" position="after">
+                <page string="Allowance List" name="allowance">
+                    <field name="allowance_ids" col="4" colspan="4" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                        <tree string="Allowance" editable="top">
+                            <field name="code"/>
+                            <field name="description"/>
+                            <field name="amount"/>
+                            <field name="apply_on"/>
+                        </tree>
+                    </field>
+                </page>
+
+                <page string="Subcontracts" name="hr_subcontracts">
+                    <field name="subcontract_ids" col="4" colspan="4" readonly="1">
+                        <tree string="Subcontracts">
+                            <field name="employee_id" invisible="1"/>
+                            <field name="contract_type_id" invisible="1"/>
+                            <field name="structure_type_id" invisible="1"/>
+                            <field name="date_end" invisible="1"/>
+                            <field name="name" string="Reference"/>
+                            <field name="job_id" string="Position"/>
+                            <field name="job_title_id" string="Job Title"/>
+                            <field name="resource_calendar_id"/>
+                            <field name="date_start"/>
+                            <field name="wage"/>
+                            <field name="hr_responsible_id"/>
+                            <field name="state" widget="badge"/>
+                            <field name="sub_state" widget="badge"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+            <xpath expr="//group/group[1]" position="replace">
+                <group>
+                    <field name="active" invisible="1"/>
+                    <field name="is_trial" invisible="1"/>
+                    <field name="is_hardwork" invisible="1"/>
+                    <field name="company_country_id" invisible="1"/>
+                    <field name="contract_type_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="employee_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="department_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="job_id" attrs="{'readonly': [('state', '!=', 'draft')]}" domain="[('department_id', '=', department_id)]"/>
+                    <field name="job_title_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="structure_type_id" domain="['|', ('country_id', '=', False), ('country_id', '=', company_country_id)]" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                    <field name="company_id" groups="base.group_multi_company" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                </group>
+            </xpath>
+
+            <!-- <xpath expr="//field[@name='hr_responsible_id']" position="after">
+                <field name="no_required_attendance" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath> -->
+
+            <xpath expr="//page[@name='hr_subcontracts']" position="after">
+                <page string="Overtime" name="overtime">
+                    <group>
+                        <group>
+                            <label for="over_day"/>
+                            <div class="o_row" name="day_wage">
+                                <field name="over_day" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <span>/day</span>
+                            </div>
+                        </group>
+                        <group>
+                            <label for="over_hour"/>
+                            <div class="o_row" name="hour_wage">
+                                <field name="over_hour" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <span>/hour</span>
+                            </div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+            <xpath expr="//field[@name='date_start']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='notes']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date_end']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='resource_calendar_id']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='hr_responsible_id']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='wage']" position="attributes">
+                <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_contract.action_hr_contract" model="ir.actions.act_window">
+        <field name="view_mode">tree,kanban,form,activity</field>
+        <field name="context">{'search_default_group_by_state': 0, 'search_default_expiring': 1, 'search_default_draft': 1}</field>
+    </record>
+
+</odoo>

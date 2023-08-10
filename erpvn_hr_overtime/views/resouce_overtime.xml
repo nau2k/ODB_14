@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="resource_calendar_overtime_form_view_inherit" model="ir.ui.view">
+        <field name="name">resource.calendar.overtime.form.view.inherit</field>
+        <field name="model">resource.calendar</field>
+        <field name="inherit_id" ref="erpvn_hr_work_entry.resource_calendar_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='is_fulltime']" position="after">
+                <field name="is_overtime" widget="boolean_toggle"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

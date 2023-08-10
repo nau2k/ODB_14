@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.overtime</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Overtime" string="Overtime" data-key="erpvn_hr_overtime" groups="hr.group_hr_manager">
+                    <h2>Overtime</h2>
+                    <div class="row mt16 o_settings_container" name="overtime_settings">
+                        <div class="col-12 col-lg-6 o_setting_box" id="limited_overtime_per_year">
+                            <div class="o_setting_right_pane">
+                                <label for="limited_overtime_per_year"/>
+                                <div class="row">
+                                    <div class="text-muted col-lg-8">
+                                        Set limited hours to allow maximum overtime for each employee per year.
+                                    </div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <span><field name="limited_overtime_per_year" class="oe_inline"/> hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box" id="overtime_type">
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Overtime Type</span>
+                                <div class="text-muted">
+                                    Choose the overtime type to apply every overtime order created.
+                                </div>
+                                <div class="content-group">
+                                    <div class="mt16">
+                                        <field name="overtime_type" class="oe_inline"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_overtime_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'erpvn_hr_overtime', 'bin_size': False}</field>
+    </record>
+
+</odoo>

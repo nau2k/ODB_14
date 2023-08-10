@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="wz_resign_confirm" model="ir.ui.view">
+        <field name="name">wz_resign_confirm</field>
+        <field name="model">wz.resign.confirm</field>
+        <field name="arch" type="xml">
+            <form string="Approve Date">
+                <p>Please enter confirm date !!</p>
+                <group>
+                    <group>
+                        <field name="resign_confirm_date" required="1"/>
+                        <field name="expected_revealing_date" readonly="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="OK" name="action_ok" type="object" class="oe_highlight" />
+                    <button string="Cancel" class="btn btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

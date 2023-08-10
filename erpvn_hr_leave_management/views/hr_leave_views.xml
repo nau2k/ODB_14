@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="hr_leave_search_view_inherit" model="ir.ui.view">
+		<field name="name">hr.leave.earch.my.inherit</field>
+		<field name="model">hr.leave</field>
+		<field name="inherit_id" ref="hr_holidays.hr_leave_view_search_my"/>
+		<field name="arch" type="xml">
+			<xpath expr="//filter[@name='approve']" position="after">
+                <filter domain="[('state','=', 'cancel')]" string="Cancelled" name="cancel"/>
+				<filter domain="[('state','=', 'refuse')]" string="Refused" name="refuse"/>
+            </xpath>
+			<xpath expr="//field[@name='employee_id']" position="replace">
+				<field name="employee_id" string="Employee" filter_domain="['|', '|', '|','|',('employee_id.barcode', 'ilike', self), ('employee_id.name', 'ilike', self),('employee_id.work_email', 'ilike', self), ('employee_id.mobile_phone', 'ilike', self), ('employee_id.work_phone', 'ilike', self)]"/>
+			</xpath>
+		</field>
+	</record>
+
+	<record id="hr_leave_calendar_view_inherit" model="ir.ui.view">
+		<field name="name">hr.leave.calendar.inherit</field>
+		<field name="model">hr.leave</field>
+		<field name="inherit_id" ref="hr_holidays.hr_leave_view_calendar"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='employee_id']" position="replace">
+                <field name="employee_id" filters="1" invisible="1" widget="many2one_avatar_user"/>
+            </xpath>
+		</field>
+	</record>
+
+	<record id="action_validate_my_inherited" model="ir.ui.view">
+		<field name="name">hr.leave.tree.my.inherit</field>
+		<field name="model">hr.leave</field>
+		<field name="inherit_id" ref="hr_holidays.hr_leave_view_tree_my"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+			<xpath expr="//field[@name='employee_id']" position="before">
+                <field name="sequence"/>
+                <field name="barcode"/>
+            </xpath>
+            <xpath expr="//field[@name='department_id']" position="attributes">
+                <attribute name="invisible">0</attribute>
+				<attribute name="optional">show</attribute>
+            </xpath>
+            <xpath expr="//field[@name='holiday_type']" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </xpath>
+		</field>
+	</record>
+
+	<record id="view_leave_approval_inherited" model="ir.ui.view">
+		<field name="name">hr.leave.view.form.inherit</field>
+		<field name="model">hr.leave</field>
+		<field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//button[@name='action_validate']" position="replace">
+				<button string="Validate" name="action_validate" states="validate1" type="object" groups="hr_holidays.group_hr_holidays_user,erpvn_hr_leave_management.group_hr_holidays_department_manager" class="oe_highlight"/>
+			</xpath>
+			<xpath expr="//field[@name='state']" position="replace">
+				<field name="state" widget="statusbar" statusbar_visible="draft,confirm,refuse,validate,validate1,cancle"/>
+			</xpath>
+			<xpath expr="//field[@name='employee_id']" position="replace">
+			</xpath>
+			<xpath expr="//field[@name='name']" position="before">
+			<field name="type_description" type="html"/>
+			</xpath>
+			<xpath expr="//field[@name='number_of_days']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+			<xpath expr="//field[@name='request_unit_half']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+			<xpath expr="//label[@for='request_unit_half']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+			<xpath expr="//field[@name='holiday_status_id']" position="replace"></xpath>
+
+			<xpath expr="//field[@name='request_date_to']" position="attributes">
+				<attribute name="attrs">{'invisible': [('customize_leave_type', '=', 'normal'), '|', ('request_unit_half', '=', True), ('request_unit_hours', '=', True)]}</attribute>
+			</xpath>
+
+			<xpath expr="//label[@for='request_hour_from']" position="attributes">
+				<attribute name="attrs">{'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)]}</attribute>
+				<attribute name="string">Hours:</attribute>
+			</xpath>
+			<xpath expr="//field[@name='request_hour_from']" position="attributes">
+				<attribute name="attrs">{
+					'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)],
+					'required': [('customize_leave_type', '!=', 'normal'), ('request_unit_hours', '=', True)],
+				}</attribute>
+			</xpath>
+
+			<xpath expr="//label[@for='request_hour_to']" position="attributes">
+				<attribute name="attrs">{'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)]}</attribute>
+			</xpath>
+			<xpath expr="//field[@name='request_hour_to']" position="attributes">
+				<attribute name="attrs">{
+					'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)],
+					'required': [('customize_leave_type', '!=', 'normal'), ('request_unit_hours', '=', True)],
+				}</attribute>
+			</xpath>
+
+			<xpath expr="//label[@for='request_unit_hours']" position="attributes">
+				<attribute name="attrs">{'invisible': ['|', ('customize_leave_type', '!=', 'normal'), ('leave_type_request_unit', '!=', 'hour')]}</attribute>
+			</xpath>
+			<xpath expr="//field[@name='request_unit_hours']" position="attributes">
+				<attribute name="attrs">{'invisible': ['|', ('customize_leave_type', '!=', 'normal'), ('leave_type_request_unit', '!=', 'hour')]}</attribute>
+			</xpath>
+
+			<xpath expr="//div[hasclass('oe_title')]" position="after">
+				<h1>
+					<field name="sequence" nolabel="1" readonly="1"/>
+				</h1>
+				<group name="employee_leave_infor">
+					<group>
+						<field name="return_date" invisible="1"/>
+						<field name="department_id"/>
+						<field name="cus_employee_id" domain="[('department_id','=', department_id)]"
+							string="Employee" attrs="{'invisible': [('customize_leave_type', '=', 'normal'), ('holiday_type', '!=', 'employee_cus')]}"/>
+						<field name="mode_employee_type_id" attrs="{'invisible': [('holiday_type', '!=', 'employee_type')]}"/>
+						<field name="customize_leave_type" widget="radio"/>
+						<p name="customize_leave_des" attrs="{'invisible': [('customize_leave_type', '=', 'normal')]}">
+							The 'Interrupted Range' is used for creating multiple range leaves.
+						</p>
+
+						<field name="barcode" readonly="1" attrs="{'invisible': [('holiday_type', '!=', 'employee')]}"/>
+						<field name="employee_id" context="{'default_employee_id': employee_id}"
+							attrs="{'invisible': ['|', ('customize_leave_type', '!=', 'normal'), ('holiday_type', '!=', 'employee')]}"/>
+
+						<field name="allocation_total_display" string="Allocations"
+							readonly="1" attrs="{'invisible': [('holiday_type', '!=', 'employee'), ('customize_leave_type', '=', 'normal')]}"/>
+						<field name="allocation_taken_display" string="Time Off Used"
+							readonly="1" attrs="{'invisible': [('holiday_type', '!=', 'employee'), ('customize_leave_type', '=', 'normal')]}"/>
+						<field name="allocation_remained_display" string="Time Off Remain"
+							readonly="1" attrs="{'invisible': [('holiday_type', '!=', 'employee'), ('customize_leave_type', '=', 'normal')]}"/>
+					</group>
+					<group>
+						<field attrs="{'invisible': [('holiday_type', '!=', 'employee')]}" nolabel="1" name="image_1920" widget="image" class="oe_avatar" options='{"zoom": true, "preview_image":"image_128"}'/>
+					</group>
+				</group>
+			</xpath>
+			<xpath expr="//group[@name='col_right']" position="before">
+				<group>
+					<field name="mode_id" nolabel="1" options="{'no_create': True, 'no_open': True}"
+						class="w-60" autocomplete="off" domain="[('type_ids','!=',False)]"
+						attrs="{'readonly': [('state', 'not in', ['draft', 'confirm'])]}"/>
+					<br/>
+					<field name="holiday_status_id" nolabel="1" attrs="{'invisible': [('mode_id', '=', False)]}" required="1" 
+						domain="['&amp;', '&amp;', ('mode_id', '=', 'mode_id'), ('virtual_remaining_leaves', '&gt;', 0), '|', ('allocation_type', 'in', ['fixed_allocation', 'no']),'&amp;',('allocation_type', '=', 'fixed'), ('max_leaves', '>', '0')]"
+						context="{'employee_id':employee_id, 'default_date_from':date_from}" options="{'no_create': True, 'no_open': True}" class="w-100" widget="radio"/>
+				</group>
+			</xpath>
+
+			<xpath expr="//form/sheet" position="inside">
+				<button name="compute_sheet" string="Load Employee" type="object"
+					attrs="{'invisible': ['|', ('customize_leave_type', '=', 'normal'), ('state', 'not in', ['draft', 'confirm'])]}"
+					icon="fa-cloud-download" class="btn-outline-primary"/>
+					
+				<group name="employee_list">
+					<field name="leave_employee_ids" nolabel="1" attrs="{
+						'invisible': [('customize_leave_type', '=', 'normal')]}">
+
+						<tree create="0" deletable="1" editable="1"
+							decoration-info="status == 'diff'"
+							decoration-warning="status == 'unwork'"
+							decoration-danger="status == 'duplicated'"
+							default_order="sequence">
+
+							<field name="sequence" string="# No." readonly="1" force_save="1"/>
+							<field name="request_date_from" invisible="1"/>
+							<field name="request_date_to" invisible="1"/>
+							<field name="notes" invisible="1"/>
+							<field name="state" invisible="1"/>
+							<field name="status" invisible="1"/>
+							
+							<field name="name"/>
+							<field name="barcode" readonly="1"/>
+							<field name="employee_id" context="{'default_employee_id': employee_id}" readonly="1"/>
+							<field name="hr_leave_type_id"/>
+							<field name="date_from"/>
+							<field name="date_to"/>
+							<field name="number_of_hours" sum="Total" widget="float_time" readonly="1"/>
+							<field name="number_of_days" force_save="1" invisible="1"/>
+							<field name="duration_display" force_save="1" invisible="1"/>
+							<field name="allocation_total_display" string="Allocations" readonly="1"/>
+							<field name="allocation_taken_display" string="Time Off Used" readonly="1"/>
+							<field name="allocation_remained_display" string="Time Off Remain" readonly="1"/>
+						</tree>
+					</field>
+				</group>
+			</xpath>
+
+		</field>
+	</record>
+
+	<record id="hr_leave_view_form_manager_inherited" model="ir.ui.view">
+		<field name="name">hr.leave.view.form.manager.inherited</field>
+		<field name="model">hr.leave</field>
+		<field name="inherit_id" ref="hr_holidays.hr_leave_view_form_manager"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='holiday_status_id']" position="replace"></xpath>
+			<xpath expr="//field[@name='holiday_type']" position="replace"></xpath>
+			<xpath expr="//field[@name='employee_id']" position="replace"></xpath>
+			<xpath expr="//field[@name='department_id']" position="replace"></xpath>
+			<xpath expr="//field[@name='cus_employee_id']" position="replace"></xpath>
+			<xpath expr="//field[@name='payslip_status']" position="replace"></xpath>
+
+			<xpath expr="//label[@for='number_of_days']" position="replace">
+				<label for="number_of_days" string="Duration" attrs="{'invisible': ['|', '|', ('holiday_type', '!=', 'employee'), ('customize_leave_type', '!=', 'normal'),
+					'&amp;', ('request_unit_half', '=', True), ('leave_type_request_unit', '!=', 'hour')]}"/>
+			</xpath>
+
+			<xpath expr="//form/sheet/group/group[1]/div[2]" position="replace">
+				<div>
+					<div class="o_row">
+						<div groups="!hr_holidays.group_hr_holidays_manager" class="o_row"
+							attrs="{'invisible': ['|', '|', '|', ('request_unit_half', '=', True),
+								('customize_leave_type', '!=', 'normal'),
+								('holiday_type', '!=', 'employee'), ('request_unit_hours', '=', True)]}">
+
+							<field name="number_of_days_display" nolabel="1" readonly="1" class="oe_inline"/>
+							<span>Days</span>
+						</div>
+						<div groups="hr_holidays.group_hr_holidays_manager" class="o_row"
+							attrs="{'invisible': ['|', '|', '|', ('request_unit_half', '=', True),
+								('customize_leave_type', '!=', 'normal'),
+								('holiday_type', '!=', 'employee'), ('request_unit_hours', '=', True)]}">
+
+							<field name="number_of_days" nolabel="1" class="oe_inline"/>
+							<span>Days</span>
+						</div>
+						<div attrs="{'invisible': ['|', ('leave_type_request_unit', '!=', 'hour'), ('holiday_type', '!=', 'employee')]}" class="o_row">
+							<field name="number_of_hours_text" nolabel="1" class="oe_inline"/>
+						</div>
+					</div>
+				</div>
+			</xpath>
+
+			<xpath expr="//field[@name='allocation_total_display']" position="before">
+				<xpath expr="//field[@name='holiday_type']" position="move"/>
+				<xpath expr="//field[@name='department_id']" position="move"/>
+				<xpath expr="//field[@name='mode_employee_type_id']" position="move"/>
+				<xpath expr="//field[@name='customize_leave_type']" position="move"/>
+				<xpath expr="//p[@name='customize_leave_des']" position="move"/>
+				<xpath expr="//field[@name='mode_company_id']" position="move"/>
+				<xpath expr="//field[@name='category_id']" position="move"/>
+				<xpath expr="//field[@name='barcode']" position="move"/>
+				<xpath expr="//field[@name='employee_id']" position="move"/>
+			</xpath>
+
+			<xpath expr="//field[@name='request_date_to']" position="attributes">
+				<attribute name="attrs">{'invisible': [('customize_leave_type', '=', 'normal'), '|', ('request_unit_half', '=', True), ('request_unit_hours', '=', True)]}</attribute>
+			</xpath>
+
+			<xpath expr="//label[@for='request_hour_from']" position="attributes">
+				<attribute name="attrs">{'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)]}</attribute>
+				<attribute name="string">Hours:</attribute>
+			</xpath>
+			<xpath expr="//field[@name='request_hour_from']" position="attributes">
+				<attribute name="attrs">{
+					'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)],
+					'required': [('customize_leave_type', '!=', 'normal'), ('request_unit_hours', '=', True)],
+				}</attribute>
+			</xpath>
+
+			<xpath expr="//label[@for='request_hour_to']" position="attributes">
+				<attribute name="attrs">{'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)]}</attribute>
+			</xpath>
+			<xpath expr="//field[@name='request_hour_to']" position="attributes">
+				<attribute name="attrs">{
+					'invisible': [('customize_leave_type', '=', 'normal'), ('request_unit_hours', '=', False)],
+					'required': [('customize_leave_type', '!=', 'normal'), ('request_unit_hours', '=', True)],
+				}</attribute>
+			</xpath>
+
+			<xpath expr="//label[@for='request_unit_hours']" position="attributes">
+				<attribute name="attrs">{'invisible': ['|', ('customize_leave_type', '!=', 'normal'), ('leave_type_request_unit', '!=', 'hour')]}</attribute>
+			</xpath>
+			<xpath expr="//field[@name='request_unit_hours']" position="attributes">
+				<attribute name="attrs">{'invisible': ['|', ('customize_leave_type', '!=', 'normal'), ('leave_type_request_unit', '!=', 'hour')]}</attribute>
+			</xpath>
+
+			<xpath expr="//field[@name='employee_id']" position="after">
+				<field name="cus_employee_id" domain="[('department_id','=', department_id)]"
+					attrs="{'invisible': [('customize_leave_type', '=', 'normal'), ('holiday_type', '!=', 'employee_cus')]}"/>
+			</xpath>
+
+			<xpath expr="//field[@name='department_id']" position="attributes">
+				<attribute name="attrs">{
+					'invisible': [('holiday_type', 'not in', ('employee', 'department', 'employee_cus'))],
+					'required': [('holiday_type', '=', 'department')],
+				}</attribute>
+			</xpath>
+
+			<!-- <xpath expr="//form/sheet" position="inside">
+				<button name="compute_sheet" string="Load Employee" type="object"
+					attrs="{'invisible': ['|', '&amp;', ('customize_leave_type', '=', 'normal'), ('holiday_type', '=', 'employee'), ('state', 'not in', ['draft', 'confirm'])]}"
+					icon="fa-cloud-download" class="btn-outline-primary"/>
+					
+				<group name="employee_list">
+					<field name="leave_employee_ids" nolabel="1" attrs="{
+						'invisible': [('customize_leave_type', '=', 'normal'), ('holiday_type', '=', 'employee')],
+						'readonly': [('state', 'not in', ['draft', 'confirm'])]}">
+
+						<tree create="0" deletable="1" editable="1"
+							decoration-info="status == 'diff'"
+							decoration-warning="status == 'unwork'"
+							decoration-danger="status == 'duplicated'"
+							default_order="sequence">
+
+							<field name="sequence" string="# No." readonly="1" force_save="1"/>
+							<field name="request_date_from" invisible="1"/>
+							<field name="request_date_to" invisible="1"/>
+							<field name="notes" invisible="1"/>
+							<field name="state" invisible="1"/>
+							<field name="status" invisible="1"/>
+							
+							<field name="name"/>
+							<field name="barcode" readonly="1"/>
+							<field name="employee_id" context="{'default_employee_id': employee_id}" readonly="1"/>
+							<field name="hr_leave_type_id"/>
+							<field name="date_from"/>
+							<field name="date_to"/>
+							<field name="number_of_hours" sum="Total" widget="float_time" readonly="1"/>
+							<field name="number_of_days" force_save="1" invisible="1"/>
+							<field name="duration_display" force_save="1" invisible="1"/>
+							<field name="allocation_total_display" string="Allocations" readonly="1"/>
+							<field name="allocation_taken_display" string="Time Off Used" readonly="1"/>
+							<field name="allocation_remained_display" string="Time Off Remain" readonly="1"/>
+						</tree>
+					</field>
+				</group>
+			</xpath> -->
+		</field>
+	</record>
+
+	<record id="hr_leave_tree_view_inherited" model="ir.ui.view">
+		<field name="name">hr.leave.tree.view.inherited</field>
+		<field name="model">hr.leave</field>
+		<field name="inherit_id" ref="hr_holidays.hr_leave_view_tree"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='employee_id']" position="before">
+				<field name="barcode" readonly="1" attrs="{'invisible': [('holiday_type', '!=', 'employee')]}"/>
+			</xpath>
+		</field>
+	</record>
+
+    <record id="hr_holidays.hr_leave_action_my" model="ir.actions.act_window">
+        <field name="name">Time Off Requests</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.leave</field>
+        <field name="view_mode">calendar,tree,form,kanban,activity</field>
+        <field name="context">{'search_default_hr_leave': True}</field>
+        <field name="search_view_id" ref="hr_leave_search_view_inherit"/>
+		<field name="domain">[]</field>
+    </record>
+
+	<record id="hr_leave_action_my_view_calendar" model="ir.actions.act_window.view">
+		<field name="sequence">1</field>
+		<field name="view_mode">calendar</field>
+		<field name="view_id" ref="hr_holidays.hr_leave_view_calendar"/>
+		<field name="act_window_id" ref="hr_holidays.hr_leave_action_my"/>
+	</record>
+
+	<record id="hr_holidays.hr_leave_action_my_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence">2</field>
+    </record>
+
+    <record id="hr_holidays.hr_leave_action_my_view_form" model="ir.actions.act_window.view">
+        <field name="sequence">3</field>
+    </record>
+
+	<record id="hr_holidays.hr_leave_allocation_action_my" model="ir.actions.act_window">
+        <field name="name">Allocation Requests</field>
+        <field name="res_model">hr.leave.allocation</field>
+        <field name="view_mode">tree,kanban,form,activity</field>
+        <field name="search_view_id" ref="hr_holidays.hr_leave_allocation_view_search_my"/>
+		<field name="context">{'search_default_hr_leave_allocation': True}</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="hr_holidays.hr_leave_action_action_approve_department" model="ir.actions.act_window">
+        <field name="domain">[]</field>
+    </record>
+	
+</odoo>

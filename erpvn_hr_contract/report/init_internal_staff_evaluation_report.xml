@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="init_internal_staff_evaluation_report" model="ir.actions.report.xml">
+            <field name="name">Internal Assessment</field>
+            <field name="type">ir.actions.report.xml</field>
+            <field name="model">init.internal.evaluation.report</field>
+            <field name="report_name">init_internal_staff_evaluation_report</field>
+            <field name="report_type">aeroo</field>
+            <field name="in_format">oo-odt</field>
+            <field name="out_format" eval="ref('report_aeroo.report_mimetypes_odt_odt')"/>
+            <field name="parser_loc">init_hr_contract/report/init_internal_staff_evaluation_report.py</field>
+            <field name="report_rml">init_hr_contract/report/init_internal_staff_evaluation_report.odt</field>
+            <field name="parser_state">loc</field>
+            <field name="tml_source">file</field>
+        </record>
+    </data>
+</openerp>

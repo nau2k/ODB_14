@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_ward,hr.hr.vn.state.ward,model_res_country_ward,base.group_system,1,1,1,1
+access_district,hr.hr.vn.state.district,model_res_country_district,base.group_system,1,1,1,1
+access_province,hr.hr.vn.state.province,model_res_country_province,base.group_system,1,1,1,1
+

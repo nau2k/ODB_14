@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_mrp_production_workorder_form_view_filter" model="ir.ui.view">
+    <field name="name">mrp_production_workorder_search_view_inherit</field>
+    <field name="model">mrp.workorder</field>
+    <field name="inherit_id" ref="mrp.view_mrp_production_workorder_form_view_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/group/filter[@name='scheduled_month']" position="replace">
+                <filter string="Scheduled Date" name="scheduled_month" domain="[]" context="{'group_by': 'date_planned_start:day'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- <record id="mrp_workorder_tree_view_inherit" model="ir.ui.view">
+        <field name="name">mrp_workorder_tree_view_inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_view"/>
+        <field name="arch" type="xml">
+            <field name="date_planned_start" position="after">
+                <field name="date_planned_finished"/>
+            </field>
+        </field>
+    </record> -->
+
+    <record id="mrp_workorder_tree_editable_view_inherit_workorder" model="ir.ui.view">
+        <field name="name">mrp.workorder.tree.editable.inherit.mrp.workorder</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_tree_editable_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="editable"></attribute>
+            </xpath>
+            <xpath expr="//field[@name='consumption']" position="before">
+                <field name="sequence" invisible="0"/>
+                <field name="barcode" invisible="0"/>
+            </xpath>
+            <field name="state" position="before">
+                <field name="percent_progressed" string="Progressed (%)" optional="hide"/>
+                <field name="time_progressed" string="Time Capacity (%)" optional="hide"/>
+            </field>
+
+            <field name="workcenter_id" position="after">
+                <field name="sequence" readonly="0"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="mrp_workorder_form_view_inherit" model="ir.ui.view">
+        <field name="name">mrp.production.work.order.form.view.inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[1]" position="replace">
+                <field name="is_user_working" invisible="1"/>
+                <field name="working_state" invisible="1"/>
+                <field name="production_state" invisible="1"/>
+
+                <group name="general_info">
+                    <field name="name" string="Name"/>
+                    <field name="workcenter_id"/>
+                    <field name="company_id"/>
+                    <field name="product_tracking"/>
+                    <field name="product_id"/>
+                    <field name="finished_lot_id"/>
+                    <field name="qty_production"/>
+                    <field name="qty_producing"/>
+                    <field name="qty_remaining"/>
+                </group>
+
+                <group name="date_time">
+                    <label for="date_planned_start" string="Planned Date"/>
+                    <div class="oe_inline">
+                        <field name="date_planned_start" class="mr8 oe_inline" required="True"/>
+                        <strong class="mr8 oe_inline">to</strong>
+                        <field name="date_planned_finished" class="oe_inline" required="True"/>
+                        <field name="show_json_popover" invisible="1"/>
+                        <field name="json_popover" invisible="1"/>
+                    </div>
+                    <label for="duration_expected"/>
+                    <div class="o_row">
+                        <field name="duration_expected" widget="float_time" readonly="1"/>
+                        <span>minutes</span>
+                    </div>
+                    <label for="mo_lv"/>
+                    <div class="o_row">
+                        <field name="mo_lv" widget="float_time" readonly="1"/>
+                    </div>
+
+                    <field name="percent_progressed" widget="progressbar"/>
+                    <field name="time_progressed" widget="progressbar"/>
+                    <field name="is_last_wo"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="mrp_workorder_form_view_inherit" model="ir.ui.view">
+        <field name="name">mrp.production.work.order.form.view.inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workorder_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[1]" position="before">
+                <group>
+                    <field name="name" string="Name"/>
+                    <field name="workcenter_id"/>
+                    <field name="company_id"/>
+                    <field name="product_tracking"/>
+                    <field name="production_id"/>
+                    <field name="product_id"/>
+                    <field name="finished_lot_id"/>
+                    <field name="qty_remaining" string="Quantity Remain"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//form/sheet/group/group[1]" position="inside">
+                <field name="percent_progressed" widget="progressbar"/>
+                <field name="time_progressed" widget="progressbar"/>
+                <field name="is_last_wo"/>
+                <field name="is_user_working" invisible="1"/>
+                <field name="working_state" invisible="1"/>
+                <field name="production_state" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_workorder_graph_view_inherit" model="ir.ui.view">
+        <field name="name">mrp_workorder_pivot_view_inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.workcenter_line_graph"/>
+        <field name="arch" type="xml">
+            <graph position="replace">
+                <graph string="Operations" sample="1">
+                    <field name="product_id"/>
+                    <field name="qty_production" type="measure"/>
+                    <field name="qty_produced" type="measure"/>
+                </graph>
+            </graph>
+        </field>
+    </record>
+
+    <record id="mrp_workorder_pivot_view_inherit" model="ir.ui.view">
+        <field name="name">mrp_workorder_pivot_view_inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.workcenter_line_pivot"/>
+        <field name="arch" type="xml">
+            <pivot position="replace">
+                <pivot string="Operations" sample="1">
+                    <field name="date_finished" type="col" interval="month"/>
+                    <field name="qty_production" type="measure" widget="float_time"/>
+                    <field name="qty_produced" type="measure" widget="float_time"/>
+                </pivot>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="action_update_progress" model="ir.actions.server">
+        <field name="name">Update Progress</field>
+        <field name="model_id" ref="model_mrp_workorder"/>
+        <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+        <field name="binding_model_id" ref="model_mrp_workorder"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = records.action_update_progress()
+        </field>
+    </record>
+
+</odoo>

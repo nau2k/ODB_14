@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="action_update_location_production" model="ir.actions.server">
+			<field name="name">Update Location Production</field>
+			<field name="model_id" ref="erpvn_mrp_management.model_product_category"/>
+			<field name="binding_model_id" ref="erpvn_mrp_management.model_product_category"/>            
+			<field name="binding_view_types">list</field>
+			<field name="state">code</field>
+			<field name="code">
+				if records:
+					action = records.action_update_location_production()
+			</field>
+		</record>
+
+	</data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+
+    <record id="holidays_mode_type_view_filter" model="ir.ui.view">
+        <field name="name">hr.leave.mode.type.filter</field>
+        <field name="model">hr.leave.mode.type</field>
+        <field name="arch" type="xml">
+            <search string="Search Time Off Mode Type">
+                <field name="name" string="Time Off Group Types"/>
+                <field name="code"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="holidays_mode_type_view_kanban" model="ir.ui.view">
+        <field name="name">hr.leave.mode.type.kanban</field>
+        <field name="model">hr.leave.mode.type</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div>
+                                <strong><field name="name"/></strong>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="holidays_mode_type_view_tree" model="ir.ui.view">
+        <field name="name">hr.leave.mode.type.normal.tree</field>
+        <field name="model">hr.leave.mode.type</field>
+        <field name="arch" type="xml">
+            <tree string="Time Off Mode Type" editable="bottom">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="type_ids" widget="many2many_tags"/>
+                <field name="company_id" groups="base.group_multi_company" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="open_holidays_mode_type_view" model="ir.actions.act_window">
+        <field name="name">Time Off Mode Types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.leave.mode.type</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="property_rule_work_entry_base_user" model="ir.rule">
+            <field name="name">Work Entry Internal User</field>
+            <field name="model_id" ref="model_hr_work_entry"/>
+            <field name="domain_force">[
+                '|',('department_id','child_of',[user.department_id.id]),
+                '|', ('department_id.manager_id.user_id', '=', user.id), 
+                ('department_id','=',user.department_id.id)
+            ]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="property_rule_work_entry_hr_office" model="ir.rule">
+            <field name="name">Work Entry HR Officer</field>
+            <field name="model_id" ref="model_hr_work_entry"/>
+            <field name="domain_force">[(1,"=",1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('hr.group_hr_user'))]"/>
+        </record>
+        
+        <record id="property_rule_work_entry_administrator" model="ir.rule">
+            <field name="name">Work Entry Administrator</field>
+            <field name="model_id" ref="model_hr_work_entry"/>
+            <field name="domain_force">[(1,"=",1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('base.group_system'))]"/>
+        </record>
+        
+    </data>
+</odoo>

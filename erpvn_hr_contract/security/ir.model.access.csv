@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_contract_allowance_user,hr.contract.allowance.user,model_hr_contract_allowance,hr.group_hr_user,1,1,1,1
+access_hr_contract_allowance_emp,hr.contract.allowance.emp,model_hr_contract_allowance,base.group_user,1,0,0,0
+
+access_hr_payroll_structure_type_manager,hr.payroll.structure.type.manager,model_hr_payroll_structure_type,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_contract_type_manager,hr.contract.type.manager,model_hr_contract_type,hr_contract.group_hr_contract_manager,1,1,1,1
+
+access_hr_contract_user,hr.contract.user,model_hr_contract,erpvn_hr_contract.group_hr_contract_user,1,0,0,0
+access_hr_subcontract_user,hr.subcontract.user,model_hr_subcontract,erpvn_hr_contract.group_hr_contract_user,1,0,0,0
+access_hr_subcontract_manager,hr.subcontract.manager,model_hr_subcontract,hr_contract.group_hr_contract_manager,1,1,1,1
+
+access_hr_contract_type_user,hr.contract.type.user,model_hr_contract_type,erpvn_hr_contract.group_hr_contract_user,1,0,0,0
+
+access_wizard_hr_subcontract,wizard.hr.subcontract,model_wizard_hr_subcontract,erpvn_hr_contract.group_hr_contract_user,1,1,1,0
+access_wizard_hr_subcontract_allowance,wizard.hr.subcontract.allowance,model_wizard_hr_subcontract_allowance,erpvn_hr_contract.group_hr_contract_user,1,1,1,1
+
+access_wizard_option_print_py3o,wizard_option_print_py3o,model_wizard_option_print_py3o,erpvn_hr_contract.group_hr_contract_user,1,1,1,1

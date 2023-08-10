@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="bom_extra_plan_search_view" model="ir.ui.view">
+            <field name="name">bom.extra.plan.search.view</field>
+            <field name="model">bom.extra.plan</field>
+            <field name="arch" type="xml">
+                <search string="Production Planning">
+                    <field name="product_id"/>
+                    <field name="product_bom_id"/>
+                    <field name="parent_bom_id"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Bill of Material" name="group_bom_id" context="{'group_by':'product_bom_id'}"/>
+                        <filter string="Parent BoM" name="group_parent_bom_id" context="{'group_by':'parent_bom_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- BOM Extra Plan Tree View-->
+        <record id="bom_extra_plan_tree_view" model="ir.ui.view">
+            <field name="name">bom.extra.plan.tree.view</field>
+            <field name="model">bom.extra.plan</field>
+            <field name="arch" type="xml">
+                <tree string="BOM Extra Plans" sample="1">
+                    <field name="company_id" invisible="1"/>
+                    <field name="sequence" widget="handle"/>
+                    <field name="seq" string="Sequence"/>
+
+                    <field name="product_tmpl_id" invisible="1"/>
+                    <field name="product_uom_category_id" invisible="1"/>
+                    <field name="parent_product_tmpl_id" invisible="1"/>
+                    <field name="parent_bom_id" string="Parent BOM"/>
+                    <field name="product_id" context="{'default_type': 'product'}"/>
+                    <field name="product_qty"/>
+                    <field name="product_uom_id" string="Product UoM" options="{'no_open':True,'no_create':True}"/>
+                    <field name="product_bom_id" string="Product BoM" options="{'no_open':True,'no_create':True}" domain="[('product_id', '=', product_id)]"/>
+                    <field name="time_produce" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- BOM Extra Plan Form View-->
+        <record id="bom_extra_plan_form_view" model="ir.ui.view">
+            <field name="name">bom.extra.plan.form.view</field>
+            <field name="model">bom.extra.plan</field>
+            <field name="arch" type="xml">
+                <form string="BOM Extra Plan">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="company_id" invisible="1"/>
+                                <field name="product_uom_category_id" invisible="1"/>
+                                <field name="parent_bom_id" string="Parent BOM"/>
+                                <field name="parent_product_tmpl_id" string="Parent Product"/>
+                            </group>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="product_bom_id" domain="[('product_id', '=', product_id)]"/>
+                                <field name="product_qty"/>
+                                <field name="product_uom_id" string="Product UoM"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="bom_extra_plan_action" model="ir.actions.act_window">
+            <field name="name">BOM Extra Plans</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bom.extra.plan</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_group_bom_id': True,}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                No BoM Line found. Let's create one!
+                </p><p>
+                Bills of materials line allow you to define the list of required raw
+                materials used to make a finished product; through a manufacturing
+                order or a pack of products.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

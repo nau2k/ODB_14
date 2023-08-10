@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-name="ValidateWorkEntries.validate_work_entries_button">
+        <button t-if="widget.modelName == 'hr.work.entry'" type="button" style="margin: 0 10px;" class="btn btn-outline-primary o_button_validate_work_entries">
+            <i class="fa fa-bars"></i>
+            Batch Actions
+        </button>
+    </t>
+
+    <t t-extend="ListView.buttons" t-name="ValidateWorkEntriesListView.buttons">
+        <t t-jquery="button.o_list_button_add" t-operation="after">
+            <t t-call="ValidateWorkEntries.validate_work_entries_button"/>
+        </t>
+    </t>
+</templates>

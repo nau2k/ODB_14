@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <record id="wizards_adjustment_request_line_form_view" model="ir.ui.view">
+        <field name="name">wizard.timesheet.adjustment.request.form</field>
+        <field name="model">wizard.timesheet.adjustment.request</field>
+        <field name="arch" type="xml">
+            <form string="Adjustment Request Line">
+                <sheet>
+                    <field name="line_ids">
+                        <tree editable="bottom" create="false" delete="true">
+                            <field name="employee_code" readonly="1"/>
+                            <field name="employee_id" readonly="1"/>
+                            <field name="old_date_start" readonly="1"/>
+                            <field name="old_date_stop"  readonly="1"/>
+                            <field name="break_time" readonly="1" widget="float_time"/>
+                            <field name="new_date_start"/>
+                            <field name="new_date_stop"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <footer>
+                    <button string='Save' name="create_adjustment_request" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

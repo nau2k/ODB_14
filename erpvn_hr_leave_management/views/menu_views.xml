@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+<!-- 
+	<record id="hr_holidays.menu_hr_holidays_root" model="ir.ui.menu">
+		<field name="action" ref="hr_holidays.hr_leave_action_my"/> 
+	</record> -->
+
+    <menuitem id="hr_holidays.menu_hr_holidays_my_leaves" name="Time Off" sequence="10"
+        parent="hr_holidays.menu_hr_holidays_root" action="hr_holidays.hr_leave_action_my"/>
+
+    <menuitem id="hr_holidays.hr_leave_menu_my"  name="Time Off Requests"
+        parent="hr_holidays.menu_hr_holidays_my_leaves" action="hr_holidays.hr_leave_action_my" sequence="10"/>
+
+    <menuitem id="hr_holidays.menu_open_allocation" name="Allocation Requests" groups="group_hr_holidays_department_manager"
+        parent="hr_holidays.menu_hr_holidays_my_leaves" action="hr_holidays.hr_leave_allocation_action_my" sequence="20"/>
+
+	<menuitem id="hr_holidays.hr_leave_menu_new_request"
+	    action="hr_holidays.hr_leave_action_new_request" active="False" sequence="1"/>
+
+    <menuitem id="hr_holidays.menu_hr_holidays_dashboard" name="Everyone" sequence="40"
+        parent="hr_holidays.menu_hr_holidays_root" action="hr_holidays.action_hr_holidays_dashboard"/>
+
+    <menuitem id="hr_holidays.menu_hr_holidays_approvals" name="Managers" sequence="80"
+        parent="hr_holidays.menu_hr_holidays_root" groups="hr_holidays.group_hr_holidays_user,erpvn_hr_leave_management.group_hr_holidays_department_manager"/>
+
+            <menuitem id="hr_holidays.hr_holidays_menu_manager_approve_allocations" name="Allocations"
+                parent="hr_holidays.menu_hr_holidays_approvals"
+                groups="hr_holidays.group_hr_holidays_user"
+                sequence="10"/>
+
+            <menuitem id="menu_manager_approve_work_entry" name="Work Entry" 
+                parent="hr_holidays.menu_hr_holidays_approvals" groups="hr_holidays.group_hr_holidays_user,erpvn_hr_leave_management.group_hr_holidays_department_manager" action="action_approve_work_entry" sequence="20"/>
+        
+            <menuitem id="menu_manager_approve_adjustment_request" name="Work Entry Adjustment" 
+                parent="hr_holidays.menu_hr_holidays_approvals" action="action_approve_adjustment_request" sequence="30"/>
+
+    <menuitem  id="hr_holidays.hr_holidays_status_menu_configuration" active="False"/> 
+            
+    <menuitem id="hr_holidays.hr_holidays_menu_config_activity_type" active="False"/>
+
+    <menuitem id="hr_holidays.menu_hr_holidays_report" name="Reporting" sequence="90"
+        parent="hr_holidays.menu_hr_holidays_root" groups="hr_holidays.group_hr_holidays_user,erpvn_hr_leave_management.group_hr_holidays_department_manager"/>
+
+    <menuitem id="hr_holidays.menu_hr_holidays_configuration" name="Configuration"
+        parent="hr_holidays.menu_hr_holidays_root" groups="hr_holidays.group_hr_holidays_user" sequence="100"/>
+
+        <menuitem name="Settings" id="menu_hr_holidays_config_settings_action" action="hr_holidays_config_settings_action" 
+            parent="hr_holidays.menu_hr_holidays_configuration" sequence="-2"/>
+
+            <menuitem id="sub_menu_time_off" parent="hr_holidays.menu_hr_holidays_configuration" name="Time Off" sequence="1"/>
+
+                <menuitem  id="hr_holidays_status_menu_configuration" name="Time Off Types" action="hr_holidays.open_view_holiday_status" 
+                    parent="sub_menu_time_off" groups="hr_holidays.group_hr_holidays_user" sequence="1"/>
+
+                <menuitem id="menu_holidays_group_type" name="Time Off Mode Type" sequence="2"
+                    parent="sub_menu_time_off" action="erpvn_hr_leave_management.open_holidays_mode_type_view" groups="hr_holidays.group_hr_holidays_manager"/>
+
+                <menuitem id="hr_holidays_menu_config_activity_type" action="hr_holidays.mail_activity_type_action_config_hr_holidays"
+                    parent="sub_menu_time_off" groups="base.group_no_one" sequence="3"/>
+
+</odoo>

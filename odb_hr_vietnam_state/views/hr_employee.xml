@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="odb_hr_state_employee_form_view_inherit" model="ir.ui.view">
+        <field name="name">odb_hr_state_employee_form_view_inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="priority">20</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='country_id']" position="attributes">
+                <attribute name="placeholder">Country...</attribute>
+            </xpath>
+            <xpath expr="//field[@name='country_id']" position="after">
+                <label for="state_id" string="Address"/>
+                <div class="o_address_format">
+                    <field name="state_id" placeholder="State..." class="o_address_state" options="{&quot;no_open&quot;: True,&quot;no_create&quot;: True}"/>
+                    <field name="district_id" placeholder="District..." class="o_address_state" options="{&quot;no_open&quot;: True,&quot;no_create&quot;: True}"/>
+                    <field name="ward_id" placeholder="Ward..." class="o_address_city" options="{&quot;no_open&quot;: True,&quot;no_create&quot;: True}"/>
+                    <field name="street" placeholder="Street..." class="o_address_street"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="odb_hr_state_employee_inherit" model="ir.ui.view">
+        <field name="name">odb_hr_state_employee_inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="priority">20</field>
+        <field name="inherit_id" ref="erpvn_hr_management.employee_form_view_inherit"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <field name="identification_country_id" placeholder="Country..." options="{'no_create': True, 'no_open': True}"/>
+                <label for="identification_state_id" string=" ID Address" />
+                <div class="o_address_format">
+                    <field name="identification_state_id" placeholder="State..." class="o_address_state" options="{&quot;no_open&quot;: True,&quot;no_create&quot;: True}"/>
+                    <field name="identification_district_id" placeholder="District..." class="o_address_state" options="{&quot;no_open&quot;: True,&quot;no_create&quot;: True}"/>
+                    <field name="identification_ward_id" placeholder="Ward..." class="o_address_city" options="{&quot;no_open&quot;: True,&quot;no_create&quot;: True}"/>
+                    <field name="identification_street" placeholder="Street..." class="o_address_street"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+
+</odoo>

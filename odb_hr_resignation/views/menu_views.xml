@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="hr_resignation_menu" name="Resignation" groups="base.group_user" parent="hr.menu_hr_root" sequence="20"/>
+
+            <menuitem id="hr_resignation_request_menu" parent="hr_resignation_menu" name="Resignation Request"
+                  action="hr_resignation_request" groups="base.group_user" sequence="10"/>
+
+            <menuitem id="hr_resignation_approved_menu" parent="hr_resignation_menu" name="Approved Resignation"
+                  action="hr_resignation_approved" groups="hr.group_hr_user" sequence="20"/>
+
+    </data>
+</odoo>

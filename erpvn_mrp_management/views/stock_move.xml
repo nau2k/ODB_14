@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="stock_move_tree_view_inherit" model="ir.ui.view">
+        <field name="name">stock.move.tree.view.inherit</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="odb_stock_management.stock_move_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="production_id" invisible="1"/>
+                <field name="parent_production_product_id"/>
+                <field name="mo_lv"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="stock_move_form_view_inherit" model="ir.ui.view">
+        <field name="name">stock.move.form.view.inherit</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='group_id']" position="after">
+                <field name="production_id" invisible="1"/>
+                <field name="parent_production_product_id"/>
+                <field name="mo_lv"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

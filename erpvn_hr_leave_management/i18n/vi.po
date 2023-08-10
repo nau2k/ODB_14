@@ -1,0 +1,1037 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* erpvn_hr_leave_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-15 04:16+0000\n"
+"PO-Revision-Date: 2022-06-15 04:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,body_html:erpvn_hr_leave_management.leave_request_mail
+msgid ""
+"\n"
+"            \t<p> Dear ${object.employee_id.parent_id.name},</p>\n"
+"               <table>\n"
+"                   <tr>\n"
+"                    <td>Employee Name</td> \n"
+"                    <td>\n"
+"                      <field name=\"name\">Requesting for Leave</field>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>                      \n"
+"                    <td>${object.employee_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Description</td>\n"
+"                   <td>\n"
+"                    </td>   \n"
+"                     <td>\n"
+"                    </td>\n"
+"                    <td>${object.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                  <td>Leave Type</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.holiday_status_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>No Of Days</td>\n"
+"                   <td>\n"
+"                    </td>\n"
+"                     <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.number_of_days}</td>\n"
+"                  </tr>\n"
+"                   <tr>\n"
+"                    <td>Start Date</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                   <td>${object.date_from.strftime('%d/%m/%Y')}</td> \n"
+"                 </tr>\n"
+"                 <tr>\n"
+"                  <td>End Date</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                   <td>${object.date_to.strftime('%d/%m/%Y')}</td>\n"
+"                  \n"
+"                </tr>\n"
+"                <!-- <tr>\n"
+"                  <td>Return Date</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                  <td>\n"
+"                    ${object.return_date}\n"
+"                       </td>\n"
+"                    </tr> -->\n"
+"</table>\n"
+"<p>${object.employee_id.name} has applied for ${object.number_of_days} days of ${object.leave_type} and Please click on view details</p>\n"
+"<br>\n"
+"<br>\n"
+"\n"
+"<div style=\"text-align: left; margin-top: 16px;\">\n"
+"<a href=\"/leaveapproval/${object.employee_id.id}/${object.id}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: \n"
+"                #875A7B; border: 1px solid #875A7B; border-radius:3px\">View Details</a>\n"
+"</div>\n"
+"<br>\n"
+"<br>\n"
+"<p>Regards,</p>\n"
+"<p>${object.employee_id.name}</p>\n"
+"            \t\n"
+"                  \n"
+"\n"
+"      "
+msgstr ""
+"\n"
+"            \t<p> Gửi ${object.employee_id.parent_id.name},</p>\n"
+"               <table>\n"
+"                   <tr>\n"
+"                    <td>Nhân viên</td> \n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>                      \n"
+"                    <td>${object.employee_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Mô tả</td>\n"
+"                   <td>\n"
+"                    </td>   \n"
+"                     <td>\n"
+"                    </td>\n"
+"                    <td>${object.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                  <td>Loại phép</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.holiday_status_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Số ngày</td>\n"
+"                   <td>\n"
+"                    </td>\n"
+"                     <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.number_of_days}</td>\n"
+"                  </tr>\n"
+"                   <tr>\n"
+"                    <td>Bắt đầu</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                   <td>${object.date_from.strftime('%d/%m/%Y')}</td> \n"
+"                 </tr>\n"
+"                 <tr>\n"
+"                  <td>Kết thúc</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                   <td>${object.date_to.strftime('%d/%m/%Y')}</td>\n"
+"                  \n"
+"                </tr>\n"
+"                <!-- <tr>\n"
+"                  <td>Còn lại</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                  <td>\n"
+"                    ${object.return_date}\n"
+"                       </td>\n"
+"                    </tr> -->\n"
+"</table>\n"
+"<p>${object.employee_id.name} đã tạo ${object.number_of_days} ngày của loại phép ${object.leave_type} hãy bấm vào đây xem chi tiết.</p>\n"
+"<br>\n"
+"<br>\n"
+"\n"
+"<div style=\"text-align: left; margin-top: 16px;\">\n"
+"<a href=\"/leaveapproval/${object.employee_id.id}/${object.id}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: \n"
+"                #875A7B; border: 1px solid #875A7B; border-radius:3px\">Xem chi tiết</a>\n"
+"</div>\n"
+"<br>\n"
+"<br>\n"
+"<p>Chân thành cảm ơn,</p>\n"
+"<p>${object.employee_id.name}</p>\n"
+"            \t\n"
+"                  \n"
+"\n"
+"      "
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,body_html:erpvn_hr_leave_management.leave_approval_mail
+msgid ""
+"\n"
+"                  <p>Dear ${object.employee_id.name},</p>\n"
+"                  <table>\n"
+"                   <tr>\n"
+"                    <td>Employee Name</td> \n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>                      \n"
+"                    <td>${object.employee_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Description</td>\n"
+"                   <td>\n"
+"                    </td>\n"
+"                     <td>\n"
+"                    </td>   \n"
+"                    <td>${object.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                  <td>Leave Type</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>                       \n"
+"                    <td> ${object.holiday_status_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>No Of Days</td>\n"
+"                   <td>\n"
+"                    </td>\n"
+"                     <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.number_of_days}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Start Date</td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>${object.date_from.strftime('%d/%m/%Y')}</td> \n"
+"                 </tr>\n"
+"                 <tr>\n"
+"                  <td>End Date</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                   <td>\n"
+"                    </td>   \n"
+"                 <td>${object.date_to.strftime('%d/%m/%Y')}</td>\n"
+"                </tr>\n"
+"               <!--  <tr>\n"
+"                  <td>Return Date</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                  <td>\n"
+"                    \n"
+"                    ${object.return_date}\n"
+"                       </td>\n"
+"                    </tr> -->\n"
+"</table>\n"
+"<br><p>Requested Leave for ${object.date_from.strftime('%d/%m/%Y')} to ${object.date_to.strftime('%d/%m/%Y')} days has been approved.</p>\n"
+"<br>\n"
+"<br>\n"
+"<p>Regards,</p>\n"
+"                  %if object.double_validation == True:\n"
+"\t                \t${object.employee_id.parent_id.parent_id.name}\n"
+"\t                %else:\n"
+"\t                  \t${object.employee_id.parent_id.name}\n"
+"\t                %endif\n"
+"                  <p>${object.employee_id.parent_id.department_id.name}</p>\n"
+"\n"
+"                   \n"
+"\n"
+"      "
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,body_html:erpvn_hr_leave_management.leave_rejection_mail
+msgid ""
+"\n"
+"                  <p>Dear ${object.employee_id.name},</p>\n"
+"                  <table>\n"
+"                   <tr>\n"
+"                    <td>Employee Name</td>  \n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>                     \n"
+"                    <td>${object.employee_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Description</td>\n"
+"                   <td>\n"
+"                    </td>\n"
+"                     <td>\n"
+"                    </td>   \n"
+"                    <td>${object.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                  <td>Leave Type</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.holiday_status_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>No Of Days</td>\n"
+"                     <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.number_of_days}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Start Date</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                   <td>${object.date_from.strftime('%d/%m/%Y')}</td> \n"
+"                 </tr>\n"
+"                 <tr>\n"
+"                  <td>End Date</td>\n"
+"                  <td>\n"
+"                    </td>   \n"
+"                   <td>\n"
+"                    </td>\n"
+"                  <td>${object.date_to.strftime('%d/%m/%Y')}</td>\n"
+"                </tr>\n"
+"<!--                 <tr>\n"
+"                  <td>Return Date</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                  <td>\n"
+"                    \n"
+"                    ${object.return_date}\n"
+"                       </td>\n"
+"                    </tr> -->\n"
+"</table>\n"
+"<br><p>Requested Leave for ${object.date_from.strftime('%d/%m/%Y')} to ${object.date_to.strftime('%d/%m/%Y')} days has rejected.</p>\n"
+"\n"
+"<br>\n"
+"<br>\n"
+"<p>Regards,</p>\n"
+"                  %if object.double_validation == True:\n"
+"\t                \t${object.employee_id.parent_id.parent_id.name}\n"
+"\t                %else:\n"
+"\t                  \t${object.employee_id.parent_id.name}\n"
+"\t                %endif\n"
+"                  <p>${object.employee_id.parent_id.department_id.name}</p>\n"
+"\n"
+"                   \n"
+"\n"
+"      "
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,body_html:erpvn_hr_leave_management.leave_validation_mail
+msgid ""
+"\n"
+"                  <p>Dear ${object.employee_id.parent_id.parent_id.name},</p>\n"
+"                  <table>\n"
+"                   <tr>\n"
+"                    <td>Employee Name</td>\n"
+"                    <td>\n"
+"                    </td> \n"
+"                    <td>\n"
+"                    </td>                      \n"
+"                    <td>${object.employee_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Description</td>\n"
+"                   <td>\n"
+"                    </td>   \n"
+"                     <td>\n"
+"                    </td>\n"
+"                    <td>${object.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                  <td>Leave Type</td>\n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.holiday_status_id.name}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>No Of Days</td>\n"
+"                   <td>\n"
+"                    </td>\n"
+"                     <td>\n"
+"                    </td>   \n"
+"                    <td> ${object.number_of_days}</td>\n"
+"                  </tr>\n"
+"                  <tr>\n"
+"                    <td>Start Date</td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    <td>\n"
+"                    </td>\n"
+"                    <td>${object.date_from.strftime('%d/%m/%Y')}</td> \n"
+"                 </tr>\n"
+"                 <tr>\n"
+"                  <td>End Date</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                   <td>\n"
+"                    </td>   \n"
+"                 <td>${object.date_to.strftime('%d/%m/%Y')}</td>\n"
+"                </tr>\n"
+"                <!-- <tr>\n"
+"                  <td>Return Date</td>\n"
+"                  <td>\n"
+"                    </td>\n"
+"                  <td>\n"
+"                    <td>\n"
+"                    </td>   \n"
+"                    ${object.return_date}\n"
+"                       </td>\n"
+"                    </tr> -->\n"
+"</table>\n"
+"<br><p>Requested Leave of ${object.employee_id.name} leave from ${object.date_from.strftime('%d/%m/%Y')} to ${object.date_to.strftime('%d/%m/%Y')} was waiting for your approval.</p>\n"
+"<br>\n"
+"<div style=\"text-align: left; margin-top: 16px;\">\n"
+"<a href=\"/approvalvalidationmail/${object.employee_id.id}/${object.id}\" style=\"padding: 5px 10px; font-size: 12px; line-height: 18px; color: #FFFFFF; border-color:#875A7B; text-decoration: none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; background-image: none; background-color: \n"
+"        #875A7B; border: 1px solid #875A7B; border-radius:3px\">View Details</a>\n"
+"</div>\n"
+"<br>\n"
+"<p>Regards,</p>\n"
+"<p>${object.employee_id.parent_id.name}</p>\n"
+"<p>${object.employee_id.parent_id.department_id.name}</p>\n"
+"\n"
+"                   \n"
+"\n"
+"      "
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,subject:erpvn_hr_leave_management.leave_request_mail
+msgid ""
+"${object.employee_id.name} - ${object.holiday_status_id.name} "
+"${object.number_of_days} - days"
+msgstr ""
+"${object.employee_id.name} - ${object.holiday_status_id.name} "
+"${object.number_of_days} - ngày"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__0
+msgid "00:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__0_5
+msgid "00:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__10
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__10
+msgid "10:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__10_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__10_5
+msgid "10:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__11
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__11
+msgid "11:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__11_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__11_5
+msgid "11:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__12
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__0
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__12
+msgid "12:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__12_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__0_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__12_5
+msgid "12:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__13
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__13
+msgid "13:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__13_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__13_5
+msgid "13:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__14
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__14
+msgid "14:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__14_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__14_5
+msgid "14:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__15
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__15
+msgid "15:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__15_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__15_5
+msgid "15:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__16
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__16
+msgid "16:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__16_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__16_5
+msgid "16:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__17
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__17
+msgid "17:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__17_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__17_5
+msgid "17:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__18
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__18
+msgid "18:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__18_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__18_5
+msgid "18:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__19
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__19
+msgid "19:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__19_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__19_5
+msgid "19:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__1
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__1
+msgid "1:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__1_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__1_5
+msgid "1:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__20
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__20
+msgid "20:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__20_5
+msgid "20:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__21
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__21
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__22
+msgid "21:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__21_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__20_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__21_5
+msgid "21:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__22
+msgid "22:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__22_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__22_5
+msgid "22:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__23
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__23
+msgid "23:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__23_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__23_5
+msgid "23:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__2
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__2
+msgid "2:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__2_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__2_5
+msgid "2:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__3
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__3
+msgid "3:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__3_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__3_5
+msgid "3:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__4
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__4
+msgid "4:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__4_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__4_5
+msgid "4:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__5
+msgid "5:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__5_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__5_5
+msgid "5:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__6
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__6
+msgid "6:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__6_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__6_5
+msgid "6:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__7
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__7
+msgid "7:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__7_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__7_5
+msgid "7:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__8
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__8
+msgid "8:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__8_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__8_5
+msgid "8:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__9
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__9
+msgid "9:00"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_from__9_5
+#: model:ir.model.fields.selection,name:erpvn_hr_leave_management.selection__hr_leave__request_hour_to__9_5
+msgid "9:30"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__active
+msgid "Active"
+msgstr "Kích hoạt"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.ui.menu,name:erpvn_hr_leave_management.hr_holidays_menu_config_activity_type
+msgid "Activity Types"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.actions.act_window,name:erpvn_hr_leave_management.action_approve_adjustment_request
+#: model:ir.ui.menu,name:erpvn_hr_leave_management.menu_manager_approve_adjustment_request
+msgid "Adjustment Request"
+msgstr "Yêu cầu điều chỉnh"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__allocation_display
+msgid "Allocation Display"
+msgstr "Hiển thị phân bổ"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__allocation_used_display
+msgid "Allocation Used Display"
+msgstr "Hiển thị phân bổ đã dùng"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.view_leave_approval_inherited
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__code
+msgid "Code"
+msgstr "Mã"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__create_date
+msgid "Created on"
+msgstr "Tạo lúc"
+
+#. module: erpvn_hr_leave_management
+#: model:res.groups,name:erpvn_hr_leave_management.group_hr_holidays_department_manager
+msgid "Department Manager"
+msgstr "Trưởng bộ phận"
+
+#. module: erpvn_hr_leave_management
+#: model:res.groups,name:erpvn_hr_leave_management.group_hr_holidays_department_user
+msgid "Department User"
+msgstr "Người dùng bộ phận"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__description
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_allocation__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_type__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__employee_id
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Employee Name"
+msgstr "Tên nhân viên"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "End Date"
+msgstr "Ngày kết thúc"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model,name:erpvn_hr_leave_management.model_hr_leave_mode_type
+msgid "HR Leave Mode Type"
+msgstr "Chế độ phép"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Holiday"
+msgstr "Ngày lễ"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__request_hour_from
+msgid "Hour from"
+msgstr "Từ giờ"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__request_hour_to
+msgid "Hour to"
+msgstr "Đến giờ"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__id
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_allocation__id
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__id
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_type__id
+msgid "ID"
+msgstr ""
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_allocation____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_type____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật bởi"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lúc"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Leave Details"
+msgstr "Chi tiết Phép"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Leave Type"
+msgstr "Loại phép"
+
+#. module: erpvn_hr_leave_management
+#: code:addons/erpvn_hr_leave_management/models/hr_leave.py:0
+#, python-format
+msgid ""
+"Leave request must be in Draft state (\"To Submit\") in order to confirm it."
+msgstr ""
+"Yêu cầu nghỉ phép đang trong trạng thái Dự thảo (\"Chờ duyệt\") hãy xác nhận"
+" nó."
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__type_ids
+msgid "Leaves Type"
+msgstr "Loại phép"
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,subject:erpvn_hr_leave_management.leave_validation_mail
+msgid "Mail for Leave Approval"
+msgstr "Mail để phê duyệt Phép"
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,subject:erpvn_hr_leave_management.leave_approval_mail
+msgid "Mail for Leave Approved"
+msgstr "Mail đã phê duyệt Phép"
+
+#. module: erpvn_hr_leave_management
+#: model:mail.template,subject:erpvn_hr_leave_management.leave_rejection_mail
+msgid "Mail for Leave Rejection"
+msgstr "Mail đã từ chối Phép"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.actions.act_window,help:erpvn_hr_leave_management.action_approve_adjustment_request
+msgid "Manager Adjustment Request"
+msgstr "Yêu cầu quản lý điều chỉnh"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.actions.act_window,help:erpvn_hr_leave_management.action_approve_work_entry
+msgid "Manager Work Entry"
+msgstr "Quảy lý giờ công"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__mode_id
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_type__mode_id
+msgid "Mode Type"
+msgstr "Chế độ Phép"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_mode_type__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Number Of Days"
+msgstr "Số ngày"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.hr_work_entry_inherit_view_search
+msgid "People I Manage"
+msgstr "Do tôi quản lý"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__return_date
+msgid "Return Date"
+msgstr "Ngày trở lại làm việc"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.holidays_mode_type_view_filter
+msgid "Search Time Off Mode Type"
+msgstr "Tìm phép theo chế độ"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.time_off_request_page
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.validation_page
+msgid "Start Date"
+msgstr "NGày bắt đầu"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave_type__request_unit
+msgid "Take Time Off in"
+msgstr "Nghỉ phép trong"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model,name:erpvn_hr_leave_management.model_hr_leave
+#: model:ir.ui.menu,name:erpvn_hr_leave_management.sub_menu_time_off
+msgid "Time Off"
+msgstr "Ngày nghỉ"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model,name:erpvn_hr_leave_management.model_hr_leave_allocation
+msgid "Time Off Allocation"
+msgstr "Phân bổ nghỉ phép"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.holidays_mode_type_view_filter
+msgid "Time Off Group Types"
+msgstr "Nhóm loại phép"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.ui.menu,name:erpvn_hr_leave_management.menu_holidays_group_type
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.holidays_mode_type_view_tree
+msgid "Time Off Mode Type"
+msgstr "Loại chế độ"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.actions.act_window,name:erpvn_hr_leave_management.open_holidays_mode_type_view
+msgid "Time Off Mode Types"
+msgstr "Loại chế độ"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.hr_employee_leave_view_form
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.hr_leave_view_form_manager_inherited
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.view_leave_approval_inherited
+msgid "Time Off Remain"
+msgstr "Nghỉ phép còn lại"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.model,name:erpvn_hr_leave_management.model_hr_leave_type
+#: model:ir.model.fields,field_description:erpvn_hr_leave_management.field_hr_leave__holiday_status_id
+msgid "Time Off Type"
+msgstr "Loại Nghỉ phép"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.ui.menu,name:erpvn_hr_leave_management.hr_holidays_status_menu_configuration
+msgid "Time Off Types"
+msgstr "Loại Nghỉ phép"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.hr_employee_leave_view_form
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.hr_leave_view_form_manager_inherited
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.view_leave_approval_inherited
+msgid "Time Off Used"
+msgstr "Phép đã dùng"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.hr_work_entry_inherit_view_search
+msgid "Time off of people you are manager of"
+msgstr "Các phép của nhân viên mà bạn quản lý"
+
+#. module: erpvn_hr_leave_management
+#: model:ir.actions.act_window,name:erpvn_hr_leave_management.action_approve_work_entry
+#: model:ir.ui.menu,name:erpvn_hr_leave_management.menu_manager_approve_work_entry
+msgid "Work Entry"
+msgstr "Giờ công"
+
+#. module: erpvn_hr_leave_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_leave_management.submit
+msgid "Your Process Has been Completed Successfully!!!"
+msgstr "Bạn đã hoàn tất các bước xử lý Thành công!!!"

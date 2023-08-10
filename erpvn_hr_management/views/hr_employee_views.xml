@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="employee_form_view_inherit" model="ir.ui.view">
+            <field name="name">Employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/button" position="after">
+                    <button class="btn btn-success" string="Create New User" type="object" name="action_create_user" attrs="{'invisible': ['|','|',('id', '=', False),('user_id', '!=', False),('active', '=', False),]}"/>
+                </xpath>
+                <div class="oe_button_box" position="inside">
+                    <button class="oe_stat_button" name="announcement_view" type="object" icon="fa-bullhorn" attrs="{'invisible':[('announcement_count','=', 0)]}">
+                        <field string="Announcements" name="announcement_count" widget="statinfo"/>
+                    </button>
+                </div>
+                <xpath expr="//field[@name='work_email']" position="replace">
+                    <field name="work_email" widget="email" required="1"/>
+                </xpath>
+                <xpath expr="//field[@name='job_title']" position="replace">
+                    <br/>
+                    <field name="barcode"/><button style="font-size:13px;margin-top:-2.2%" name="%(hr.hr_employee_print_badge)d" string="Print Badge" class="btn btn-link" type="action" attrs="{'invisible': [('barcode', '=', False)]}"/>
+                    <div>
+                    </div>
+                    <field name="employee_type_id" style="color:red" string="Employee Type" options="{'no_create': True}"/>
+                </xpath>
+
+                <field name="user_id" position="after">
+                    <field name="joining_date"/>
+                    <field name="resign_date" attrs="{'invisible': [('active', '!=', False)]}"/>
+                </field>
+                <field name="permit_no" position="after">
+                    <label for="permit_from" string="Permit Range"/>
+                    <div class="o_row">
+                        <field name="permit_from" placeholder="Start date"/> - 
+                        <field name="permit_to" placeholder="End Date" attrs="{'required': [('permit_no', '!=', False)]}"/>
+                    </div>
+                </field>
+                <xpath expr="//group[@name='identification_group']" position="replace">
+                    <group string="Attendance" name="identification_group">
+                        <field name="pin" string="PIN Code"/>
+                        <field name="seniority_leave" readonly="1"/>
+                        <field name="allocation_total_display" string="Allocations"/>
+                        <field name="allocation_taken_display" string="Time Off Used"/>
+                        <field name="allocation_remained_display" string="Time Off Remain"/>
+                    </group>
+                </xpath>
+                <xpath expr="//page[@name='personal_information']" position="inside">
+                    <group name="fam_ids" colspan="4" string="Dependence Details">
+                        <field name="fam_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="name" required="1"/>
+                                <field name="relation_id" required="1"/>
+                                <field name="phone_number"/>
+                                <field name="birth_date"/>
+                                <field name="age"/>
+                                <field name="identification_id"/>
+                                <field name="country_id"/>
+                                <field name="state_id" string="City/Province"/>
+                                <field name="address"/>
+                                <field name="vat"/>
+                                <field name="notes"/>
+                            </tree>
+                        </field>
+                    </group>
+                </xpath>
+                <field name="birthday" position="after">
+                    <field name="place_of_permanent" string='Place of permanent (Old)' />
+                    <field name="age"/>
+                    <field name="ethnic"/>
+                    <field name="religion"/>
+                </field>
+                <field name="identification_id" position="replace"/>
+                <field name="passport_id" position="replace"/>
+                <xpath expr="//page[@name='personal_information']/group/group[1]" position="after">
+                    <group name="identification_id" string="Identification ID">
+                        <field name="identification_id" string="ID Number"/>
+                        <field name="identification_address" string="ID Address (Old)" />
+                        <field name="identification_created_date" string="ID Date" attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                        <field name="identification_created_place" string="ID At" attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                        <field name="id_expiry_date" string="ID Expiration" groups="hr.group_hr_user" attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                        <field name="id_attachment_id" groups="hr.group_hr_user" widget="many2many_binary" class="oe_inline" attrs="{'invisible': [('identification_id', 'in', [None,False])]}"/>
+                        <field name="passport_id"/>
+                        <field name="passport_expiry_date" groups="hr.group_hr_user" attrs="{'invisible': [('passport_id', 'in', [None,False])]}"/>
+                        <field name="passport_attachment_id" groups="hr.group_hr_user" widget="many2many_binary" class="oe_inline" attrs="{'invisible': [('passport_id', 'in', [None,False])]}"/>
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='job_id']" position="after">
+                    <field name="title_id" string="Job Title"/>
+                    <field name="job_title" string="Job Title (Eng)"/>
+                </xpath>
+                <xpath expr="//field[@name='job_id']" position="replace"/>
+                <xpath expr="//field[@name='department_id']" position="after">
+                    <field name="job_id" domain="[('department_id', '=', department_id)]"/>
+                </xpath>
+
+
+                <xpath expr="//field[@name='resource_calendar_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='tz']" position="after">
+                    <field name="resource_calendar_id" required='1' />
+                </xpath>
+                <xpath expr="//div[@id='o_work_employee_container']/div[@id='o_work_employee_main']/group[4]" position="after">
+                    <field name="working_history_ids" readonly='1' options="{'no_create': True,'no_open': True}" >
+                        <tree default_order="id desc"  decoration-success="to_date == False">
+                            <field name="resource_calendar_id" />
+                            <field name="from_date" />
+                            <field name="to_date" />
+                            <field name="responsible_id" />
+                            <field name="employee_id" invisible = '1'/>
+                            <field name="is_first"  invisible = '1' />
+                        </tree>
+                    </field>
+                </xpath>
+                
+
+
+            </field>
+        </record>
+
+        <record id="employee_search_view_inherit" model="ir.ui.view">
+			<field name="name">hr.employee.search.inherit</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_filter"/>
+			<field name="arch" type="xml"> 
+            	<xpath expr="//field[@name='name']" position="replace">
+					 <field name="name" string="Name" filter_domain="['|', '|', '|','|',('barcode', 'ilike', self), ('name', 'ilike', self),('work_email', 'ilike', self), ('mobile_phone', 'ilike', self), ('work_phone', 'ilike', self)]"/>
+				</xpath>
+                <xpath expr="//search/searchpanel/field[@name='department_id']" position="before">
+					<field name="gender" select="multi" icon="fa-users" enable_counters="1"/>
+                    <field name="employee_type_id" select="multi" icon="fa-users" enable_counters="1"/>
+				</xpath>
+                <field name="job_id" position="after">
+                    <filter string="Resigned Employees" name="resigned" domain="['&amp;',('resigned', '=', True),('active', '=', False)]"/>
+                    <filter string="Fired Employees" name="fired" domain="['&amp;',('fired', '=', True),('active', '=', False)]"/>
+                </field>
+			</field>
+		</record>
+
+        <record id="employee_tree_view_inherit" model="ir.ui.view">
+			<field name="name">hr.employee.tree.inherit</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_tree"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="before">
+					<field name="barcode"/>
+				</xpath>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="hr_kanban_view_employee_inherit">
+            <field name="name">hr.kanban.view.employee.inherit</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_kanban_details')]/ul" position="inside">
+                    <li t-if="record.barcode.raw_value">
+                        <field name="barcode"/>
+                    </li>
+                </xpath>
+                <xpath expr="//div[hasclass('oe_kanban_bottom_right')]" position="inside">
+                    <div class="float-right" t-if="record.employee_type_id.raw_value">
+                        <field name="employee_type_id"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+            <field name="domain">[('employee_type_id.is_domain', '=', True)]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record id="hr_employee_view_archived_employee_action" model="ir.actions.act_window">
+            <field name="name">Archived Employees</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('active', '=', False), ('employee_type_id.is_domain', '=', True)]</field>
+        </record>
+
+
+        <record id="hr_hr_employee_view_form2_inherit" model="ir.ui.view">
+            <field name="name">hr_hr_employee_view_form2_inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//span[@class='fa fa-exclamation-triangle text-danger o_calendar_warning pl-3']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//span[@class='o_calendar_warning_tooltip text-danger']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='resource_calendar_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//label[@for='resource_calendar_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

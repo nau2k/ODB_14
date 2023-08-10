@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.meal</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='overtime_settings']" position="inside">
+                <div class="row mt16 o_settings_container" name="odb_meal_registration_settings">
+                    <div class="col-12 col-lg-6 " id="limit_date_end">
+                        <div class="o_setting_right_pane">
+                            <label for="limit_date_end"/>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="limit_date_end" default="25" class="oe_inline"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

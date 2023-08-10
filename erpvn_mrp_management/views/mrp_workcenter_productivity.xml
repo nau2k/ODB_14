@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- <record id="mrp_workcenter_productivity_search_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.workcenter.productivity.search.view.inherit</field>
+            <field name="model">mrp.workcenter.productivity</field>
+            <field name="inherit_id" ref="mrp.oee_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='duration']" position="after">
+                    <field name="qty_produced" groups="mrp.group_mrp_manager"/>
+                    <field name="state" readonly="0" groups="mrp.group_mrp_manager"/>
+                </xpath>
+                <search string="Operations">
+                    <field name="workcenter_id"/>
+                    <field name="workcenter_id"/>
+                    <field name="loss_id"/>
+                    <separator/>
+                    <filter name="availability" string="Availability Losses" domain="[('loss_type','=','availability')]"/>
+                    <filter name="performance" string="Performance Losses" domain="[('loss_type','=','performance')]"/>
+                    <filter name="quality" string="Quality Losses" domain="[('loss_type','=','quality')]"/>
+                    <filter name="productive" string="Fully Productive" domain="[('loss_type','=','productive')]"/>
+                    <filter name="filter_date_start" string="Date" date="date_start"/>
+                    <separator/>
+                    <group expand="0" string="Group by...">
+                        <filter string="User" name="user" context="{'group_by': 'create_uid'}"/>
+                        <filter string="Workcenter" name="workcenter_group" context="{'group_by': 'workcenter_id'}"/>
+                        <filter string="Loss Reason" name="loss_group" context="{'group_by': 'loss_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record> -->
+
+        <record id="mrp_workcenter_productivity_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.workcenter.productivity.form.view.inherit</field>
+            <field name="model">mrp.workcenter.productivity</field>
+            <field name="inherit_id" ref="mrp.oee_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='duration']" position="after">
+                    <field name="qty_produced" groups="mrp.group_mrp_manager"/>
+                    <field name="state" readonly="0" groups="mrp.group_mrp_manager"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

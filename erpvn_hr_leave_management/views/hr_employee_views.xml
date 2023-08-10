@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_employee_form_leave_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.leave.form.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <button name="%(hr_holidays.act_hr_employee_holiday_request)d" position="replace">
+                <button name="action_hr_employee_holidays"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-calendar"
+                        attrs="{'invisible': [('show_leaves','=', False)]}"
+                        context="{'search_default_employee_id': active_id}"
+                        groups="base.group_user"
+                        help="Remaining leaves">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="allocation_taken"/>/<field name="allocation_total"/> Hours
+                        </span>
+                        <span class="o_stat_text">
+                            Time Off
+                        </span>
+                    </div>
+                </button>
+            </button>
+        </field>
+    </record>
+
+    <record id="res_users_view_form" model="ir.ui.view">
+        <field name="name">hr.user.preferences.view.form.leave.inherit</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="hr.res_users_view_form_profile"/>
+        <field name="arch" type="xml">
+            <button name="%(hr_holidays.hr_leave_action_new_request)d" position="replace">
+                <button name="action_hr_employee_holidays"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-calendar"
+                        attrs="{'invisible': [('show_leaves','=', False)]}"
+                        groups="base.group_user"
+                        help="Remaining leaves">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="allocation_taken"/>/<field name="allocation_total"/> Hours
+                        </span>
+                        <span class="o_stat_text">
+                            Time Off
+                        </span>
+                    </div>
+                </button>
+            </button>
+        </field>
+    </record>
+	
+</odoo>

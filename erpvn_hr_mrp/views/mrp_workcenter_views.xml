@@ -1,0 +1,98 @@
+<odoo>
+    <data>
+
+        <record id="mrp_workcenter_search_view_inherit" model="ir.ui.view">
+            <field name="name">mrp_workcenter_search_view_inherit</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.view_mrp_workcenter_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="department_id"/>
+                </xpath>
+                <xpath expr="//search" position="inside">
+                    <searchpanel>
+                        <field name="department_id" enable_counters="1"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_workcenter_tree_view_inherit" model="ir.ui.view">
+            <field name="name">mrp_workcenter_tree_view_inherit</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="mrp_workcenter_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp_workcenter_form_view_inherit</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='alternative_workcenter_ids']" position="before">
+                    <field name="department_id"/>
+                </xpath>
+                <page name="general_info" position="after">
+                    <page string="Employees" name="employee">
+                        <field name="employee_ids" widget="one2many_tags">
+                            <tree string="Employees">
+                                <field name="barcode" decoration-bf="1 == 1"/>
+                                <field name="name"/>
+                                <field name="job_id"/>
+                                <field name="parent_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Job Positions" name="position">
+                        <field name="position_ids" widget="one2many_tags">
+                            <tree string="Job Positions" create="false" editable="bottom">
+                                <field name="name" readonly="1"/>
+                                <field name="no_of_employee" readonly="1"/>
+                                <field name="effective_percent" decoration-bf="1 == 1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+
+                <group name="capacity" position="after">
+                    <group string="Capacity Information" name="capacity_info">
+                        <field name="work_days"/>
+                        <field name="work_hours" widget="float_time"/>
+                        <field name="work_shift"/>
+                        <label for="available_capacity"/>
+                        <div class="o_row">
+                            <field name="available_capacity" widget="float_time"/> Hour(s) 
+                        </div>
+
+                        <field name="employee_work_hours" widget="float_time"/>
+                    </group>
+                </group>
+
+                <xpath expr="//sheet" position="after">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_update_department_in_workcenters" model="ir.actions.server">
+            <field name="name">Update Department</field>
+            <field name="model_id" ref="model_mrp_workcenter"/>
+            <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+            <field name="binding_model_id" ref="model_mrp_workcenter"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_update_department_in_workcenters()
+            </field>
+        </record>
+
+    </data>
+</odoo>

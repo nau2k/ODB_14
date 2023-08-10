@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+            <menuitem id="menu_mrp_workcenter_calendar" name="Workcenter Calendar" action="action_workcenter_resource_calendar"
+                parent="mrp.mrp_planning_menu_root" sequence="10" groups="mrp.group_mrp_manager"/>
+            
+            <menuitem id="menu_mrp_employee_calendar" name="Employee Calendar" action="action_employee_resource_calendar"
+                parent="mrp.mrp_planning_menu_root" sequence="20" groups="mrp.group_mrp_manager"/>
+
+    </data>
+</odoo>

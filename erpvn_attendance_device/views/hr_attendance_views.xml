@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  	<data>
+      	<record id="hr_attendance_view_form" model="ir.ui.view">
+		    <field name="name">attendance.form</field>
+		    <field name="model">hr.attendance</field>
+		    <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/> 
+		    <field name="arch" type="xml">
+				<xpath expr="//sheet" position="replace">
+					<!-- <header>
+						<button name="action_set_to_draft" type="object" string="Set to Draft"
+							attrs="{'invisible':[('state', 'in', ('draft', 'validated'))]}"
+							class="btn-secondary" groups="hr_attendance.group_hr_attendance_user"/>
+						<button name="action_cancel" type="object" string="Cancel"
+							attrs="{'invisible':[('state', 'in', ('cancelled', 'validated'))]}"
+							class="btn-danger" groups="hr_attendance.group_hr_attendance_user"/>
+						<button name="action_validate" type="object" string="Validate"
+							attrs="{'invisible':[('state', 'in', ('cancelled', 'validated'))]}"
+							class="btn-primary" groups="hr_attendance.group_hr_attendance_user"/>
+						<field name="state" widget="statusbar" statusbar_visible="draft,validated,cancelled"/>
+					</header> -->
+					<sheet>
+						<group>
+							<group>
+								<field name="employee_barcode"/>
+								<field name="employee_id"/>
+								<field name="device_user_id" readonly="1"/>
+								<field name="department_id"/>
+							</group>
+							<group>
+								<field name="attendance_state_id"/>
+								<field name="check_in"/>
+								<field name="device_in_id"/>
+								<field name="check_out"/>
+								<field name="device_out_id"/>
+								<field name="worked_hours" widget="float_time"/>
+							</group>
+						</group>
+					</sheet>
+					<div class="oe_chatter">
+						<field name="message_follower_ids"/>
+						<field name="activity_ids"/>
+						<field name="message_ids"/>
+					</div>
+				</xpath>
+		   </field>
+		</record>
+		
+		<record id="view_attendance_tree" model="ir.ui.view">
+		    <field name="name">hr.attendance.tree</field>
+		    <field name="model">hr.attendance</field>
+		    <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+		    <field name="arch" type="xml">
+                <field name="employee_id" position="replace">
+		            <field name="employee_barcode"/>
+		            <field name="employee_id" force_save="1" readonly="0"/>
+		        </field>
+		    	<field name="check_in" position="after">
+		            <field name="device_in_id"/>
+		        </field>
+		        <field name="check_out" position="after">
+		            <field name="device_out_id"/>
+		            <field name="no_check_in" invisible="1"/>
+		        </field>
+		        <field name="worked_hours" position="after">
+					<field name="type" widget="badge" string="Created Type"/>
+		            <field name="state" widget="badge"
+						decoration-info="state == 'draft'"
+						decoration-success="state == 'approve'"
+						decoration-danger="state in ('no_check_in', 'no_check_out')"/>
+		        </field>
+		   </field>
+		</record>
+        
+        <record id="hr_attendance_form_pivot_view" model="ir.ui.view">
+			<field name="name">hr.attendance.pivot.inherit</field>
+			<field name="model">hr.attendance</field>
+			<field name="inherit_id" ref="hr_attendance.hr_attendance_view_pivot"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='employee_id']" position="after">
+					<field name="employee_barcode"/>
+				</xpath>
+			</field>
+		</record>
+
+        <record id="action_set_attendances_to_draft_from_list" model="ir.actions.server">
+            <field name="name">Set to Draft</field>
+            <field name="groups_id" eval="[(4, ref('hr_attendance.group_hr_attendance_user'))]"/>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_set_to_draft_multi()
+            </field>
+        </record>
+
+        <record id="action_cancel_attendances_from_list" model="ir.actions.server">
+            <field name="name">Cancel</field>
+            <field name="groups_id" eval="[(4, ref('hr_attendance.group_hr_attendance_user'))]"/>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_cancel_multi()
+            </field>
+        </record>
+
+        <record id="action_validate_attendances_from_list" model="ir.actions.server">
+            <field name="name">Validate</field>
+            <field name="groups_id" eval="[(4, ref('hr_attendance.group_hr_attendance_user'))]"/>
+            <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="binding_model_id" ref="hr_attendance.model_hr_attendance"/>
+            <field name="binding_view_types">list</field>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_validate_multi()
+            </field>
+        </record>
+  	</data>
+</odoo>

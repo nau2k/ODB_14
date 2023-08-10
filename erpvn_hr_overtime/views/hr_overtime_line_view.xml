@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_overtime_line_search_view" model="ir.ui.view">
+            <field name="name">hr_overtime_line_search_view</field>
+            <field name="model">hr.overtime.line</field>
+            <field name="arch" type="xml">
+                <search string="Employee Overtime">
+                    <field name="employee_id" filter_domain="['|', ('employee_code', 'ilike', self),('employee_id','ilike',self)]"/>
+                    <field name="department_id"/>
+                    <field name="overtime_day" string="Date"/>
+                    <separator/>
+                    <filter string="To Approve" name="to_approved" domain="[('state','in', ['draft', 'confirmed'])]"/>
+                    <filter string="Approve" name="approved" domain="[('state','=', 'approved')]"/>
+                    <filter string="Cancel" name="cancelled" domain="[('state','=', 'cancelled')]"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_department_id" string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                        <filter name="groupby_manager_id" string="Manager" domain="[]" context="{'group_by':'manager_id'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="department_id" enable_counters="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="hr_overtime_line_form_view" model="ir.ui.view">
+            <field name="name">hr_overtime_line_form_view</field>
+            <field name="model">hr.overtime.line</field>
+            <field name="arch" type="xml">
+                <form string="Overtime Line">
+                    <header>
+                        <field name="status" widget="statusbar" statusbar_visible="cancel,has-overtime,has-shift,valid"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_code"/>
+                                <field name="employee_id" domain="[('barcode', '!=', False), ('employee_type_id.name', '!=', 'Machine')]"/>
+                                <field name="overtime_id" readonly="1"/>
+                                <field name="department_id" readonly="1"/>
+                                <field name="job_id" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="overtime_day" readonly="1"/>
+                                <field name="hour_from" readonly="1"/>
+                                <field name="hour_to" readonly="1"/>
+                                <field name="duration" widget="float_time" string="Duration" readonly="1"/>
+                                <field name="break_time" widget="float_time" string="Break Hours" readonly="1"/>
+                                <field name="actual_time" widget="float_time" string="Actual" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="note" readonly="1"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Work Entries" name="work_entries">
+                                <field name="work_entry_ids" readonly="1">
+                                    <tree string="Work Entries">
+                                        <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="employee_code" invisible="1"/>
+                                        <field name="employee_id" invisible="1"/>
+                                        <field name="department_id" invisible="1"/>
+                                        <field name="work_entry_type_id" readonly="1"/>
+                                        <field name="date_start" string="Expected From" readonly="1"/>
+                                        <field name="date_stop" string="Expected To" readonly="1"/>
+                                        <field name="duration" invisible="1" string="Expected Period (hours)" widget="float_time"/>
+                                        <field name="actual_start" readonly="1"/>
+                                        <field name="actual_stop" readonly="1"/>
+                                        <field name="actual_duration" invisible="1" string="Actual Period (hours)" widget="float_time"/>
+                                        <field name="lack_hours" readonly="1" string="Lack Hour (hours)" widget="float_time" optional="show"/>
+                                        <field name="state" widget="badge"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_overtime_line_tree_view" model="ir.ui.view">
+            <field name="name">hr_overtime_line_tree_view</field>
+            <field name="model">hr.overtime.line</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime Lines">
+                    <field name="overtime_day"/>
+                    <field name="employee_code"/>
+                    <field name="employee_id"/>
+                    <field name="overtime_id" invisible="1"/>
+                    <field name="department_id"/>
+                    <field name="job_id"/>
+                    <field name="hour_from"/>
+                    <field name="hour_to"/>
+                    <field name="duration" widget="float_time" string="Duration" readonly="1"/>
+                    <field name="break_time" widget="float_time" string="Break Hours"/>
+                    <field name="actual_time" widget="float_time" string="Actual" readonly="1"/>
+                    <field name="note"/>
+                    <field name="state" widget="badge" invisible="1"/>
+                    <field name="status" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="employee_overtime_pivot_view" model="ir.ui.view">
+            <field name="name">hr.overtime.line.pivot</field>
+            <field name="model">hr.overtime.line</field>
+            <field name="arch" type="xml">
+                <pivot string="OverTime">
+                    <field name="overtime_day" type="row" interval="day"/>
+                    <field name="department_id" type="row"/>
+                    <field name="employee_id" type="row"/>
+                    <field name="state" type="col"/>
+                    <field name="duration" type="measure" widget="float_time"/>
+                    <field name="actual_time" type="measure" widget="float_time"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="employee_overtime_graph_view" model="ir.ui.view">
+            <field name="name">hr.overtime.line.graph</field>
+            <field name="model">hr.overtime.line</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <graph string="Over Time Summary" sample="1">
+                    <field name="department_id" type="row"/>
+                    <field name="duration" type="col"/>
+                    <field name="actual_time" type="col"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_employee_overtime_report" model="ir.actions.act_window">
+            <field name="name">Employee OverTime</field>
+            <field name="res_model">hr.overtime.line</field>
+            <field name="search_view_id" ref="hr_overtime_line_search_view"/>
+            <field name="view_mode">pivot,graph,tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No data yet!
+                </p>
+            </field>
+        </record>
+
+        <record id="action_overtime_line" model="ir.actions.act_window">
+            <field name="name">OverTime Line</field>
+            <field name="res_model">hr.overtime.line</field>
+            <field name="search_view_id" ref="hr_overtime_line_search_view"/>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No data yet!
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<data>
+		<record id="attendance_update_wizard_form_view" model="ir.ui.view">
+			<field name="name">Attendance Update Wizard</field>
+			<field name="model">attendance.update.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Synchronize Data">
+					<div>
+						This is the wizards to update the check-in/check-out list with the wrong time
+						<br/>
+					</div>
+					<br/>
+						<group>
+							<group>
+								<field name="option"/>
+							</group>
+						</group>
+						<group>
+							<group>
+								<field name="date_upload" attrs="{'invisible': [('option', '!=', 'insert time')]}"/>
+								<field name="employee_ids" attrs="{'invisible': [('option', 'in', ['insert time','import'])]}" widget="many2many_tags"/>
+								<field name="resource_calendar_id" attrs="{'invisible':[('option', '!=','add full')]}"/>
+							</group>
+							<group>
+								<label for="day_from" string="Dates"  attrs="{'invisible':  [('option', 'in', ['insert time','import'])]}"/>
+								<div>
+									<div class="o_row o_row_readonly" attrs="{'invisible':  [('option', 'in', ['insert time','import'])]}">
+										<span class="oe_inline">
+											From
+										</span>
+										<field name="day_from" class="oe_inline" nolabel="1"/>
+										<span class="oe_inline" >
+											To
+										</span>
+										<field name="day_to" class="oe_inline"/>
+									</div>
+								</div>
+							</group>
+						</group>
+						<group>
+							<field name="file" filename="filename"  attrs="{'invisible': [('option', '!=', 'import')]}"/>
+						</group>
+						<field name="line_ids" attrs="{'invisible': [('option', '!=','insert time')]}">
+							<tree editable="bottom" create="false" delete="true">
+								<field name="employee_barcode" readonly="1"/>
+								<field name="employee_id" readonly="1"/>
+								<field name="check_in"/>
+								<field name="device_in_id" readonly="1"/>
+								<field name="check_out" readonly="1"/>
+								<field name="device_out_id" readonly="1"/>
+								<field name="worked_hours" widget="float_time"/>
+								<field name="attendance_late" readonly="1" widget="float_time"/>
+								<field name="state" readonly="1"/>
+							</tree>
+						</field>
+					<footer>
+						<button name="action_update_attendances" string="Update" type="object" class="oe_highlight" attrs="{'invisible': [('option', '!=','insert time')]}"/>
+						<button name="update_attendances_all" string="Update" type="object" class="oe_highlight" attrs="{'invisible': [('option', '!=', 'add full')]}"/>
+						<button name="delete_attendaces" string="Delete" type="object" class="oe_highlight" attrs="{'invisible':[('option', '!=','delete')]}"/>
+						<button name="import_excel" string="Import Attendances" type="object" class="oe_highlight" attrs="{'invisible':[('option', '!=','import')]}"/>
+						<div style="float: right;" attrs="{'invisible':[('option', '!=','import')]}" >
+							<a role="button" href="/erpvn_hr_work_entry/static/download/hr.attendance.xlsx" class="btn-primary" 
+								style="font-size: 12px; line-height: 1.5; border-radius: 3px; padding: 8px 10px; color: #ffffff;">
+								<i class="fa fa-download"/> Download Template
+							</a>
+						</div>
+						<button special="cancel" class="oe_highlight" string="Cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

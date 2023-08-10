@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="show_remaning_leaves" model="ir.ui.view">
+        <field name="name">hr_leave_allocation_show_remaning_leaves_tree_view</field>
+        <field name="model">hr.leave.allocation</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_allocation_view_tree"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='holiday_status_id']" position="after">
+                <field name="holiday_type"/>
+            </xpath>
+            <xpath expr="//field[@name='duration_display']" position="after">
+                <field name="create_date"/>
+                <field name="create_uid"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_update_nextcall_allocations" model="ir.actions.server">
+        <field name="name">Update Nextcall</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="hr_holidays.model_hr_leave_allocation"/>
+        <field name="binding_model_id" ref="hr_holidays.model_hr_leave_allocation"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = {
+                    'type': 'ir.actions.act_window',
+                    'res_model': 'update.nextcall.allocation.wizard',
+                    'views': [[False, 'form']],
+                    'target': 'new',
+                    'context': {'allocations': records.ids},
+                }
+        </field>
+    </record>
+
+    <record id="ir_actions_server_validate_allocations" model="ir.actions.server">
+        <field name="name">Validate Allocations</field>
+        <field name="model_id" ref="hr_holidays.model_hr_leave_allocation"/>
+        <field name="binding_model_id" ref="hr_holidays.model_hr_leave_allocation"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+        if records:
+            res = records.action_validate()
+            if isinstance(res, dict):
+                action = res
+        </field>
+    </record>
+</odoo>

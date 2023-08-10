@@ -1,0 +1,1814 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* erpvn_hr_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-09 16:02+0000\n"
+"PO-Revision-Date: 2022-06-09 16:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__announcement_count
+msgid "# Announcements"
+msgstr "# Thông báo"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">\n"
+"                                    <b attrs=\"{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}\">Company Address</b>\n"
+"                                    <b attrs=\"{'invisible': ['&amp;', ('parent_id', '!=', False), ('type', '!=', False)]}\">Address</b>\n"
+"                                </span>"
+msgstr ""
+"<span class=\"o_form_label o_td_label\" name=\"address_name\">\n"
+"                                    <b attrs=\"{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}\">Địa chỉ cty</b>\n"
+"                                    <b attrs=\"{'invisible': ['&amp;', ('parent_id', '!=', False), ('type', '!=', False)]}\">Địa chỉ</b>\n"
+"                                </span>"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_contract_notice_period
+msgid "<span> days</span>"
+msgstr "<span> ngày</span>"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_management_res_config_settings_form_view
+msgid "<span>days</span>"
+msgstr "<span>ngày</span>"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_search_view_inherit
+msgid "Absent"
+msgstr "Nghỉ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_needaction
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_needaction
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__active
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__active
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__active
+msgid "Active"
+msgstr "Kích hoạt"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__active_lang_count
+msgid "Active Lang Count"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_exception_decoration
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_exception_decoration
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_state
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_state
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_type_icon
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_type_icon
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.actions.server,name:erpvn_hr_management.ir_actions_server_department_channel
+msgid "Add Department Channel"
+msgstr "Thêm Kênh bộ phận"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_management_form_view_inherit
+msgid "Add note ...."
+msgstr "Thêm ghi chú..."
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__address
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__type
+msgid "Address Type"
+msgstr "Loại địa chỉ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__age
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__age
+msgid "Age"
+msgstr "Tuổi"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+"Tất cả email và tài liệu được gửi đến liên hệ này sẽ được chuyển đổi sang ngôn"
+" ngữ này."
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__announcement
+msgid "Announcement Content"
+msgstr "Nội dung thông báo"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+msgid "Announcement Reason"
+msgstr "Lý do thông báo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__announcement_reason
+msgid "Announcement Subject"
+msgstr "Tiêu đề thông báo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__announcement_type
+msgid "Announcement Type"
+msgstr "Loại thông báo"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_employee.py:0
+#: code:addons/erpvn_hr_management/models/hr_employee.py:0
+#: model:ir.actions.act_window,name:erpvn_hr_management.action_hr_announcement
+#: model:ir.ui.menu,name:erpvn_hr_management.hr_announcement_menu
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_form
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+#, python-format
+msgid "Announcements"
+msgstr "Thông báo"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_form
+msgid "Approve"
+msgstr "Duyệt"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__state__approved
+msgid "Approved"
+msgstr "Đã duyệt"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+msgid "Approved Letters"
+msgstr "Thư đã duyệt"
+
+#. module: erpvn_hr_management
+#: model:ir.actions.act_window,name:erpvn_hr_management.view_approved_resignation
+#: model:ir.ui.menu,name:erpvn_hr_management.employee_resignation_approved
+#: model_terms:ir.actions.act_window,help:erpvn_hr_management.view_approved_resignation
+msgid "Approved Resignation"
+msgstr "Nghỉ việc đã duyệt"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__attachment_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__id_attachment_id
+msgid "Attachment"
+msgstr "Đính kèm"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_attachment_count
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_attachment_count
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số đính kèm"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Attendance"
+msgstr "Điểm danh"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__bank_ids
+msgid "Banks"
+msgstr "Ngân hàng"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__barcode
+msgid "Barcode"
+msgstr "Mã vạch"
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "Người dùng cơ bản"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__birth_date
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__birthday
+msgid "Birthday"
+msgstr "Ngày sinh"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__announcement_type__department
+msgid "By Department"
+msgstr "Theo bộ phận"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__announcement_type__employee
+msgid "By Employee"
+msgstr "Theo nhân viên"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__announcement_type__job_position
+msgid "By Job Position"
+msgstr "Theo vị trí công việc"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/wizards/wizard_make_contact.py:0
+#, python-format
+msgid ""
+"Changing the company of a contact should only be done if it was never "
+"correctly set. If an existing contact starts working for a new company then "
+"a new contact should be created under that new company. You can use the "
+"\"Discard\" button to abandon this change."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__is_company
+msgid "Check if the contact is a company, otherwise it is a person"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__employee
+msgid "Check this box if this contact is an Employee."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__city
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "City"
+msgstr "Thành phố"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__state_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "City/Province"
+msgstr "Thành phố/Tỉnh"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.actions.act_window,help:erpvn_hr_management.action_hr_announcement
+#: model_terms:ir.actions.act_window,help:erpvn_hr_management.action_hr_employee_relation_view
+msgid "Click to Create a New Record."
+msgstr "Bấm Tạo một bản ghi mới"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_department__code
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__code
+msgid "Code"
+msgstr "Mã"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__name
+msgid "Code No:"
+msgstr "Số mã:"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__color
+msgid "Color Index"
+msgstr "Mã màu"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__commercial_partner_id
+msgid "Commercial Entity"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__company_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__company_id
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__wizard_make_contact__company_type__company
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Company"
+msgstr "Công ty"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__company_name
+msgid "Company Name"
+msgstr "Tên công ty"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__commercial_company_name
+msgid "Company Name Entity"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__company_type
+msgid "Company Type"
+msgstr "Loại công ty"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__contact_address
+msgid "Complete Address"
+msgstr "Địa chỉ đầy đủ"
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "Thiết lập cấu hình"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_res_partner
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__child_ids
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__wizard_make_contact__type__contact
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__phone_number
+msgid "Contact No"
+msgstr "Số liên hệ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__res_partner_ids
+msgid "Contacts"
+msgstr "Liên hệ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__employee_contract_id
+msgid "Contract"
+msgstr "Hợp đồng"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__announcement_count
+msgid "Count of Announcement's"
+msgstr "Số thông báo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__country_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__country_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Country"
+msgstr "Quốc gia"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__requested_date
+msgid "Create Date of Record"
+msgstr "Ngày tạo bản ghi"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Create New User"
+msgstr "Tạo người dùng mới"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Created At"
+msgstr "Tạo lúc"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Created On"
+msgstr "Ngày tạo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__create_date
+msgid "Created on"
+msgstr "Tạo lúc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__credit_limit
+msgid "Credit Limit"
+msgstr "Giới hạn tín dụng"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__date
+msgid "Date"
+msgstr "Ngày"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__identification_created_date
+msgid "Date created ID"
+msgstr "Ngày tạo ID"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__birthday
+msgid "Date of Birth"
+msgstr "Ngày sinh"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__resign_date
+msgid "Date of the resignation"
+msgstr "Ngày xin nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__resign_confirm_date
+msgid "Date on which the request is confirmed by the employee."
+msgstr "Ngày xác nhận yêu cầu của nhân viên."
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__approved_revealing_date
+msgid "Date on which the request is confirmed by the manager."
+msgstr "Ngày xác nhận yêu cầu của quản lý"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+msgid "Dates"
+msgstr "Ngày"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__wizard_make_contact__type__delivery
+msgid "Delivery Address"
+msgstr "Địa chỉ gửi"
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_department
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__department_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__department_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_job_title_search_view
+msgid "Department"
+msgstr "Phòng/Ban"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_department__name
+msgid "Department Name"
+msgstr "Tên phòng/ban"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__department_id
+msgid "Department of the employee"
+msgstr "Bộ phận của nhân viên"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__department_ids
+msgid "Department's which want to see this announcement"
+msgstr "Bộ phận muốn thấy thông báo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__department_ids
+msgid "Departments"
+msgstr "Bộ phận"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Dependence Details"
+msgstr "Chi tiết phụ thuột"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_department__mail_channel_id
+msgid "Discuss Channel"
+msgstr "Kênh thảo luận"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_department__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_base__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_partner__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__state__draft
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_resignation__state__draft
+msgid "Draft"
+msgstr "Dự thảo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__partner_share
+msgid ""
+"Either customer (not a user), either shared user. Indicated the current "
+"partner is a customer without access or with a limited access created for "
+"sharing data."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__email
+msgid "Email"
+msgstr "Email"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__employee_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__employee_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_partner__employee_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__employee
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__employee_id
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_contract
+msgid "Employee Contract"
+msgstr "Hợp đồng nhân viên"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+msgid "Employee Details"
+msgstr "Chi tiết nhân viên"
+
+#. module: erpvn_hr_management
+#: model:ir.ui.menu,name:erpvn_hr_management.menu_action_hr_employee_relation_view
+msgid "Employee Relation"
+msgstr "Nhân viên liên quan"
+
+#. module: erpvn_hr_management
+#: model:ir.actions.act_window,name:erpvn_hr_management.view_employee_resignation
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_tree
+msgid "Employee Resignation"
+msgstr "Nhân viên nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.actions.act_window,help:erpvn_hr_management.view_employee_resignation
+msgid "Employee Resignation Form"
+msgstr "Văn bản đăng ký nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__joining_date
+msgid "Employee joining date computed from the contract start date"
+msgstr "Ngày vào công ty được tính từ ngày bắt đầu hợp đồng"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__expected_revealing_date
+msgid "Employee requested date on which he is revealing from the company."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__employee_ids
+msgid "Employee's which want to see this announcement"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__employee_ids
+msgid "Employees"
+msgstr "Nhân viên"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__date_end
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "End Date"
+msgstr "Ngày kết thúc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__date_end
+msgid "End date of announcement want too see"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__ethnic
+msgid "Ethnic"
+msgstr "Dân tộc"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Expiration Date"
+msgstr "Ngày hết hạn"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__state__expired
+msgid "Expired"
+msgstr "Thời hạn"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__id_expiry_date
+msgid "Expiry Date"
+msgstr "Ngày hết hạn"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__id_expiry_date
+msgid "Expiry date of Identification ID"
+msgstr "Ngày hết hạn của CCCD"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__passport_expiry_date
+msgid "Expiry date of Passport ID"
+msgstr "Ngày hết hạn của Hộ chiếu"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_management_form_view_inherit
+msgid "Extra's Info"
+msgstr "Thông tin ngoài"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_employee_family_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_employee_family_tree_view
+msgid "Falimy of Employee"
+msgstr "Người thân"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__fam_ids
+msgid "Family"
+msgstr "Gia đình"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__fam_ids
+msgid "Family Information"
+msgstr "Thông tin gia đình"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__fired
+msgid "Fired"
+msgstr "Đã nghỉ"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_search_view_inherit
+msgid "Fired Employees"
+msgstr "Nhân viên đã nghỉ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_resignation__resignation_type__fired
+msgid "Fired by the company"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_follower_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_follower_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_follower_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_channel_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_channel_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_channel_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_partner_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_partner_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_partner_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__activity_type_icon
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__activity_type_icon
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__email_formatted
+msgid "Format email address \"Name <email@domain>\""
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__email_formatted
+msgid "Formatted Email"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_form
+msgid "General Announcement"
+msgstr "Thông báo chung"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+msgid "General Announcements"
+msgstr "Thông báo chung"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__partner_latitude
+msgid "Geo Latitude"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__partner_longitude
+msgid "Geo Longitude"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_relation__sequence
+msgid "Gives the sequence order when displaying a list of follow-up lines."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_job_title_search_view
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_announcement
+msgid "HR Announcement"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.actions.server,name:erpvn_hr_management.hr_announcement_expiry_date_ir_actions_server
+#: model:ir.cron,cron_name:erpvn_hr_management.hr_announcement_expiry_date
+#: model:ir.cron,name:erpvn_hr_management.hr_announcement_expiry_date
+msgid "HR Announcement Expiry Date"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_employee
+msgid "HR Employee"
+msgstr "Nhân sự"
+
+#. module: erpvn_hr_management
+#: model:ir.actions.server,name:erpvn_hr_management.employee_data_reminder_ir_actions_server
+#: model:ir.cron,cron_name:erpvn_hr_management.employee_data_reminder
+#: model:ir.cron,name:erpvn_hr_management.employee_data_reminder
+msgid "HR Employee Data Expiration"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_employee_family
+msgid "HR Employee Family"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.actions.act_window,name:erpvn_hr_management.action_hr_employee_relation_view
+#: model:ir.model,name:erpvn_hr_management.model_hr_employee_relation
+msgid "HR Employee Relation"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_job_title
+msgid "HR Job Title"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_job_title_search_view
+msgid "HR Job Title Search"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_resignation
+msgid "HR Resignation"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.actions.server,name:erpvn_hr_management.ir_cron_data_employee_resignation_ir_actions_server
+#: model:ir.cron,cron_name:erpvn_hr_management.ir_cron_data_employee_resignation
+#: model:ir.cron,name:erpvn_hr_management.ir_cron_data_employee_resignation
+msgid "HR Resignation: update employee"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__hr_presence_state
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_base__hr_presence_state
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_public__hr_presence_state
+msgid "Hr Presence State"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_contract__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_department__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_base__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_config_settings__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_partner__id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__id
+msgid "ID"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_employee.py:0
+#, python-format
+msgid "ID-%s Expired On %s"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_exception_icon
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_exception_icon
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__activity_exception_icon
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__activity_exception_icon
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__identification_created_place
+msgid "Identification Created At"
+msgstr "Nơi cấp"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__identification_created_date
+msgid "Identification Created On"
+msgstr "Ngày cấp"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Identification ID"
+msgstr "Số CMND"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__identification_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__identification_id
+msgid "Identification No"
+msgstr "Số CMND"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__fired
+msgid "If checked then employee has fired"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__resigned
+msgid "If checked then employee has resigned"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__message_needaction
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__message_unread
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__message_needaction
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__message_unread
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__message_needaction
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__message_unread
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__message_needaction
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__message_has_error
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__message_has_sms_error
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__message_has_error
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__message_has_sms_error
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__message_has_error
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__message_has_sms_error
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__message_has_error
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__wizard_make_contact__company_type__person
+msgid "Individual"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__industry_id
+msgid "Industry"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__type
+msgid ""
+"Invoice & Delivery addresses are used in sales orders. Private addresses are"
+" only visible by authorized users."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__wizard_make_contact__type__invoice
+msgid "Invoice Address"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__is_children
+msgid "Is Children?"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_is_follower
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_is_follower
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_is_follower
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_partner__is_internal
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_users__is_internal
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__is_internal
+msgid "Is Internal"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__is_company
+msgid "Is a Company"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+msgid "Is a General Announcement"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__is_announcement
+msgid "Is general Announcement?"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_hr_job
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__job_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__function
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_job_title_search_view
+msgid "Job Position"
+msgstr "Chức vụ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__position_ids
+msgid "Job Position's which want to see this announcement"
+msgstr "Vị trí công việc mà muốn thấy Thông báo này"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__position_ids
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_management_form_view_inherit
+msgid "Job Positions"
+msgstr "Vị trí công việc"
+
+#. module: erpvn_hr_management
+#: model:ir.actions.act_window,name:erpvn_hr_management.action_hr_job_title
+#: model:ir.ui.menu,name:erpvn_hr_management.menu_hr_job_title
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_job_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_job_title_form
+msgid "Job Title"
+msgstr "Chức danh"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__code
+msgid "Job Title Code"
+msgstr "Mã chức danh"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_job_title_form
+msgid "Job Title's Name"
+msgstr "Tên chức danh"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job__title_ids
+msgid "Jobs"
+msgstr "Công việc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__joined_date
+msgid "Join Date"
+msgstr "Ngày vào"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__joining_date
+msgid "Joining Date"
+msgstr "Ngày vào"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__joined_date
+msgid "Joining date of the employee.i.e Start date of the first contract"
+msgstr "Ngày vào của nhân viên, ví dụ Ngày bắt đầu của hợp đồng"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__lang
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_department____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_base____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_partner____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật bởi"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lúc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__expected_revealing_date
+msgid "Last Working Day"
+msgstr "Ngày làm việc cuối cùng"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#, python-format
+msgid "Last date of the Employee must be anterior to Joining date"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__announcement
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_form
+msgid "Letter"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__company_id
+msgid "Login user Company"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_main_attachment_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_main_attachment_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_main_attachment_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Make Contact"
+msgstr "Tạo liên hệ"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.hr_management_form_view_inherit
+msgid "Members"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_has_error
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_has_error
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_has_error
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_ids
+msgid "Messages"
+msgstr "Thông điệp"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__personal_mobile
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__mobile
+msgid "Mobile"
+msgstr "Di động"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__my_activity_date_deadline
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__my_activity_date_deadline
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__name
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__name
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_search_view_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Name"
+msgstr "Tên"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__employee_id
+msgid "Name of the employee for whom the request is creating"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#, python-format
+msgid "New"
+msgstr "Mới"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_date_deadline
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_date_deadline
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_summary
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_summary
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_type_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_type_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_config_settings__no_of_days
+msgid "No Of Days"
+msgstr "Số ngày"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "No."
+msgstr "Số."
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_resignation__resignation_type__resigned
+msgid "Normal Resignation"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__notes
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__comment
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_contract__notice_days
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_subcontract__notice_days
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_res_config_settings__notice_period
+msgid "Notice Period"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_contract__notice_days
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_subcontract__notice_days
+msgid "Number days notice open resignation"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_needaction_counter
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_needaction_counter
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__children
+msgid "Number of Children"
+msgstr "Số lượng con"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_has_error_counter
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_has_error_counter
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__message_needaction_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__message_needaction_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__message_needaction_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__message_has_error_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__message_has_error_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__message_has_error_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__message_unread_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__message_unread_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__message_unread_counter
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__name
+msgid "Order Reference"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__wizard_make_contact__type__other
+msgid "Other Address"
+msgstr "Địa chỉ khác"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "PIN Code"
+msgstr "Mã PIN"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__parent_name
+msgid "Parent name"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__same_vat_partner_id
+msgid "Partner with same Tax ID"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__passport_attachment_id
+msgid "Passport Attachment"
+msgstr "Hộ chiếu đính kèm"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__passport_expiry_date
+msgid "Passport Expiry Date"
+msgstr "Thời hạn hộ chiếu"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Passport ID"
+msgstr "ID hộ chiếu"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_employee.py:0
+#, python-format
+msgid "Passport-%s Expired On %s"
+msgstr "Hộ chiếu-%s Hết hạn lúc %s"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__permit_from
+msgid "Permit Date From"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__permit_to
+msgid "Permit Date To"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Permit Range"
+msgstr "Phạm vi cho phép"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__personal_mobile
+msgid "Personal mobile number of the employee"
+msgstr "Số điện thoại cá nhân"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__phone
+msgid "Phone"
+msgstr "Điện thoại"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__identification_created_place
+msgid "Place created ID"
+msgstr "Nơi cấp"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__place_of_permanent
+msgid "Place of permanent"
+msgstr "Địa chỉ thường trú"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#, python-format
+msgid "Please enter valid dates."
+msgstr "Hãy nhập một ngày"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#, python-format
+msgid "Please set joining date for employee"
+msgstr "Hãy nhập ngày vào công ty cho nhân viên"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_search_view_inherit
+msgid "Present"
+msgstr "Hiện tại"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Print Badge"
+msgstr "In thẻ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__wizard_make_contact__type__private
+msgid "Private Address"
+msgstr "Địa chỉ cá nhân"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__reason
+msgid "Reason"
+msgstr "Lý do"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__ref
+msgid "Reference"
+msgstr "Liên quan"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_form
+msgid "Refuse"
+msgstr "Từ chối"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__state__rejected
+msgid "Refused"
+msgstr "Đã từ chối"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_resignation__state__cancel
+msgid "Rejected"
+msgstr "Đã từ chối"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__parent_id
+msgid "Related Company"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__relation_id
+msgid "Relation"
+msgstr "Quan hệ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__name
+msgid "Relationship"
+msgstr "Mối quan hệ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__relation_id
+msgid "Relationship with the employee"
+msgstr "Quan hệ với nhân viên"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_relation__name
+msgid "Relationship with thw employee"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__religion
+msgid "Religion"
+msgstr "Tôn giáo"
+
+#. module: erpvn_hr_management
+#: model:ir.ui.menu,name:erpvn_hr_management.menu_hr_report
+msgid "Reporting"
+msgstr "Báo cáo"
+
+#. module: erpvn_hr_management
+#: model:ir.ui.menu,name:erpvn_hr_management.employee_report_menu
+msgid "Reports"
+msgstr "Báo cáo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__requested_date
+msgid "Requested Date"
+msgstr "Ngày yêu cầu"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__resign_date
+msgid "Resign Date"
+msgstr "Ngày nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model:ir.ui.menu,name:erpvn_hr_management.employee_resignation
+msgid "Resignation"
+msgstr "Nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+msgid "Resignation Details"
+msgstr "Chi tiết đơn nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model:ir.ui.menu,name:erpvn_hr_management.employee_resignation_request
+msgid "Resignation Request"
+msgstr "Yêu cầu nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__resignation_type
+msgid "Resignation Type"
+msgstr "Loại nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee__resigned
+msgid "Resigned"
+msgstr "Đã nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_search_view_inherit
+msgid "Resigned Employees"
+msgstr "Nhân viên nghỉ việc"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__activity_user_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__activity_user_id
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__activity_user_id
+msgid "Responsible User"
+msgstr "Người chịu trách nhiệm"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_has_sms_error
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_has_sms_error
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_has_sms_error
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__user_id
+msgid "Salesperson"
+msgstr "Nhân viên bán hàng"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Save"
+msgstr "Lưu"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__employee_id
+msgid "Select corresponding Employee"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__resignation_type
+msgid ""
+"Select the type of resignation: normal resignation or fired by the company"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_form
+msgid "Send For Approval"
+msgstr "Gửi duyệt"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_department__sequence
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_relation__sequence
+msgid "Sequence"
+msgstr "Thứ tự"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__name
+msgid "Sequence Number of the Announcement"
+msgstr "Số trình tự thông báo"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+msgid "Set to Draft"
+msgstr "Đặt lại dự thảo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__partner_share
+msgid "Share Partner"
+msgstr "Chia sẽ đối tác"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__reason
+msgid "Specify reason for leaving the company"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__date_start
+msgid "Start Date"
+msgstr "Ngày bắt đầu"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_form_view_inherit
+msgid "Start date"
+msgstr "Ngày bắt đầu"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__date_start
+msgid "Start date of announcement want to see"
+msgstr "Ngày bắt đầu muốn thấy thông báo"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__state_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "State"
+msgstr "Bang"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__state
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__state
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.view_hr_announcement_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__activity_state
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__activity_state
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__street
+msgid "Street"
+msgstr "Đường"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Street 2..."
+msgstr "Đường 2..."
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Street..."
+msgstr "Đường..."
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__street2
+msgid "Street2"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__category_id
+msgid "Tags"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "Tags..."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__vat
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__vat
+msgid "Tax ID"
+msgstr "Mã số Thuế"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__vat
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__vat
+msgid ""
+"The Tax Identification Number. Complete it if the contact is subjected to "
+"government taxes. Used in some legal statements."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__place_of_permanent
+msgid "The adress where created ID"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__user_id
+msgid "The internal user in charge of this contact."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#, python-format
+msgid "The last working day must not be less than the current day "
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.constraint,message:erpvn_hr_management.constraint_hr_employee_name_uniq
+msgid "The work email must be unique !"
+msgstr "Mail làm việc phải là duy nhất!"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#, python-format
+msgid ""
+"There is a resignation request in confirmed or approved state for this "
+"employee"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__tz
+msgid "Timezone"
+msgstr "Múi giờ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__tz_offset
+msgid "Timezone offset"
+msgstr "Múi giờ"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__announcement_reason
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__title
+msgid "Title"
+msgstr "Tiêu đề"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__name
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__name
+msgid "Title Name"
+msgstr "Tên tiêu đề"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_search_view_inherit
+msgid "To Define"
+msgstr "Chờ chỉ định"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__is_announcement
+msgid "To set Announcement as general announcement"
+msgstr "Để thiết lập thông báo như một Thông báo chung"
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.employee_resignation_form
+msgid "Type"
+msgstr "Loại"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__activity_exception_decoration
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__activity_exception_decoration
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_unread
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_unread
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_unread
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__message_unread_counter
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__message_unread_counter
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__message_unread_counter
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__barcode
+msgid "Use a barcode to identify this contact."
+msgstr "Sử dụng Mã vạch để xác định liên hệ này."
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__user_ids
+msgid "Users"
+msgstr "Người dùng"
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields.selection,name:erpvn_hr_management.selection__hr_announcement__state__to_approve
+msgid "Waiting For Approval"
+msgstr "Chờ duyệt"
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/wizards/wizard_make_contact.py:0
+#, python-format
+msgid "Warning"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__website
+msgid "Website Link"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_announcement__website_message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_employee_family__website_message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_job_title__website_message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__website_message_ids
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee_family__website_message_ids
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_job_title__website_message_ids
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_resignation__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_wizard_make_contact__tz
+msgid ""
+"When printing documents and exporting/importing data, time values are computed according to this timezone.\n"
+"If the timezone is not set, UTC (Coordinated Universal Time) is used.\n"
+"Anywhere else, time values are computed according to the time offset of your web client."
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model,name:erpvn_hr_management.model_wizard_make_contact
+msgid "Wizard Make Contact"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__passport_attachment_id
+msgid "You can attach the copy of Passport"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_employee__id_attachment_id
+msgid "You can attach the copy of your Id"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,help:erpvn_hr_management.field_hr_announcement__attachment_id
+msgid "You can attach the copy of your Letter"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: code:addons/erpvn_hr_management/models/hr_resignation.py:0
+#, python-format
+msgid "You cannot create request for other employees"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "ZIP"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_wizard_make_contact__zip
+msgid "Zip"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model:ir.model.fields,field_description:erpvn_hr_management.field_hr_resignation__read_only
+msgid "check field"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "e.g. BE0477472701"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "e.g. Mister"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "e.g. Sales Director"
+msgstr ""
+
+#. module: erpvn_hr_management
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_management.wizard_make_contact_form_view
+msgid "e.g. https://www.odoo.com"
+msgstr ""

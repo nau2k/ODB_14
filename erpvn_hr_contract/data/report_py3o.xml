@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="hr_subcontract_salary_report_py3o" model="ir.actions.report">
+        <field name="name">Print File Subcontract salary</field>
+        <field name="type">ir.actions.report</field>
+        <field name="model">hr.subcontract</field>
+        <field name="report_name">py3o_subcontract_salary</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">odt</field>
+        <field name="module">erpvn_hr_contract</field>
+        <field name="py3o_template_fallback">report/subcontract_for_salary.odt</field>
+        <field name="binding_model_id" ref="erpvn_hr_contract.model_hr_subcontract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="hr_subcontract_job_report_py3o" model="ir.actions.report">
+        <field name="name">Print File Subcontract position</field>
+        <field name="type">ir.actions.report</field>
+        <field name="model">hr.subcontract</field>
+        <field name="report_name">py3o_subcontract_position</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">odt</field>
+        <field name="module">erpvn_hr_contract</field>
+        <field name="py3o_template_fallback">report/subcontract_for_job_title.odt</field>
+        <field name="binding_model_id" ref="erpvn_hr_contract.model_hr_subcontract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <record id="contract_report_py3o" model="ir.actions.report">
+        <field name="name">Print File Contract</field>
+        <field name="type">ir.actions.report</field>
+        <field name="model">hr.subcontract</field>
+        <field name="report_name">py3o_contract</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">odt</field>
+        <field name="module">erpvn_hr_contract</field>
+        <field name="py3o_template_fallback">report/hr_contract.odt</field>
+        <field name="binding_model_id" ref="erpvn_hr_contract.model_hr_subcontract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <record id="subcontract_report_py3o" model="ir.actions.report">
+        <field name="name">Print File Subcontract</field>
+        <field name="type">ir.actions.report</field>
+        <field name="model">hr.subcontract</field>
+        <field name="report_name">py3o_subcontract</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">odt</field>
+        <field name="module">erpvn_hr_contract</field>
+        <field name="py3o_template_fallback">report/hr_subcontract.odt</field>
+        <field name="binding_model_id" ref="erpvn_hr_contract.model_hr_subcontract"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

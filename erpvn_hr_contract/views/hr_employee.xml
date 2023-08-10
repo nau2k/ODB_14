@@ -1,0 +1,76 @@
+<odoo>
+    <data>
+
+        <record id="hr_employee_contract_form_view_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.contract.form.view.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='personal_information']/group" position="inside">
+                    <group name="tax_code" string="Tax - Insurance">
+                        <field name="tax_code"/>
+                        <field name="social_insurance_no"/>
+                        <field name="health_insurance_no"/>
+                    </group>
+                </xpath>
+
+                <xpath expr="//field[@name='job_id']" position="before">
+                    <field name="hire_date"/>
+                    <field name="departure_date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="erpvn_hr_contract_inherit_view_kanban">
+            <field name="name">erpvn.hr.contract.inherit.kanban</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('o_kanban_record_headings')]" position="replace"> 
+                    <div class="o_kanban_record_headings">
+                        <strong class="o_kanban_record_title">
+                             <div class="float-right"
+                                  t-if="record.hr_icon_display.raw_value == 'presence_present'"
+                                  name="presence_present">
+                                 <!-- Employee is present/connected and it is normal according to his work schedule  -->
+                                 <span class="fa fa-circle text-success" role="img" aria-label="Present"
+                                       title="Present" name="presence_present">
+                                 </span>
+                             </div>
+                             <div class="float-right"
+                                  t-if="record.hr_icon_display.raw_value == 'presence_absent'"
+                                  name="presence_absent">
+                                 <!-- Employee is not present and it is normal according to his work schedule -->
+                                 <span class="fa fa-circle-o text-muted" role="img" aria-label="Absent"
+                                       title="Absent" name="presence_absent">
+                                 </span>
+                             </div>
+                             <div class="float-right"
+                                  t-if="record.hr_icon_display.raw_value == 'presence_absent_active'"
+                                     name="presence_absent_active">
+                                 <!-- Employee is connected but according to his work schedule,
+                                      he should not work for now  -->
+                                 <span class="fa fa-circle-o text-success" role="img"
+                                       aria-label="Present but not active"
+                                       title="Present but not active"
+                                       name="presence_absent_active">
+                                 </span>
+                             </div>
+                             <div class="float-right"
+                                  t-if="record.hr_icon_display.raw_value == 'presence_to_define'"
+                                     name="presence_to_define">
+                                 <!-- Employee is not here but according to his work schedule, he should be connected -->
+                                 <span class="fa fa-circle text-warning" role="img"
+                                       aria-label="To define" title="To define"
+                                       name="presence_to_define">
+                                 </span>
+                             </div>
+                             <field name="name" placeholder="Employee's Name"/>
+                        </strong>
+                        <span t-if="record.job_title.raw_value" class="o_kanban_record_subtitle" style="color:blue"><field name="job_title"/></span>
+                </div>
+                    </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

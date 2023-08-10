@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_employee_relation_view_tree" model="ir.ui.view">
+            <field name="name">hr.employee.relation.tree</field>
+            <field name="model">hr.employee.relation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="is_children"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_hr_employee_relation_view" model="ir.actions.act_window">
+            <field name="name">HR Employee Relation</field>
+            <field name="res_model">hr.employee.relation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to Create a New Record.
+                </p>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="mail_notify_for_approving_overtime_request" model="mail.template">
+            <field name="name">The Overtime Requests Are Waiting For Approving</field>
+            <field name="subject">The Overtime Requests Are Waiting For Approving ${object.get_department() | safe}</field>
+            <field name="email_from">"${object.company_id.name | safe}" &lt;${(object.company_id.email or user.email) | safe}&gt;</field>
+            <field name="lang">${user.lang}</field>
+            <field name="model_id" ref="erpvn_hr_overtime.model_hr_overtime"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+                <p>THIS IS AN AUTOMATED EMAIL. DO NOT REPLY.</p>
+                <p>Here is the overtime requests, waiting for your approving:</p>
+                <div>
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="text-center" style="vertical-align:middle;" width="150px">
+                                    <strong>Employee Code</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="200px">
+                                    <strong>Employee</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="200px">
+                                    <strong>Department</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>Date</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>From</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>To</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>Duration</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            %if ctx.get('data', False):
+                                <% set records = ctx.get('data') %>
+                                %for record in records:
+                                    <tr>
+                                        <td class="text-center" style="vertical-align:middle;">${record.employee_code}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.employee_id.name}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.department_id.name}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_day()}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_datetime_from()}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_datetime_to()}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_duration()}</td>
+                                    </tr>
+                                %endfor
+                            %endif
+                        </tbody>
+                    </table>
+
+                    <br/>
+                    You will find more details here:
+                    <div style="margin: 16px 0px 16px 0px;">
+                        <a href="/web#id=${object.id}&amp;action=2928&amp;model=hr.overtime&amp;view_type=form&amp;cids=1&amp;menu_id=395"
+                            style="padding: 8px 16px 8px 16px; font-size: 14px; color: #FFFFFF; text-decoration: none !important; background-color: #875A7B; border: 0px solid #875A7B; border-radius:3px">
+                            View Overtime
+                        </a>
+                    </div>
+                    <br/>
+                </div>
+            ]]>
+            </field>
+        </record>
+
+        <record id="mail_notify_about_approved_overtime_requests" model="mail.template">
+            <field name="name">Notify About Approved Overtime Requests</field>
+            <field name="subject">Notify About Approved Overtime Requests ${object.get_department() | safe}</field>
+            <field name="email_from">"${object.company_id.name | safe}" &lt;${(object.company_id.email or user.email) | safe}&gt;</field>
+            <field name="lang">${user.lang}</field>
+            <field name="model_id" ref="erpvn_hr_overtime.model_hr_overtime"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+                <p>THIS IS AN AUTOMATED EMAIL. DO NOT REPLY.</p>
+                <p>Here is the overtime requests, have been approved:</p>
+                <div>
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="text-center" style="vertical-align:middle;" width="150px">
+                                    <strong>Employee Code</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="200px">
+                                    <strong>Employee</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="200px">
+                                    <strong>Department</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>Date</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>From</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>To</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>Duration</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            %if ctx.get('data', False):
+                                <% set records = ctx.get('data') %>
+                                %for record in records:
+                                    <tr>
+                                        <td class="text-center" style="vertical-align:middle;">${record.employee_code}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.employee_id.name}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.department_id.name}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_day()}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_datetime_from()}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_datetime_to()}</td>
+                                        <td class="text-center" style="vertical-align:middle;">${record.get_duration()}</td>
+                                    </tr>
+                                %endfor
+                            %endif
+                        </tbody>
+                    </table>
+
+                    <br/>
+                    You will find more details here:
+                    <div style="margin: 16px 0px 16px 0px;">
+                        <a href="/web#id=${object.id}&amp;action=2928&amp;model=hr.overtime&amp;view_type=form&amp;cids=1&amp;menu_id=395"
+                            style="padding: 8px 16px 8px 16px; font-size: 14px; color: #FFFFFF; text-decoration: none !important; background-color: #875A7B; border: 0px solid #875A7B; border-radius:3px">
+                            View Overtime
+                        </a>
+                    </div>
+                    <br/>
+                    
+                </div>
+            ]]>
+            </field>
+        </record>
+
+    </data>
+</odoo>

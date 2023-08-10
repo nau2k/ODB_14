@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="hr_announcement_menu" name="Announcements" parent="hr.menu_hr_root"
+                  action="action_hr_announcement" groups="hr.group_hr_user,hr.group_hr_manager" sequence="30"/>
+        
+        <menuitem id="employee_report_menu" name="Reports" sequence="30" groups="hr.group_hr_manager,hr.group_hr_user"/>
+       
+        <menuitem id="menu_hr_report" name="Reporting" action="hr.hr_employee_public_action" parent="hr.menu_hr_root" sequence="90"/>
+
+        <menuitem id="hr.menu_hr_employee" name="Employee Directory" active="false" sequence="4"/>
+
+        <menuitem id="hr_employee_type_menu" name="Employee Type" action="hr_employee_type_action" 
+            parent="hr.menu_human_resources_configuration_employee" sequence="4" groups="hr.group_hr_manager"/>
+
+        <menuitem id="menu_action_hr_employee_relation_view" name="Employee Relation" action="action_hr_employee_relation_view"
+            parent="hr.menu_human_resources_configuration_employee" sequence="90"/>
+
+        <menuitem id="menu_department_structure"
+            name="Departments" parent="hr.menu_hr_root" groups="hr.group_hr_user" sequence="10"/>
+        
+            <menuitem id="hr.menu_hr_department_kanban" groups="hr.group_hr_user" sequence="10"
+                parent="menu_department_structure" action="hr.hr_department_kanban_action"/>
+
+            <menuitem id="hr.menu_view_hr_job" name="Job Positions" sequence="30"
+                parent="menu_department_structure" action="hr.action_hr_job"/>
+
+            <menuitem id="menu_hr_job_title" name="Job Title" sequence="40"
+                parent="menu_department_structure" action="action_hr_job_title"/>
+
+        <menuitem id="menu_action_export_employee" name="Export Employee" action="action_export_employee"
+            parent="hr.menu_hr_employee_payroll" sequence="30"/>
+
+        <menuitem id="menu_action_archived_employee" name="Archived Employees" action="hr_employee_view_archived_employee_action"
+            parent="hr.menu_hr_employee_payroll" sequence="2"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="timesheet_adjustment_request_line_tree_view" model="ir.ui.view">
+            <field name="name">timesheet.adjustment.request.line.tree.view</field>
+            <field name="model">timesheet.adjustment.request.line</field>
+            <field name="arch" type="xml">
+                <tree string="Adjustment Requests">
+                    <field name="employee_code"/>
+                    <field name="employee_id"/>
+                    <field name="old_date_start" string="Old From" readonly="1"/>
+                    <field name="old_date_stop" string="Old To" readonly="1"/>
+                    <field name="old_duration" readonly="1" string="Old Duration (hours)" widget="float_time"/>
+                    <field name="new_date_start" string="New From" readonly="1"/>
+                    <field name="new_date_stop" string="New To" readonly="1"/>
+                    <field name="new_duration" readonly="1" string="New Duration (hours)" widget="float_time"/>
+                    <field name="state" widget="badge"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="timesheet_adjustment_request_line_form_view" model="ir.ui.view">
+            <field name="name">timesheet.adjustment.request.line.form.view</field>
+            <field name="model">timesheet.adjustment.request.line</field>
+            <field name="arch" type="xml">
+                <form string="Adjustment Request Line">
+                    <header>
+                        <button name="action_set_to_draft" type="object" string="Set to Draft"
+                            attrs="{'invisible': [('state', '!=', 'cancelled')]}"
+                            class="btn-secondary" groups="base.group_user"/>
+                        <button name="action_cancel" type="object" string="Cancel"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"
+                            class="btn-secondary" groups="base.group_user"/>
+                        <button name="action_confirm" type="object" string="Confirm"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"
+                            class="btn-primary" groups="hr_holidays.group_hr_holidays_responsible"/>
+                        <button name="action_validate" type="object" string="Validate"
+                            attrs="{'invisible': [('state', '!=', 'confirm')]}"
+                            class="btn-primary" groups="hr_attendance.group_hr_attendance_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,validated,cancelled"/>
+                    </header>
+
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_code"/>
+                                <field name="employee_id" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                                <field name="work_entry_id" attrs="{'readonly': [('state', '=', 'validated')]}" string="Work Entry"
+                                    domain="[('employee_id', '=', employee_id), ('state', '=', 'confirmed')]" options="{'no_create': True}"/>
+                                <field name="resource_calendar_id" readonly="1" force_save="1"/>
+                                <field name="attendance_id" readonly="1" force_save="1"/>
+                                <field name="work_entry_type_id" readonly="1" force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="create_uid"/>
+                                <field name="create_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="old_date_start" readonly="1" force_save="1"/>
+                                <field name="old_date_stop" readonly="1" force_save="1"/>
+                                <label for="old_duration" string="Current Period"/>
+                                <div class="o_row">
+                                    <field name="old_duration" widget="float_time" readonly="1" nolabel="1" force_save="1"/><span class="ml8">Hours</span>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="new_date_start"/>
+                                <field name="new_date_stop"/>
+                                <label for="new_duration" string="New Period"/>
+                                <div class="o_row">
+                                    <field name="new_duration" widget="float_time" nolabel="1"/><span class="ml8">Hours</span>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="timesheet_adjustment_request_line_search" model="ir.ui.view">
+            <field name="name">timesheet.adjustment.request.line.search</field>
+            <field name="model">timesheet.adjustment.request.line</field>
+            <field name="arch" type="xml">
+                <search string="Search Adjustment Request">
+                    <field name="employee_id"/>
+                    <filter name="adjustment_reques_conflicting" string="Conflicting" domain="[('state', '=', 'draft')]"/>
+                    <filter name="adjustment_reques_confirm" string="Confirm" domain="[('state', '=', 'confirm')]"/>
+                    <filter name="adjustment_reques_validated" string="Validated" domain="[('state', '=', 'validated')]"/>
+                    <filter name="adjustment_reques_cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]"/>
+                    <separator/>
+                    <filter string="People I Manage" name="managed_people" domain="[('employee_id.leave_manager_id', '=', uid)]" help="Time off of people you are manager of"/>
+                    <filter name="date_filter" string="Date" date="old_date_start"/>
+                    <filter name="current_month" string="Current Month" domain="[
+                        ('old_date_start', '&gt;=', (context_today()).strftime('%Y-%m-01')),
+                        ('old_date_stop', '&lt;', (context_today() + relativedelta(months=1)).strftime('%Y-%m-01'))]"/>
+                    <separator/>
+                    <filter name="group_employee" string="Employee" context="{'group_by': 'employee_id'}"/>
+                    <filter name="group_old_date_start" string="Old From" context="{'group_by': 'old_date_start'}"/>
+                    <separator/>
+                    <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="timesheet_adjustment_request_line_action" model="ir.actions.act_window">
+            <field name="name">Timesheet Adjustment Line</field>
+            <field name="res_model">timesheet.adjustment.request.line</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="timesheet_adjustment_request_line_only_time_form_view" model="ir.ui.view">
+            <field name="name">timesheet.adjustment.request.line.form.view</field>
+            <field name="model">timesheet.adjustment.request.line</field>
+            <field name="arch" type="xml">
+                <form string="Adjustment Request Line">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_code"/>
+                                <field name="employee_id" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="create_uid"/>
+                                <field name="create_date"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="old_date_start" readonly="1"/>
+                                <field name="old_date_stop" readonly="1"/>
+                                <field name="break_time"/>
+                                <label for="old_duration" string="Current Period"/>
+                                <div class="o_row">
+                                    <field name="old_duration" widget="float_time" readonly="1" nolabel="1"/><span class="ml8">Hours</span>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="state" invisible="1"/>
+                                <field name="new_date_start" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                                <field name="new_date_stop" attrs="{'readonly': [('state', '=', 'validated')]}"/>
+                                <label for="new_duration" string="New Period"/>
+                                <div class="o_row">
+                                    <field name="new_duration" widget="float_time" attrs="{'readonly': [('state', '=', 'validated')]}" nolabel="1"/><span class="ml8">Hours</span>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_timesheet_adjustment_request_line_action" model="ir.actions.act_window">
+            <field name="name">Adjustment Requests</field>
+            <field name="res_model">timesheet.adjustment.request.line</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="timesheet_adjustment_request_line_search"/>
+            <field name="context">{'default_timesheet_adjustment_request_line':1}</field>
+            <field name="domain">['|',('employee_id.user_id', '=', uid),('employee_id.leave_manager_id', '=', uid')]</field>
+        </record>
+
+        
+
+    </data>
+</odoo>

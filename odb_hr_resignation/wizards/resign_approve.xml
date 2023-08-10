@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="wz_resign_approved" model="ir.ui.view">
+        <field name="name">wz_resign_approved</field>
+        <field name="model">wz.resign.approved</field>
+        <field name="arch" type="xml">
+            <form string="Approve Date">
+                <p>Please enter approved date !!</p>
+                <group>
+                    <group>
+                        <field name="resign_confirm_date" readonly="1"/>
+                        <field name="expected_revealing_date" readonly="1"/>
+                        <field name="approved_revealing_date" string="Approved Last Day Of Employee" required="1" />
+                    </group>
+                </group>
+                <footer>
+                    <button string="OK" name="action_ok" type="object" class="oe_highlight" />
+                    <button string="Cancel" class="btn btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <record id="waiting_resgin_request" model="mail.template">
+      <field name="name">Resigntion: Waiting Request</field>
+      <field name="subject">Resign Request: [Waiting] ${object.employee_id.name} - Last Working Day: ${object.expected_revealing_date}</field>
+      <field name="email_from">${user.email}</field>
+      <field name="email_to">${object.employee_id.parent_id.work_email}</field>
+      <field name="model_id" ref="odb_hr_resignation.model_hr_resignation"/>
+      <field name="lang">${user.lang}</field>
+      <field name="auto_delete" eval="False"/>
+      <field name="body_html" type="html">
+      <div>
+        
+      </div>
+      </field>
+      </record>
+
+
+
+
+    
+    <!-- canceled -->
+    <record id="cancel_resgin_request" model="mail.template">
+      <field name="name"> Resigntion: Cancel Request</field>
+      <field name="subject">Resign Request: [Canceled] ${object.employee_id.name} - Last Working Day: ${object.expected_revealing_date} </field>
+      <field name="email_from"></field>
+      <field name="email_to"></field>
+      <field name="model_id" ref="odb_hr_resignation.model_hr_resignation" />
+      <field name="lang">${user.lang}</field>
+      <field name="auto_delete" eval="False" />
+      <field name="body_html" type="xml">
+        <div> Dear ${object.employee_id.name}, <br /> This resignation request is not confirmed.  <br />
+          <br />
+          <table>
+            <tr>
+                <td>Employee</td>
+                <td></td>   
+                <td></td>
+                <td>${object.employee_id.name}</td>
+            </tr>
+            <tr>
+                <td>Department</td>
+                <td></td>
+                <td></td>   
+                <td> ${object.department_id.name}</td>
+            </tr>
+            <tr>
+                <td>Contract</td>
+                <td></td>
+                <td></td>   
+                <td> ${object.employee_contract_id.name}</td>
+            </tr>
+            <tr>
+                <td>Last Working Day</td>
+                <td></td>
+                <td></td>   
+                <td>${object.expected_revealing_date}</td> 
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td></td>
+                <td></td>   
+                <td>${object.resignation_type)}</td>
+            </tr>
+            <tr>
+                <td>Reason</td>
+                <td></td>
+                <td></td>   
+                <td>${object.reason)}</td>
+            </tr>
+        </table>
+          <br />
+          <br /> Regards, ${object.user_id.company_id.email}
+        </div>
+      </field>
+    </record>
+  </data>
+</odoo>

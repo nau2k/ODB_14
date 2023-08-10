@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_shift_change_order_search_view" model="ir.ui.view">
+            <field name="name">hr.shift.change.order.search.view</field>
+            <field name="model">hr.shift.change.order</field>
+            <field name="arch" type="xml">
+                <search string="Shift Change Request">
+                    <field name="order_line_ids" string="Employee" filter_domain="['|', ('overtime_line_ids.employee_code', 'ilike', self), ('overtime_line_ids.employee_id', 'ilike', self)]"/>
+                    <field name="name" filter_domain="[('name','ilike', self)]"/>
+                    <field name="department_id"/>
+                    <separator/>
+                    <filter string="To Approve" name="to_approved" domain="[('state','in', ['draft', 'confirmed'])]"/>
+                    <filter string="Approve" name="approved" domain="[('state','=', 'approved')]"/>
+                    <filter string="Cancel" name="cancelled" domain="[('state','=', 'cancelled')]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="hr_shift_change_order_form_view" model="ir.ui.view">
+            <field name="name">hr.shift.change.order.form.view</field>
+            <field name="model">hr.shift.change.order</field>
+            <field name="arch" type="xml">
+                <form string="Shift Change Request">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,approved,cancelled"/>
+                        <button name="action_draft" string="Set To Draft" type="object" class="btn-secondary"
+                            attrs="{'invisible': [('state', '!=', 'cancelled')]}"/>
+                        <button name="action_confirm" string="Confirm" type="object" class="btn-primary"    
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="action_approve" string="Approve" type="object" class="btn-primary"
+                            attrs="{'invisible': [('state', '!=', 'confirmed') ]}" 
+                            groups="erpvn_hr_overtime.group_hr_overtime_leader"/>
+                        <button name="action_cancel" string="Cancel" type="object" class="btn-secondary"
+                            attrs="{'invisible': [('state', 'not in', ('draft', 'confirmed'))]}"
+                            groups="erpvn_hr_overtime.group_hr_overtime_leader"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" name="title">
+                            <h1>
+                                <field name="name" nolabel="1" readonly="1"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <field name='department_id' options="{'no_quick_create': True, 'no_create_edit' : True}"
+                                    attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name='employee_id' options="{'no_quick_create': True, 'no_create_edit' : True}"
+                                    attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name='manager_id'/>
+                            </group>
+                            <group>
+                                <label for="resource_calendar_id"/>
+                                <div>
+                                    <field name="resource_calendar_id" required="1" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                        options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                                </div>
+
+                                <label for="date_from" string="Date From"/>
+                                <div class="oe_inline">
+                                    <field name="date_from" class="mr8 oe_inline" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                    <strong class="mr8 oe_inline">to</strong>
+                                    <field name="date_to" class="oe_inline" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                </div>
+                                <field name="tz" invisible="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="desc" nolabel="1" placeholder="Add description..." attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <group>
+                            <button name="compute_sheet" string=" Load Employee" type="object" 
+                                class="btn-outline-success" icon="fa-cloud-download"
+                                attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <notebook>
+                            <page string="Employees" name="employees">
+                                <field name="order_line_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                    <tree editable="bottom" delete="true" decoration-danger="status != 'validation'" default_order="sequence">
+                                        <field name="sequence" string="# No." readonly="1" force_save="1" width="0.1" decoration-bf="1"/>
+                                        <field name="employee_code" widget="badge"/>
+                                        <field name="employee_id" domain="[('barcode', '!=', False), ('employee_type_id.name', '!=', 'Machine')]"/>
+                                        <field name="department_id"/>
+                                        <field name="job_id"/>
+                                        <field name="date_from"/>
+                                        <field name="date_to"/>
+                                        <field name="resource_calendar_id"/>
+                                        <field name="duration" widget="float_time" string="Duration" readonly="1" sum="Total"/>
+                                        <field name="break_time" widget="float_time" string="Break Hours" readonly="1"/>
+                                        <field name="note"/>
+                                        <field name="status" widget="badge"/>
+                                        <field name="state" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Work Entries" name="work_entries">
+                                <field name="work_entry_ids" readonly="1">
+                                    <tree decoration-danger="state == 'validated'">
+                                        <field name="employee_code" widget="badge"/>
+                                        <field name="employee_id"/>
+                                        <field name="name"/>
+                                        <field name="department_id"/>
+                                        <field name="date_start"/>
+                                        <field name="date_stop"/>
+                                        <field name="work_entry_type_id"/>
+                                        <field name="resource_calendar_id"/>
+                                        <field name="duration" widget="float_time" string="Duration" readonly="1" sum="Total"/>
+                                        <field name="break_time" widget="float_time" string="Break Hours" readonly="1"/>
+                                        <field name="note"/>
+                                        <field name="state" widget="badge"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="hr_shift_change_order_tree_view" model="ir.ui.view">
+            <field name="name">hr.shift.change.order.tree.view</field>
+            <field name="model">hr.shift.change.order</field>
+            <field name="arch" type="xml">
+                <tree string="Shift Change Requests">
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <field name="name"/>
+                    <field name="department_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="state" widget="badge" decoration-success="state == 'approved'" decoration-info="state not in ('draft', 'confirmed')" decoration-danger="state == 'cancelled'"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_working_shift_change" model="ir.actions.act_window">
+            <field name="name">Shift Change Request</field>
+            <field name="res_model">hr.shift.change.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{'search_default_to_approved':1}</field>
+            <field name="search_view_id" ref="hr_shift_change_order_search_view"/>
+        </record>
+
+    </data>
+</odoo>

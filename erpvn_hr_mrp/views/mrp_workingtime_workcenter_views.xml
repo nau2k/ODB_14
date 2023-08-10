@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_workingtime_workcenter_tree_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.workingtime.workcenter.tree.view.inherit</field>
+            <field name="model">mrp.workingtime.workcenter</field>
+            <field name="inherit_id" ref="erpvn_mrp_management.mrp_workingtime_workcenter_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='workcenter_id']" position="after">
+                    <field name="department_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

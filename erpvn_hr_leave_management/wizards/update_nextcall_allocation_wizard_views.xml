@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="update_nextcall_allocation_wizard_form_view" model="ir.ui.view">
+        <field name="name">update.nextcall.allocation.wizard.form.view</field>
+        <field name="model">update.nextcall.allocation.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group name="date">
+                    <group name="date" colspan="2">
+                        <group>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_update" string="Update" type="object" default_focus="1" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

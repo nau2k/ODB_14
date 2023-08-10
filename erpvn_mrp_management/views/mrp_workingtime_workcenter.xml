@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_workingtime_workcenter_tree_view" model="ir.ui.view">
+            <field name="name">mrp.workingtime.workcenter.tree</field>
+            <field name="model">mrp.workingtime.workcenter</field>
+            <field name="arch" type="xml">
+                <tree string="Workingtime Workcenters">
+                    <field name="sequence"/>
+                    <field name="workcenter_id"/>
+                    <field name="scheduled_time" widget="float_time"/>
+                    <field name="working_time" widget="float_time"/>
+                    <field name="total_scheduled_time" widget="float_time"/>
+                    <field name="total_working_time" widget="float_time"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

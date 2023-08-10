@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!-- Customize Attendance Report -->
+    <record id="hr_attendance_late_tree_view_inherit" model="ir.ui.view">
+        <field name="name">hr.attendance.late.tree.view.inherit</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <header>
+                    <button string="Update Attendances" name='get_attendances' type='object' class="oe_highlight"/>
+                </header>
+            </xpath>
+
+            <field name="worked_hours" position="after">
+                <field name="attendance_late" widget="float_time"/>
+                <field name="employee_type_id" invisible="1"/>
+            </field>
+
+            <field name="employee_id" position="attributes">
+                <attribute name="filter_domain">
+                    ['|','|',('name', 'ilike', self),('barcode', 'ilike', self),('work_email', 'ilike', self)]
+                </attribute>
+            </field>
+
+            <tree position="attributes">
+                <attribute name="editable">top</attribute>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_attendance_inherit_view_search" model="ir.ui.view">
+        <field name="name">hr.attendance.inherit.filter</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_filter"/>
+        <field name="model">hr.attendance</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="after">
+                <searchpanel>
+                    <field name="employee_type_id" icon="fa-tags" enable_counters="1" select="multi"/>
+                    <field name="department_id" icon="fa-users" enable_counters="1" select="multi"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

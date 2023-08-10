@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+
+        <record id="hr_work_entry.work_entry_type_attendance" model="hr.work.entry.type">
+            <field name="name">Normal x1.0</field>
+			<field name="sequence" eval="10"/>
+        </record>
+
+		<record id="work_entry_type_overtime_130" model="hr.work.entry.type">
+			<field name="name">Overtime x1.3</field>
+			<field name="sequence" eval="20"/>
+			<field name="code">WORK130</field>
+		</record>
+
+		<record id="work_entry_type_overtime_150" model="hr.work.entry.type">
+			<field name="name">Overtime x1.5</field>
+			<field name="sequence" eval="30"/>
+			<field name="code">WORK150</field>
+		</record>
+
+		<record id="work_entry_type_overtime_200" model="hr.work.entry.type">
+			<field name="name">Overtime x2.0</field>
+			<field name="sequence" eval="40"/>
+			<field name="code">WORK200</field>
+		</record>
+
+		<record id="work_entry_type_overtime_210" model="hr.work.entry.type">
+			<field name="name">Overtime x2.1</field>
+			<field name="sequence" eval="50"/>
+			<field name="code">WORK210</field>
+		</record>
+
+		<record id="work_entry_type_overtime_270" model="hr.work.entry.type">
+			<field name="name">Overtime x2.7</field>
+			<field name="sequence" eval="60"/>
+			<field name="code">WORK270</field>
+		</record>
+
+		<record id="work_entry_type_overtime_300" model="hr.work.entry.type">
+			<field name="name">Overtime x3.0</field>
+			<field name="sequence" eval="70"/>
+			<field name="code">WORK300</field>
+		</record>
+
+	</data>
+</odoo>

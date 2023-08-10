@@ -1,0 +1,17 @@
+<odoo>
+
+    <record id="action_approve_adjustment_request" model="ir.actions.act_window">
+        <field name="name">Adjustment Request</field>
+        <field name="res_model">timesheet.adjustment.request.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'search_default_managed_people': 1}</field>
+        <field name="view_id" ref="erpvn_hr_work_entry.timesheet_adjustment_request_line_tree_view"/>
+        <field name="search_view_id" ref="erpvn_hr_work_entry.timesheet_adjustment_request_line_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+            Manager Adjustment Request
+            </p>
+        </field>
+    </record>    
+</odoo>

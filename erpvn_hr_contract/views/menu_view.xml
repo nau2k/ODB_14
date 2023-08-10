@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <menuitem id="menu_human_resources_configuration_hr_contract" name="Contract"
+        parent="hr.menu_human_resources_configuration" groups="hr_contract.group_hr_contract_manager" sequence="20"/>
+
+        <menuitem id="menu_hr_config_hr_contract_type" action="action_view_hr_contract_type_list_view"
+            parent="menu_human_resources_configuration_hr_contract" sequence="20"/>
+
+    <menuitem id="menu_action_hr_subcontract" name="SubContract" action="action_hr_subcontract"
+        parent="hr.menu_hr_employee_payroll" groups="hr_contract.group_hr_contract_manager" sequence="30"/>
+</odoo>

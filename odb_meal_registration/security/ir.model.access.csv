@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_hr_meal_department_user,hr.meal.department.user,model_hr_meal,erpvn_hr_leave_management.group_hr_holidays_department_user,1,1,1,1
+access_hr_meal_resbonsible,hr.meal.resbonsible,model_hr_meal,hr_holidays.group_hr_holidays_responsible,1,0,0,0
+
+access_hr_meal_line_department_user,hr.meal.line.department.user,model_hr_meal_line,erpvn_hr_leave_management.group_hr_holidays_department_user,1,1,1,1
+access_hr_meal_line_resbonsible,hr.meal.resbonsible,model_hr_meal_line,hr_holidays.group_hr_holidays_responsible,1,0,0,0

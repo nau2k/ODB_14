@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_work_entry_inherit_view_search" model="ir.ui.view">
+            <field name="name">hr.work.entry.inherit.filter</field>
+            <field name="inherit_id" ref="hr_work_entry.hr_work_entry_view_search"/>
+            <field name="model">hr.work.entry</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="replace">
+                    <field name="employee_id" filter_domain="['|', ('employee_id', 'ilike', self), ('employee_code', 'ilike', self)]"/>
+                    <field name="department_id" filter_domain="[('department_id', 'ilike', self)]"/>
+                    <field name="resource_calendar_id" filter_domain="[('resource_calendar_id', 'ilike', self)]"/>
+                </xpath>
+                <xpath expr="//filter[@name='current_month']" position="after">
+                    <filter string="People I Manage" name="managed_people" domain="[('employee_id.leave_manager_id', '=', uid)]" help="Time off of people you are manager of"/>
+                </xpath>
+                <xpath expr="//search" position="inside">
+                    <group expand="0" string="Group By">
+                        <filter string="Employee" name="by_employee" context="{'group_by': 'employee_id'}"/>
+                        <separator/>
+                        <filter string="Department" name="by_department" context="{'group_by':'department_id'}"/>
+                        <filter string="Calendar" name="by_calendar" context="{'group_by':'resource_calendar_id'}"/>
+                        <filter string="WorkEntry Type" name="by_type" context="{'group_by':'work_entry_type_id'}"/>
+                    </group>
+                    <searchpanel>
+                        <field name="employee_type_id" select="multi" icon="fa-users" enable_counters="1"/>
+                        <!-- <field name="work_entry_type_id" select="multi" icon="fa-tags" enable_counters="1"/>
+                        <field name="resource_calendar_id" select="multi" icon="fa-tags" enable_counters="1"/> -->
+                        <field name="department_id" icon="fa-home" enable_counters="1"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_work_entry_tree_view_inherit" model="ir.ui.view">
+            <field name="name">hr.work.entry.tree.view.inherit</field>
+            <field name="model">hr.work.entry</field>
+            <field name="inherit_id" ref="hr_work_entry.hr_work_entry_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="replace">
+                    <tree multi_edit="0" sample="1" js_class="validate_shift_tree" 
+                        decoration-muted="state == 'validated'" 
+                        decoration-danger="state == 'conflict'"
+                        decoration-primary="lack_hours > 0">
+                            
+                        <header>
+                            <button string="Add Adjustment" name="make_adjustment_request" type="object" class="oe_highlight"/>
+                        </header>
+                        <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <field name="employee_code"/>
+                        <field name="employee_id"/>
+                        <field name="department_id"/>
+                        <field name="work_entry_type_id" options="{'no_create': True, 'no_open': True}"/>
+                        <field name="date_start" string="Expected From" readonly="1"/>
+                        <field name="date_stop" string="Expected To" readonly="1"/>
+                        <field name="duration" readonly="1" string="Expected Period (hours)" widget="float_time"/>
+                        <field name="actual_start" readonly="1"/>
+                        <field name="actual_stop" readonly="1"/>
+                        <field name="actual_duration" readonly="1" string="Actual Period (hours)" widget="float_time"/>
+                        <field name="attendance_late" widget="float_time"/>
+                        <field name="is_late" invisible="1"/>
+                        <field name="lack_bef_hours" readonly="1" string="Late Bef. Flex" widget="float_time" optional="show"/>
+                        <field name="lack_hours" readonly="1" string="Late Aft. Flex" widget="float_time" optional="show"/>
+                        <field name="flex_hours" readonly="1" string="Flexible Hours" widget="float_time" optional="show"/>
+                        <field name="state" widget="badge"/>
+                    </tree>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_work_entry_form_view_inherit" model="ir.ui.view">
+            <field name="name">hr.work.entry.form.view.inherit</field>
+            <field name="model">hr.work.entry</field>
+            <field name="inherit_id" ref="hr_work_entry.hr_work_entry_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/field[@name='state']" position="replace">
+                    <button name="action_set_to_draft" type="object" string="Set to Draft"
+                        attrs="{'invisible':[('state', 'not in', ('confirmed', 'cancelled'))]}" 
+                        class="btn-secondary" groups="hr_attendance.group_hr_attendance_user"/>
+                    <button name="action_confirm" type="object" string="Confirm" 
+                        attrs="{'invisible':[('state', '!=', 'draft')]}" 
+                        class="btn-primary" groups="hr_attendance.group_hr_attendance_user"/>
+                    <button name="action_validate" type="object" string="Validate"
+                        attrs="{'invisible':[('state', '!=', 'confirmed')]}"
+                        class="btn-primary" groups="hr_attendance.group_hr_attendance_manager"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                        states="draft,validated" class="btn-danger"
+                        groups="hr_attendance.group_hr_attendance_manager"/>
+                    <button name="action_fix_attendance" type="object" string="Fix Attendances"
+                        states="draft,confirmed" class="btn-warning"
+                        groups="hr_attendance.group_hr_attendance_manager"/>
+                    <field name="state" widget="statusbar"
+                        statusbar_visible="draft,confirmed,validated,conflict,cancelled"/>
+                </xpath>
+
+                <xpath expr="//field[@name='name']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}</attribute>
+                </xpath>
+
+                <xpath expr="//form/sheet/group" position="replace">
+                    <field name="company_id" invisible="1"/>
+                    <group name="employee_group">
+                        <group>
+                            <field name="employee_code"/>
+                            <field name="employee_id" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="department_id" options="{'no_create': True, 'no_create_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="resource_calendar_id" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="attendance_id" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}" domain="[('calendar_id', '=', resource_calendar_id)]" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="work_entry_type_id" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="tz" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                        </group>
+                    </group>
+
+                    <group name="time_group">
+                        <group>
+                            <field name="actual_start" readonly="1" force_save="1"/>
+                            <field name="actual_stop" readonly="1" force_save="1"/>
+                            <label for="actual_duration" string="Actual Period"/>
+                            <div class="o_row">
+                                <field name="actual_duration" nolabel="1" readonly="1" widget="float_time" force_save="1"/>
+                                <span class="ml8">Hours</span>
+                            </div>
+                            <label for="lack_bef_hours" string="Late Bef. Flex"/>
+                            <div class="o_row">
+                                <field name="lack_bef_hours" nolabel="1" readonly="1" widget="float_time" force_save="1"/>
+                                <span class="ml8">Hours</span>
+                            </div>
+                            <label for="lack_hours" string="Late Aft. Flex"/>
+                            <div class="o_row">
+                                <field name="lack_hours" nolabel="1" readonly="1" widget="float_time" force_save="1"/>
+                                <span class="ml8">Hours</span>
+                            </div>
+                            <label for="flex_hours" string="Flexible Hours"/>
+                            <div class="o_row">
+                                <field name="flex_hours" nolabel="1" readonly="1" widget="float_time" force_save="1"/>
+                                <span class="ml8">Hours</span>
+                            </div>
+                            <field name="is_late" invisible="1"/>
+                        </group>
+
+                        <group>
+                            <field name="date_start" string="Expected From" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                            <field name="date_stop" string="Expected To" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                            <label for="break_time" string="Break Time"/>
+                            <div class="o_row">
+                                <field name="break_time" nolabel="1" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}" widget="float_time"/>
+                                <span class="ml8">Hours</span>
+                            </div>
+                            <label for="duration" string="Expected Period"/>
+                            <div class="o_row">
+                                <field name="duration" nolabel="1" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}" widget="float_time"/>
+                                <span class="ml8">Hours</span>
+                            </div>
+
+                            <field name="is_flexible_time" widget="boolean_toggle" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                            <label for="flex_hour_from" string="Flexible From" attrs="{'invisible': [('is_flexible_time', '=', False)]}"/>
+                            <div class="oe_inline" attrs="{'invisible': [('is_flexible_time', '=', False)]}">
+                                <field name="flex_hour_from" widget="float_time" class="mr8 oe_inline" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                                <strong class="mr8 oe_inline">to</strong>
+                                <field name="flex_hour_to" widget="float_time" class="oe_inline" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                            </div>
+
+                            <label for="flex_hour_out" string="Flexible Out" attrs="{'invisible': [('is_flexible_time', '=', False)]}"/>
+                            <div class="oe_inline" attrs="{'invisible': [('is_flexible_time', '=', False)]}">
+                                <field name="flex_hour_out" widget="float_time" class="mr8 oe_inline" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                                <strong class="mr8 oe_inline">to</strong>
+                                <field name="flex_hour_limit_out" widget="float_time" class="oe_inline" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                            </div>
+                        </group>
+                    </group>
+
+                    <group name="note">
+                        <field name="note" placeholder="Add a note..." nolabel="1" attrs="{'readonly': [('state', 'not in', ('draft', 'conflict'))]}"/>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Related Attendances">
+                            <field name="hr_attendance_ids" options="{'reload_whole_on_button': True, 'no_open': True, 'no_create_edit': True}">
+                                <tree>
+                                    <field name="employee_barcode"/>
+                                    <field name="employee_id"/>
+                                    <field name="check_in"/>
+                                    <field name="check_out"/>
+                                    <field name="worked_hours" string="Duration (HH:MM)" sum="Total" widget="float_time"/>
+                                    <field name="type" widget="badge"/>
+                                    <field name="state" widget="badge"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Adjustment Requests">
+                            <field name="adjustment_request_ids" mode="tree" options="{'reload_whole_on_button': true}">
+                                <tree>
+                                    <field name="old_date_start" string="Old From" readonly="1"/>
+                                    <field name="old_date_stop" string="Old To" readonly="1"/>
+                                    <field name="old_duration" readonly="1" string="Old Duration (hours)" widget="float_time"/>
+                                    <field name="new_date_start" string="New From" readonly="1"/>
+                                    <field name="new_date_stop" string="New To" readonly="1"/>
+                                    <field name="new_duration" readonly="1" string="New Duration (hours)" widget="float_time"/>
+                                    <field name="state" widget="badge"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+
+                <xpath expr="//form/sheet" position="after">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_inherit_calendar" model="ir.ui.view">
+            <field name="name">hr.work.entry.calendar</field>
+            <field name="inherit_id" ref="hr_work_entry.hr_work_entry_view_calendar"/>
+            <field name="model">hr.work.entry</field>
+            <field name="arch" type="xml">
+                <xpath expr="//calendar" position="replace">
+                    <calendar string="Work Entry" date_start="date_start" date_stop="date_stop" mode="month" quick_add="False" color="color" form_view_id="%(hr_work_entry_tree_view_inherit)d" event_limit="5">
+                        <field name="employee_id" write_model="hr.user.work.entry.employee" write_field="employee_id" avatar_field="image_128"/>
+                        <field name="state"/>
+                    </calendar>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_work_entry.hr_work_entry_action" model="ir.actions.act_window">
+            <field name="name">Work Entry</field>
+            <field name="view_mode">calendar,tree,form,pivot</field>
+        </record>
+
+        <record id="hr_work_entry_tree_view_for_grid" model="ir.ui.view">
+            <field name="name">hr.work.entry.tree.view.for.grid</field>
+            <field name="model">hr.work.entry</field>
+            <field name="arch" type="xml">
+                <tree js_class="validate_shift_tree">
+                    <field name="employee_code"/>
+                    <field name="employee_id" readonly="1"/>
+                    <field name="actual_start" string="From" readonly="1"/>
+                    <field name="actual_stop" string="To" readonly="1"/>
+                    <field name="actual_duration" readonly="1" string="Duration (hours)" widget="float_time"/>
+                    <button name="make_adjustment_request" type="object" string="Change Request" class="btn-primary" groups="base.group_user"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="my_hr_work_entry_action" model="ir.actions.act_window">
+            <field name="name">Work Entries</field>
+            <field name="res_model">hr.work.entry</field>
+            <field name="view_mode">calendar,tree,form,pivot</field>
+            <field name="context">{'default_managed_people':1}</field>
+            <field name="search_view_id" ref="hr_work_entry_inherit_view_search"/>
+            <field name="domain">['|',('employee_id.user_id', '=', uid),('employee_id.leave_manager_id', '=', uid')]</field>
+        </record>
+
+        <record id="action_update_flexible_time" model="ir.actions.server">
+            <field name="name">Update Flexible Time</field>
+            <field name="model_id" ref="model_hr_work_entry"/>
+            <field name="groups_id" eval="[(4, ref('base.group_no_one'))]"/>
+            <field name="binding_model_id" ref="model_hr_work_entry"/>
+            <field name="binding_view_types">list</field>
+			<field name="state">code</field>
+			<field name="code">
+				if records:
+					action = records.update_flexible_time()
+			</field>
+        </record>
+
+    </data>
+</odoo>

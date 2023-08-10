@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_production_search_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.production.search.view.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.view_mrp_production_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/group/filter[@name='scheduled_date']" position="replace">
+                    <filter string="Category" name="group_categ" domain="[]" context="{'group_by': 'categ_id'}"/>
+                    <filter string="MO Level" name="mo_lv" domain="[('mo_lv', '!=', False)]" context="{'group_by': 'mo_lv'}"/>
+                    <filter string="Bom Archived" name="bom_id" domain="[('bom_id.active', '=', False)]"/>
+                    <filter string="Scheduled Date" name="scheduled_date" domain="[]" context="{'group_by': 'date_planned_start:day'}" help="Scheduled Date by Date"/>
+                </xpath>
+                <xpath expr="//group" position="after">
+                    <searchpanel>
+                        <field name="state" select="multi"/>
+                        <field name="bom_type" select="multi" icon="fa-tags" enable_counters="1"/>
+                        <field name="categ_id" enable_counters="1"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_management_production_form_view_inherit" model="ir.ui.view">
+            <field name="name">Mrp Production</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/header/button[@name='button_unbuild']" position="after">
+                    <button name="open_add_raw" type="object" string="Add Raw" groups="mrp.group_mrp_user"/>
+                </xpath>
+                
+                <xpath expr="//field[@name='bom_id']" position="after">
+                    <field name="mo_lv" readonly="1"/>
+                </xpath>
+
+                <xpath expr="//div[hasclass('oe_button_box')]" position="inside">
+                    <button class="oe_stat_button" name="action_view_productivities" type="object" icon="fa-tasks">
+                        <div class="o_field_widget o_stat_info">
+                            <span class="o_stat_value"><field name="productivity_count"/></span>
+                            <span class="o_stat_text">Productivity</span>
+                        </div>
+                    </button>
+                </xpath>
+
+                <xpath expr="//page[@name='operations']/field[@name='workorder_ids']" position="replace">
+                    <field name="workorder_ids" attrs="{'readonly': [('state', 'in', ['cancel', 'done'])]}"
+                        context="{'tree_view_ref': 'mrp.mrp_production_workorder_tree_editable_view',
+                            'default_product_uom_id': product_uom_id,
+                            'default_consumption': consumption,
+                            'default_company_id': company_id,
+                            'from_manufacturing_order': True}">
+                        <tree editable="bottom">
+                            <field name="consumption" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="is_produced" invisible="1"/>
+                            <field name="is_user_working" invisible="1"/>
+                            <field name="product_uom_id" invisible="1" readonly="0"/>
+                            <field name="production_state" invisible="1"/>
+                            <field name="production_bom_id" invisible="1"/>
+                            <field name="qty_producing" invisible="1"/>
+                            <field name="time_ids" invisible="1"/>
+                            <field name="working_state" invisible="1"/>
+                            <field name="operation_id" invisible="1" domain="['|', ('bom_id', '=', production_bom_id), ('bom_id', '=', False)]" context="{'default_workcenter_id': workcenter_id, 'default_company_id': company_id}"/>
+                            <field name="name" string="Operation"/>
+                            <field name="workcenter_id"/>
+                            <field name="date_planned_start" optional="show"/>
+                            <field name="date_planned_finished" optional="hide"/>
+                            <field name="date_start" optional="hide" readonly="1"/>
+                            <field name="date_finished" optional="hide" readonly="1"/>
+                            <field name="qty_production" readonly="1"/>
+                            <field name="qty_producing" readonly="1"/>
+                            <field name="duration_expected" widget="float_time"/>
+                            <field name="duration" widget="mrp_time_counter" attrs="{'invisible': [('production_state','=', 'draft')], 'readonly': [('is_user_working', '=', True)]}"/>
+                            <field name="state" widget="badge" decoration-success="state == 'done'" decoration-info="state not in ('done', 'cancel')" attrs="{'invisible': [('production_state', 'in', ('draft', 'done'))]}"/>
+                            <button name="button_start" type="object" string="Start" class="btn-success" attrs="{'invisible': ['|', '|', '|', ('production_state','in', ('draft', 'done', 'cancel')), ('working_state', '=', 'blocked'), ('state', '=', 'done'), ('is_user_working', '!=', False)]}"/>
+                            <button name="button_pending" type="object" string="Pause" class="btn-warning" attrs="{'invisible': ['|', '|', ('production_state', 'in', ('draft', 'done', 'cancel')), ('working_state', '=', 'blocked'), ('is_user_working', '=', False)]}"/>
+                            <button name="button_finish" type="object" string="Done" class="btn-success" attrs="{'invisible': ['|', '|', ('production_state', 'in', ('draft', 'done', 'cancel')), ('working_state', '=', 'blocked'), ('is_user_working', '=', False)]}"/>
+                            <button name="934" type="action" string="Block" context="{'default_workcenter_id': workcenter_id}" class="btn-danger" attrs="{'invisible': ['|', ('production_state', 'in', ('draft', 'done', 'cancel')), ('working_state', '=', 'blocked')]}"/>
+                            <button name="button_unblock" type="object" string="Unblock" context="{'default_workcenter_id': workcenter_id}" class="btn-danger" attrs="{'invisible': ['|', ('production_state', 'in', ('draft', 'done', 'cancel')), ('working_state', '!=', 'blocked')]}"/>
+                            <button name="action_open_wizard" type="object" icon="fa-external-link" class="oe_edit_only" context="{'default_workcenter_id': workcenter_id}"/>
+                            <field name="show_json_popover" invisible="1"/>
+                            <field name="json_popover" widget="mrp_workorder_popover" string=" " width="0.1" attrs="{'invisible': [('show_json_popover', '=', False)]}"/>
+                        </tree>
+                    </field>
+                </xpath>
+
+                <xpath expr="//notebook/page/field[@name='move_raw_ids']/tree/field[@name='product_id']" position="before">
+                    <button name="action_print_picking" type="object" string="Print" class="oe_highlight"/>
+                    <field name="sequence" invisible="0"/>
+                </xpath>
+
+                <xpath expr="//group[@name='group_extra_info']/label[@for='date_planned_start']" position="attributes">
+                    <attribute name="string">Scheduled Start Date</attribute>
+                </xpath>
+
+                <xpath expr="//group[@name='group_extra_info']/field[@name='user_id']" position="before">
+                    <label for="date_planned_finished"/>
+                    <div class="o_row">
+                        <field name="date_planned_finished"
+                            attrs="{'readonly': [('state', 'in', ['done', 'cancel'])]}"
+                            decoration-warning="state not in ('done', 'cancel') and date_planned_finished &lt; now"
+                            decoration-danger="state not in ('done', 'cancel') and date_planned_finished &lt; current_date"
+                            decoration-bf="state not in ('done', 'cancel') and (date_planned_finished &lt; current_date or date_planned_finished &lt; now)"/>
+                        <field name="delay_alert_date" invisible="1"/>
+                        <field string=" " name="json_popover" widget="stock_rescheduling_popover" attrs="{'invisible': [('delay_alert_date', '=', False)]}"/>
+                    </div>
+                    <label for="bom_time_produce" string="Scheduled Time"/>
+                    <div>
+                        <field name="bom_time_produce" widget="float_time" class="oe_inline"/> minutes
+                    </div>
+
+                    <label for="bom_total_time" string="Scheduled All Time Processes"/>
+                    <div>
+                        <field name="bom_total_time" widget="float_time" class="oe_inline"/> minutes
+                    </div>
+                </xpath>
+
+                <xpath expr="//page[@name='miscellaneous']" position="inside">
+                    <group name="parent_path" string="Parent Path">
+                        <field name="parent_id" invisible="1"/>
+                        <field name="production_complete_name" class="oe_inline" string="Parent Path"/>
+                        <field name="item_complete_name" class="oe_inline" string="Item Path"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+        <record id="mrp_production_tree_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.production.tree.inherit</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="categ_id"/>
+                    <field name="mo_lv"/>
+                    <field name="bom_type"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="optional">hide</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp.mrp_production_action" model="ir.actions.act_window">
+            <field name="context">{'search_default_todo': True, 'default_company_id': allowed_company_ids[0],'search_default_scheduled_date':True}</field>
+        </record>
+
+    </data>
+</odoo>

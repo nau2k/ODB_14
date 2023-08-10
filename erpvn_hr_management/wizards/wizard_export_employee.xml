@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_export_emplyee_from" model="ir.ui.view">
+        <field name="name">wizard.import.sale</field>
+        <field name="model">wizard.export.employee</field>
+        <field name="arch" type="xml">
+            <form string="Wizards Export Employee">
+                <group>
+                    <group>
+                        <field name="import_type"/>
+                    </group>
+                    <group>
+                        <field name="employee_ids" attrs="{'invisible':[('import_type', 'in', ['select_dep','all'])]}" 
+                        domain="[('employee_type_id.name','!=','Machine'),('active','=',False)] if import_type == 'archive' else [('employee_type_id.name','!=','Machine'),('active','=',True)] " 
+                        widget='many2many_tags'/>
+                        <field name="department_ids" attrs="{'invisible':[('import_type', 'in', ['active','archive','all'])]}"  widget='many2many_tags'/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_export_employee" string="Export File" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_export_employee" model="ir.actions.act_window">
+        <field name="name">Wizard Export Employee</field>
+        <field name="res_model">wizard.export.employee</field>
+        <field name="view_id" ref="wizard_export_emplyee_from"/>
+        <field name="target">new</field>
+    </record>
+</odoo>
+

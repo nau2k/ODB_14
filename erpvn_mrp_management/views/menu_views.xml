@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="menu_mrp_operations" name="Overview" action="mrp.mrp_workcenter_kanban_action"
+            parent="mrp.menu_mrp_root" sequence="5" groups="mrp.group_mrp_manager"/>
+
+            <!-- <menuitem id="menu_mrp_routing" name="Routing Line" action="mrp.mrp_routing_action"
+                parent="mrp.menu_mrp_bom" sequence="14" groups="mrp.group_mrp_manager"/> -->
+
+        <menuitem id="menu_mrp_configuration" name="Configuration"
+            groups="group_mrp_department_manager" sequence="100"/>
+
+        <menuitem id="menu_mrp_operation_line" action="mrp_operation_action_tree_form_view" parent="mrp.menu_mrp_bom"/>
+
+        
+    </data>
+</odoo>

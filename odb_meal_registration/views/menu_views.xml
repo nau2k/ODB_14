@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="hr_meal_menu" name="Meal Registration" sequence="20" action="action_hr_meal" parent="hr_holidays.menu_hr_holidays_root"/>
+    </data>
+</odoo>

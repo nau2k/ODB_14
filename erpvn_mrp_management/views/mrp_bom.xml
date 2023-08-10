@@ -1,0 +1,146 @@
+<odoo>
+    <data>
+
+        <record id="mrp_bom_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp_bom_form_view_inherit</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="before">
+                    <header>
+                        <field name="active" invisible="1"/>
+                    </header>
+                </xpath>
+                <field name='picking_type_id' position="after">
+                    <field name="categ_id" string="Category"/>
+                </field>
+                <xpath expr="//group/div[hasclass('o_row')]" position="after">
+                    <field name="time_produce" widget="float_time"/>
+                    <field name="total_time" widget="float_time"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='components']/field[@name='bom_line_ids']/tree/field[@name='sequence']" position="after">
+                    <field name="seq" string="Seq"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='components']/field[@name='bom_line_ids']/tree" position="inside">
+                    <field name="product_loss"/>
+                    <field name="multiple_qty"/>
+                    <field name="technical_qty"/>
+                    <field name="time_produce" widget="float_time"/>
+                    <button name="move_line_to_extra_plan" type="object" class="btn-danger" icon="fa-arrow-up"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='components']/field[@name='bom_line_ids']/tree/field[@name='product_tmpl_id']" position="after">
+                    <button name="action_see_bom_childs" type="object" icon="fa-cogs" aria-label="Product BoMs"
+                        title="Product BoMs" class="float-right oe_read_only"/>
+                    <field name="boms_count" class="text-left oe_read_only" string=" "/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='operations']" position="replace">
+                    <page string="Operations" name="operations" attrs="{'invisible': [('type', 'not in',('normal','phantom'))]}" groups="mrp.group_mrp_routings">
+                        <field name="operation_ids" attrs="{'invisible': [('type','not in',('normal','phantom'))]}" groups="mrp.group_mrp_routings" context="{'bom_id_invisible': True, 'default_company_id': company_id, 'default_product_tmpl_ids': [product_tmpl_id]}">
+                            <tree editable="bottom">
+                                <field name="sequence"/>
+                                <field name="name"/>
+                                <field name="workcenter_id"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="time_cycle"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page string="Working Time" name="mrp_workingtime_workcenter_ids" attrs="{'invisible': [('type', '=', 'subcontract')]}">
+                        <field name="mrp_workingtime_workcenter_ids" widget="one2many">
+                            <tree string="Working Time WorkCenters">
+                                <field name="sequence" string="Seq"/>
+                                <field name="workcenter_id"/>
+                                <field name="scheduled_time" widget="float_time"/>
+                                <field name="total_scheduled_time" widget="float_time"/>
+                            </tree>
+                        </field>
+                    </page>
+
+                    <page string="Total Material" name="mrp_component_line_ids">
+                        <field name="mrp_component_line_ids" widget="one2many">
+                            <tree string="Total Material">
+                                <field name="sequence" string="Seq"/>
+                                <field name="product_id"/>
+                                <field name="type"/>
+                                <field name="unit_product_price" invisible="1"/>
+                                <field name="uom_id"/>
+                                <field name="line_qty" invisible="1"/>
+                                <field name="need_product_price" invisible="1"/>
+                                <field name="bom_qty"/>
+                                <field name="bom_product_price" invisible="1"/>
+                                <field name="qty_available" string="On Hand" invisible="1"/>
+                                <field name="virtual_available" string="Forecast" invisible="1"/>
+                                <field name="free_qty" string="Available" invisible="1"/>
+                                <field name="qty_reserved" string="Reserved" invisible="1"/>
+                                <field name="qty_needed" string="Needed" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//notebook/page[@name='components']/field[@name='bom_line_ids']" position="before">
+                    <group string="BOM Extra Plans"></group>
+                    <field name="bom_extra_plan_ids" widget="one2many" nolabel="1" context="{'default_parent_product_tmpl_id': product_tmpl_id, 'default_product_id': False, 'default_company_id': company_id, 'default_parent_bom_id': id}">
+                        <tree string="Extra Plans" editable="bottom">
+                            <field name="company_id" invisible="1"/>
+                            <field name="product_tmpl_id" invisible="1"/>
+                            <field name="product_uom_category_id" invisible="1"/>
+                            <field name="parent_product_tmpl_id" invisible="1"/>
+                            <field name="sequence" widget="handle"/>
+                            <field name="seq" string="Seq"/>
+                            <field name="product_id" context="{'default_type': 'product'}"/>
+                            <button name="action_see_bom_childs" type="object" icon="fa-cogs" aria-label="Product BoMs"
+                                title="Product BoMs" class="float-right oe_read_only"/>
+                            <field name="boms_count" class="text-left oe_read_only" string=" "/>
+                            <field name="product_qty"/>
+                            <field name="product_loss"/>
+                            <field name="multiple_qty"/>
+                            <field name="technical_qty"/>
+                            <field name="product_uom_id" string="Product UoM" options="{'no_open':True,'no_create':True}"/>
+                            <field name="product_bom_id" string="Product BOM" invisible="1" options="{'no_open':True,'no_create':True}" domain="[('product_id', '=', product_id)]"/>
+                            <field name="time_produce" widget="float_time"/>
+                            <button name="move_line_to_bom_line" type="object" class="btn-danger" icon="fa-arrow-down"/>
+                        </tree>
+                    </field>
+                    <group string="BOM Components"></group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_mrp_bom_tree_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.bom.tree.inherit</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.mrp_bom_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_id']" position="replace">
+                    <field name="product_id" groups="product.group_product_variant"/>
+                    <field name="categ_id" string="Category"/>
+                    <field name="has_routing"/>
+                    <field name="time_produce"/>
+                    <field name="total_time"/>
+                    <field name="is_update_bom" widget="boolean_toggle" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_mrp_bom_search_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.bom.search.inherit</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="mrp.view_mrp_bom_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='phantom']" position="after">
+                    <filter string="Can be Sold" name="sale_ok" domain="[('product_tmpl_id.sale_ok', '=', True)]"/>
+                    <filter string="Can be Purchase" name="purchase_ok" domain="[('product_tmpl_id.purchase_ok', '=', True)]"/>
+                </xpath>
+                <xpath expr="//group" position="after">
+                    <searchpanel>
+                        <field name="type" select="multi" icon="fa-filter" enable_counters="1"/>
+                        <field name="categ_id"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

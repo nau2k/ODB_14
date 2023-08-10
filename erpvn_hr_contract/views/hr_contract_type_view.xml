@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_contract_type_tree_view" model="ir.ui.view">
+        <field name="name">hr_contract_type_tree_view</field>
+        <field name="model">hr.contract.type</field>
+        <field name="arch" type="xml">
+            <tree string="Contract Types">
+                <field name="name"/>
+                <field name="range_days"/>
+                <field name="is_trial"/>
+                <field name="date_start"/>
+                <field name="date_stop"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_contract_type_form_view" model="ir.ui.view">
+        <field name="name">hr_contract_type_form_view</field>
+        <field name="model">hr.contract.type</field>
+        <field name="arch" type="xml">
+            <form string="Contract Type">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="name"/>
+                            <field name="is_trial" widget="boolean_toggle"/>
+                        </group>
+
+                        <group>
+                            <label for="range_days" string="Range Days"/>
+                            <div class="o_row">
+                                <field name="range_days" placeholder="Range Days"/>
+                                <field name="range_type"/>
+                            </div>
+                            <field name="date_start"/>
+                            <field name="date_stop"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" groups="base.group_user"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_view_hr_contract_type_list_view" model="ir.actions.act_window">
+        <field name="name">Contract Type</field>
+        <field name="res_model">hr.contract.type</field>
+        <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="get_list_employee_xlsx" model="ir.actions.report">
+        <field name="name">Print File Xlsx Employee</field>
+        <field name="model">hr.employee</field>
+        <field name="binding_model_id" ref="model_hr_employee"/>
+        <field name="binding_type">report</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">erpvn_hr_management.export_employee</field>
+        <field name="report_file">List Employee</field>
+        <field name="print_report_name">List Employee</field>
+        <field name="attachment_use">False</field>
+    </record>
+</odoo>

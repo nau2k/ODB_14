@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="employee_resignation_tree" model="ir.ui.view">
+            <field name="name">hr.resignation.tree</field>
+            <field name="model">hr.resignation</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Employee Resignation" decoration-success="state == 'approved'" decoration-info="state == 'confirm'" decoration-muted="state == 'cancel'">
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="company_id" invisible="1"/>
+                    <field name="employee_contract_id" options="{'no_create': True}"/>
+                    <field name="joined_date" readonly="1"/>
+                    <field name="expected_revealing_date"/>
+                    <field name="approved_revealing_date"/>
+                    <field name="resignation_type"/>
+                    <field name="notice_period"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="employee_resignation_form" model="ir.ui.view">
+            <field name="name">hr.resignation.form</field>
+            <field name="model">hr.resignation</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Employee Resignation">
+                    <header>
+                        <button name="send_resignation" type="object" string="Send"  states='draft' class="oe_highlight" />
+                        <button string="Confirm" type="object" name="confirm_resignation" groups="hr.group_hr_user" states='waiting' class="oe_highlight"/>
+                        <button string="Cancel" type="object" name="cancel_resignation" groups="hr.group_hr_user" states='waiting'/>
+                        <button string="Approve" type="object" groups="hr.group_hr_user" name="approve_resignation" states='confirm' class="oe_highlight"/>
+                        <button string="Reject" type="object" groups="hr.group_hr_user" name="reject_resignation" states='confirm'/>
+                        <button string="Set to Draft" type="object" groups="hr.group_hr_manager" name="reset_to_draft" states='confirm, cancel'/>
+                        <button string="Print" type="object" name="action_py3o_print"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,waiting,confirm"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group string="Employee Details">
+                                <!-- <field name="read_only" invisible="1"/> -->
+                                <field name="is_manager" invisible="1"/>
+                                <field name="is_future_day" invisible="1"/>
+                                <field name="employee_id" attrs="{'readonly': ['|','|','|',('is_manager','=',False),('state','!=','draft'),('is_manager','=',False),('state','=','confirm')]}" options="{'no_create': True}" required='1' 
+                                domain="['|',('resign_ids.state', '=','cancel'),('resign_ids', '=',False),('contract_ids.state','in',('expiring','open','close'))] "/>
+                
+                                <field name="department_id" readonly="1"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="employee_contract_id" options="{'no_create': True}" domain="[('employee_id','=',employee_id)]"  force_save='1' readonly='1'/>
+                            </group>
+                            <group string="Dates">
+                                <field name="joined_date" force_save='1' readonly='1'/>
+                                <!-- <field name="joined_date" attrs="{'readonly':[('state','=','confirm')]}"/> -->
+                                <field name="resign_confirm_date" attrs="{'invisible':[('resign_confirm_date','=',False),('is_future_day','=',True)],'readonly':[('state','!=','draft')],'required':[('is_future_day','!=',True)]}"/>
+                                <field name="expected_revealing_date" attrs="{'readonly':[('state','!=','draft')]}" />
+                                <field name="approved_revealing_date" attrs="{'invisible':[('approved_revealing_date','=',False),('is_future_day','=',True)],'readonly':[('state','!=','draft')],'required':[('is_future_day','!=',True)]}"/>
+                                <field name="notice_period"  force_save='1' readonly='1'/>
+                            </group>
+                            <group string="Resignation Details">
+                                <field name="resignation_type" string="Type" groups="hr.group_hr_user" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="reason" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- add state 'waiting' -->
+        <record model="ir.actions.act_window" id="hr_resignation_request">
+            <field name="name">Employee Resignation</field>
+            <field name="res_model">hr.resignation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', 'in', ('draft', 'confirm','waiting','cancel'))]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Employee Resignation Form
+                </p>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="hr_resignation_approved">
+            <field name="name">Approved Resignation</field>
+            <field name="res_model">hr.resignation</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state', '=', 'approved')]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Approved Resignation
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

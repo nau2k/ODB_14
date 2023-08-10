@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="timeshet_line">
+        <div class="container o_mrp_bom_report_page">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="mt16">
+                        <table width="100%" class="o_mrp_bom_expandable" border="1">
+                            <thead>
+                                <tr>
+                                    <th class="tg-0pky">Employee</th>
+                                    <th class="tg-0pky">Department</th>
+                                    <th class="tg-0pky">Section</th>
+                                    <th class="tg-0pky">Type</th>
+                                    <t t-foreach="date" t-as="rec">
+                                        <td class="tg-0pky">
+                                            <t t-esc="rec"/>
+                                        </td>
+                                    </t>
+                                </tr>
+                            </thead>
+                            <t t-foreach="data" t-as="rec">
+                                <tbody>
+                                    <tr>
+                                        <td class="tg-0lax" rowspan="2">
+                                            <t t-esc="rec[0][0].name"/>
+                                        </td>
+                                        <td class="tg-0lax" rowspan="2">
+                                            <t t-esc="rec[1][0].name"/>
+                                        </td>
+                                        <td class="tg-0lax" rowspan="2">
+                                            <t t-esc="rec[2][0].name"/>
+                                        </td>
+                                        <td class="tg-0lax" rowspan="2">
+                                            <t t-foreach="rec[3][0]" t-as="key">
+                                                <p>
+                                                    <t t-esc="key.name"/>
+                                                </p>
+                                                <hr/>
+                                            </t>
+                                        </td>
+                                        <t t-foreach="rec[3][0]" t-as="key">
+                                            <t t-foreach="key_value" t-as="key_2">
+                                                <td class="tg-0lax">
+                                                    <t t-esc="key_2_value"/>
+                                                    <hr/>
+                                                </td>
+                                            </t>
+                                        </t>
+                                    </tr>
+                                </tbody>
+                            </t>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_timsheet">
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <t t-call="erpvn_hr_work_entry.timeshet_line"/>
+            </div>
+        </t>
+    </template>
+
+</odoo>

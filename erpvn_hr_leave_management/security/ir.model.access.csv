@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_leave_mode_type_employee,hr.leave.mode.type.employee,model_hr_leave_mode_type,hr_holidays.group_hr_holidays_responsible,1,0,0,0
+access_hr_leave_mode_type_department_user,hr.leave.mode.type.department_user,model_hr_leave_mode_type,erpvn_hr_leave_management.group_hr_holidays_department_user,1,0,0,0
+access_hr_leave_mode_type_user,hr.leave.mode.type.user,model_hr_leave_mode_type,hr_holidays.group_hr_holidays_user,1,0,0,0
+access_hr_leave_mode_type_manager,hr.leave.mode.type.manager,model_hr_leave_mode_type,hr_holidays.group_hr_holidays_manager,1,1,1,1
+access_hr_leave_employee_list,hr.leave.employee.list,model_hr_leave_employee_list,base.group_user,1,1,1,1
+,,,,,,,
+access_update_nextcall_allocation_wizard,update.nextcall.allocation.wizard,model_update_nextcall_allocation_wizard,hr_holidays.group_hr_holidays_manager,1,1,1,0

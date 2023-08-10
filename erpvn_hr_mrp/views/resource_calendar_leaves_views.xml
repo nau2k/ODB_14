@@ -1,0 +1,112 @@
+<odoo>
+    <data>
+
+        <record id="resource_calendar_leaves_search_view_inherit" model="ir.ui.view">
+            <field name="name">Resource Calendar</field>
+            <field name="model">resource.calendar.leaves</field>
+            <field name="inherit_id" ref="resource.view_resource_calendar_leaves_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='calendar_id']" position="after">
+                    <filter name="7days" help="7 days" string="7 days" domain="[
+                        ('date_to', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0))),
+                        ('date_to', '&lt;=', (context_today() + datetime.timedelta(7)).strftime('%Y-%m-%d')),]"/>
+                    <filter name="15days" help="Range 15 days" string="Range 15 days" domain="[
+                        ('date_to', '&gt;=', (context_today() - datetime.timedelta(7)).strftime('%Y-%m-%d')),
+                        ('date_to', '&lt;=', (context_today() + datetime.timedelta(7)).strftime('%Y-%m-%d')),]"/>
+                    <filter name="30days" help="Range 30 days" string="Range 30 days" domain="[
+                        ('date_to', '&gt;=', (context_today() - datetime.timedelta(15)).strftime('%Y-%m-%d')),
+                        ('date_to', '&lt;=', (context_today() + datetime.timedelta(15)).strftime('%Y-%m-%d')),]"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="resource_calendar_leaves_tree_view_inherit" model="ir.ui.view">
+            <field name="name">Resource Calendar</field>
+            <field name="model">resource.calendar.leaves</field>
+            <field name="inherit_id" ref="resource.resource_calendar_leave_tree"/>
+            <field name="arch" type="xml">
+                <tree position="replace">
+                    <tree string="Leave Detail">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="employee_id"/>
+                        <field name="workcenter_id"/>
+                        <field name="name" string="Reason"/>
+                        <field name="department_id"/>
+                        <field name="resource_id" invisible="1"/>
+                        <field name="calendar_id" string="Timesheet"/>
+                        <!-- <field name="hours_per_day"/> -->
+                        <field name="duration"/>
+                        <field name="time_processed"/>
+                        <field name="state" widget="selection"/>
+                        <field name="company_id" groups="base.group_multi_company" invisible="1"/>
+                    </tree>
+                </tree>
+            </field>
+        </record>
+
+        <record id="workcenter_resource_calendar_leaves_pivot" model="ir.ui.view">
+            <field name="name">Workcenter Resource Calendar</field>
+            <field name="model">resource.calendar.leaves</field>
+            <field name="arch" type="xml">
+                <pivot string="Workcenter Resource Calendar"  disable_linking="False">
+                    <field type="row" name="department_id"/>
+                    <field type="col" name="date_to" interval="day"/>
+                    <!-- <field type="measure" name="hours_per_day" string="Avg Hours/Day"/> -->
+                    <!-- <field type="measure" name="duration"/> -->
+                    <field type="measure" name="time_processed"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="employee_resource_calendar_leaves_pivot" model="ir.ui.view">
+            <field name="name">Workcenter Resource Calendar</field>
+            <field name="model">resource.calendar.leaves</field>
+            <field name="arch" type="xml">
+                <pivot string="Workcenter Resource Calendar"  disable_linking="False">
+                    <field type="row" name="department_id"/>
+                    <field type="row" name="employee_id"/>
+                    <field type="col" name="date_to" interval="day"/>
+                    <!-- <field type="measure" name="hours_per_day" string="Avg Hours/Day"/> -->
+                    <field type="measure" name="duration"/>
+                    <field type="measure" name="time_processed"/>
+                </pivot>
+            </field>
+        </record>
+        
+
+        <record id="action_employee_resource_calendar" model="ir.actions.act_window">
+            <field name="name">Employee Resource</field>
+            <field name="res_model">resource.calendar.leaves</field>
+            <field name="view_mode">pivot,calendar,tree,form</field>
+            <field name="view_id" ref="employee_resource_calendar_leaves_pivot"/>
+            <field name="domain">[('employee_id','!=',False)]</field>
+            <field name="binding_model_id" ref="model_resource_calendar_leaves"/>
+            <field name="context">{'search_default_15days':True,}</field>
+        </record>
+
+        <record id="action_workcenter_resource_calendar" model="ir.actions.act_window">
+            <field name="name">Workcenter Resource</field>
+            <field name="res_model">resource.calendar.leaves</field>
+            <field name="view_mode">pivot,calendar,tree,form</field>
+             <!-- <field name="view_mode">pivot,calendar,tree,form,cohort</field> -->
+            <field name="view_id" ref="workcenter_resource_calendar_leaves_pivot"/>
+            <field name="domain">[('workcenter_id','!=',False)]</field>
+            <field name="binding_model_id" ref="model_resource_calendar_leaves"/>
+            <field name="context">{'search_default_15days':True,}</field>
+        </record>
+
+		<record id="action_recompute_duration_resource_calendar_leaves" model="ir.actions.server">
+			<field name="name">Recompute Duration</field>
+			<field name="type">ir.actions.server</field>
+			<field name="model_id" ref="resource.model_resource_calendar_leaves"/>
+			<field name="binding_model_id" ref="resource.model_resource_calendar_leaves"/>
+			<field name="state">code</field>
+			<field name="code">
+				if records:
+					action = records.recompute_duration()
+			</field>
+		</record>
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<odoo>
+    
+    <record id="wizard_open_timesheet_from" model="ir.ui.view">
+        <field name="name">wizard_open_timesheet</field>
+        <field name="model">wizard.open.timesheet</field>
+        <field name="arch" type="xml">
+            <form string="Caption" create="true" delete="true" edit="true">
+                <group>
+                    <group>
+                        <field name="is_department"/>
+                        <field name="is_employee"/>
+                    </group>
+                    <group>
+                        <field name="department_ids" attrs="{'invisible': [('is_department', '=',False)]}" widget="many2many_tags"/>
+                        <field name="employee_ids" attrs="{'invisible': [('is_employee', '=', False)]}"  widget="many2many_tags"/>
+                        <label for="date_from" string="Dates"/>
+                        <div>
+                            <div class="o_row o_row_readonly">
+                                <span class="oe_inline">
+                                    From
+                                </span>
+                                <field name="date_from" class="oe_inline" nolabel="1"/>
+                                <span class="oe_inline">
+                                    To
+                                </span>
+                                <field name="date_to" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                </group>
+                <footer>
+                    <button special="cancel" string="Cancel"/>
+                    <button name="genarate" string="Genarate" type="object" class="oe_highlight"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_open_timesheet_action" model="ir.actions.act_window">
+        <field name="name">Wizard Open Timesheet</field>
+        <field name="res_model">wizard.open.timesheet</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_open_timesheet_from"/>
+        <field name="target">new</field>
+    </record>
+    
+</odoo>

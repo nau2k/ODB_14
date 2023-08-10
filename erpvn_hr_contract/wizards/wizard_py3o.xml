@@ -1,0 +1,17 @@
+<odoo>
+    <record id="print_option_form_view" model="ir.ui.view">
+        <field name="name">wizard.option.print.py3o.form.view</field>
+        <field name="model">wizard.option.print.py3o</field>
+        <field name="arch" type="xml">
+            <form string="Option">
+                <group>
+                    <field name="option_print" string="Option print"/>
+                </group>
+                <footer>
+                    <button name="print" string="Print" type="object" class="btn-primary"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

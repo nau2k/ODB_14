@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="leave_request_mail" model="mail.template">
+            <field name="name">Approve Leave Request</field>
+            <field name="subject">Leave Request: ${object.employee_id.name} - ${object.holiday_status_id.name} ${object.get_duration_display_for_mail()}</field>
+            <field name="email_from">${user.email or object.employee_id.work_email}</field>
+            <field name="email_to">${object.employee_id.parent_id.work_email}</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="xml">
+<div>
+    Dear ${object.get_receiver(object.employee_id.parent_id)},<br/>
+    The request for leave is waiting for your approve<br/>
+    NOTE: This request is going to be cancelled automatically after 72 hours without your approve.
+    <br/><br/>
+
+    <table>
+        <tr>
+            <td>${object.get_type()}</td>
+            <td></td>                      
+            <td></td>                      
+            <td>${object.get_type_value()}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td></td>   
+            <td></td>
+            <td>${object.get_description()}</td>
+        </tr>
+        <tr>
+            <td>Leave Type</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.holiday_status_id.name}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.get_duration_display_for_mail()}</td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_from.strftime('%d/%m/%Y')}</td> 
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_to.strftime('%d/%m/%Y')}</td>
+        </tr>
+    </table>
+
+    <br/>
+    You will find more details here:
+    <div style="margin: 16px 0px 16px 0px;">
+        <a href="/web#id=${object.id}&amp;action=574&amp;model=hr.leave&amp;view_type=form&amp;cids=1&amp;menu_id=395"
+                style="padding: 8px 16px 8px 16px; font-size: 14px; color: #FFFFFF; text-decoration: none !important; background-color: #875A7B; border: 0px solid #875A7B; border-radius:3px">
+            View Time Off
+        </a>
+    </div>
+    <br/><br/>
+    Regards,
+    % if object.employee_id
+        <br/>
+        <p>${object.employee_id.name}</p>
+    % endif
+</div>
+            </field>
+        </record>
+
+
+        <record id="leave_request_mail_remind" model="mail.template">
+            <field name="name">Remind: Request for leave about to be refuse</field>
+            <field name="subject">Remind leave request about to be refuse!</field>
+            <field name="email_from">${user.email}</field>
+            <field name="email_to">${object.get_receiver_email(object.employee_id.parent_id)}</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="xml">
+<div>
+    Dear ${object.get_receiver(object.employee_id.parent_id)},<br/>
+    The request for leave is waiting for your approve<br/>
+    NOTE: This request is going to be cancelled automatically after 24 hours without your approve.
+    <br/><br/>
+
+    <table class="table table-condensed table-bordered">
+        <thead>
+            <tr class="active">
+                <th class="text-center" style="vertical-align:middle;" width="150px">
+                    <strong>${object.get_type()}</strong>
+                </th>
+                <th class="text-center" style="vertical-align:middle;" width="200px">
+                    <strong>Description</strong>
+                </th>
+                <th class="text-center" style="vertical-align:middle;" width="100px">
+                    <strong>Leave Type</strong>
+                </th>
+                <th class="text-center" style="vertical-align:middle;" width="100px">
+                    <strong>Duration</strong>
+                </th>
+                <th class="text-center" style="vertical-align:middle;" width="100px">
+                    <strong>Start Date</strong>
+                </th>
+                <th class="text-center" style="vertical-align:middle;" width="100px">
+                    <strong>End Date</strong>
+                </th>
+                <th class="text-center" style="vertical-align:middle;" width="70px">
+                    <strong>Detail</strong>
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            % set records = ctx.get('data', {})
+            % for rec in records:
+                <tr>
+                    <td>${rec.get_type_value()}</td>
+                    <td>${rec.get_description()}</td>
+                    <td>${rec.holiday_status_id.name}</td>
+                    <td>${rec.get_duration_display_for_mail()}</td>
+                    <td>${rec.date_from.strftime('%d/%m/%Y')}</td>
+                    <td>${rec.date_to.strftime('%d/%m/%Y')}</td>
+                    <td>
+                        <a href="/erpvn_hr_leave_management/holiday/view?id=${rec.id}"
+                            style="padding: 2px 6px; color: #FFFFFF; text-decoration: none; background-color: #5D8DA8; border: 1px solid #5D8DA8;">
+                            View</a>
+                    </td>
+                </tr>
+            % endfor
+        </tbody>
+    </table>
+
+    <br/>
+
+    Go to list time off
+    <div style="margin: 16px 0px 16px 0px;">
+        <a href="erpvn_hr_leave_management/holidays/view"
+            style="padding: 2px 6px; color: #FFFFFF; text-decoration: none; background-color: #5D8DA8; border: 1px solid #5D8DA8;">
+            View Time Off
+        </a>
+    </div>
+
+    <br/><br/>
+    Regards,
+    % if user.name
+        <br/>
+        <p>${user.name}</p>
+    % endif
+</div>
+            </field>
+        </record>
+
+        <record id="leave_validation_mail" model="mail.template">
+            <field name="name">Validate Leave Request</field>
+            <field name="subject">Leave Request: ${object.employee_id.name} - ${object.holiday_status_id.name} ${object.get_duration_display_for_mail()}</field>
+            <field name="email_from">${user.email}</field>
+            <field name="email_to">${object.employee_id.parent_id.work_email}</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="xml">
+
+<div>
+    Dear ${object.get_receiver(object.employee_id.parent_id)},<br/>
+    The request for leave is waiting for your validation.<br/>
+    <br/><br/>
+
+    <table>
+        <tr>
+            <td>${object.get_type()}</td>
+            <td></td>                      
+            <td></td>                      
+            <td>${object.get_type_value()}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td></td>   
+            <td></td>
+            <td>${object.get_description()}</td>
+        </tr>
+        <tr>
+            <td>Leave Type</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.holiday_status_id.name}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.get_duration_display_for_mail()}</td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_from.strftime('%d/%m/%Y')}</td> 
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_to.strftime('%d/%m/%Y')}</td>
+        </tr>
+    </table>
+
+    <br/>
+    You will find more details here:
+    <div style="margin: 16px 0px 16px 0px;">
+        <a href="/web#id=${object.id}&amp;action=574&amp;model=hr.leave&amp;view_type=form&amp;cids=1&amp;menu_id=395"
+                style="padding: 8px 16px 8px 16px; font-size: 14px; color: #FFFFFF; text-decoration: none !important; background-color: #875A7B; border: 0px solid #875A7B; border-radius:3px">
+            View Time Off
+        </a>
+    </div>
+    <br/><br/>
+    Regards,
+    % if object.employee_id.parent_id
+        <br/>
+        <p>${object.employee_id.parent_id.name}</p>
+    % else:
+        % if user.employee_id
+            <br/>
+            <p>${user.employee_id.name}</p>
+        % endif
+    % endif
+</div>
+            </field>
+        </record>
+
+        <record id="leave_approval_mail" model="mail.template">
+            <field name="name">Approved Leave Request</field>
+            <field name="subject">Approved Request: ${object.employee_id.name} - ${object.holiday_status_id.name} ${object.get_duration_display_for_mail()}</field>
+            <field name="email_from">${object.employee_id.parent_id.work_email}</field>
+            <field name="email_to">${object.employee_id.work_email}</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="xml">
+
+<div>
+    Dear ${object.get_receiver(object.employee_id)},<br/>
+    Your request has been approved by ${object.employee_id.parent_id.name | safe}<br/>
+    <br/><br/>
+
+    <table>
+        <tr>
+            <td>${object.get_type()}</td>
+            <td></td>                      
+            <td></td>                      
+            <td>${object.get_type_value()}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td></td>   
+            <td></td>
+            <td>${object.get_description()}</td>
+        </tr>
+        <tr>
+            <td>Leave Type</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.holiday_status_id.name}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.get_duration_display_for_mail()}</td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_from.strftime('%d/%m/%Y')}</td> 
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_to.strftime('%d/%m/%Y')}</td>
+        </tr>
+    </table>
+
+    <br/>
+    You will find more details here:
+    <div style="margin: 16px 0px 16px 0px;">
+        <a href="/web#id=${object.id}&amp;action=574&amp;model=hr.leave&amp;view_type=form&amp;cids=1&amp;menu_id=395"
+                style="padding: 8px 16px 8px 16px; font-size: 14px; color: #FFFFFF; text-decoration: none !important; background-color: #875A7B; border: 0px solid #875A7B; border-radius:3px">
+            View Time Off
+        </a>
+    </div>
+    <br/><br/>
+    Regards,
+    % if object.employee_id.parent_id
+        <br/>
+        <p>${object.employee_id.parent_id.name}</p>
+    % else:
+        % if user.employee_id
+            <br/>
+            <p>${user.employee_id.name}</p>
+        % endif
+    % endif
+</div>
+            </field>
+        </record>
+
+
+        <record id="leave_rejection_mail" model="mail.template">
+            <field name="name">Reject Leave Request</field>
+            <field name="subject">Rejected Request: ${object.employee_id.name} - ${object.holiday_status_id.name} ${object.get_duration_display_for_mail()}</field>
+            <field name="email_from">${user.email | safe}</field>
+            <field name="email_to">${object.employee_id.work_email | safe}</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="xml">
+
+<div>
+    Dear ${object.get_receiver(object.employee_id)},<br/>
+    Your request has been rejected by ${user.employee_id.name or user.name}.<br/>
+    <br/><br/>
+
+    <table>
+        <tr>
+            <td>${object.get_type()}</td>
+            <td></td>                      
+            <td></td>                      
+            <td>${object.get_type_value()}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td></td>   
+            <td></td>
+            <td>${object.get_description()}</td>
+        </tr>
+        <tr>
+            <td>Leave Type</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.holiday_status_id.name}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.get_duration_display_for_mail()}</td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_from.strftime('%d/%m/%Y')}</td> 
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_to.strftime('%d/%m/%Y')}</td>
+        </tr>
+    </table>
+
+    <br/>
+    You will find more details here:
+    <div style="margin: 16px 0px 16px 0px;">
+        <a href="/web#id=${object.id}&amp;action=574&amp;model=hr.leave&amp;view_type=form&amp;cids=1&amp;menu_id=395"
+                style="padding: 8px 16px 8px 16px; font-size: 14px; color: #FFFFFF; text-decoration: none !important; background-color: #875A7B; border: 0px solid #875A7B; border-radius:3px">
+            View Time Off
+        </a>
+    </div>
+    
+    <br/><br/>
+    Regards,
+    % if user.employee_id
+        <br/>
+        <p>${user.employee_id.name}</p>
+    % else:
+        <br/>
+        <p>${user.name}</p>
+    % endif
+</div>
+            </field>
+        </record>
+
+        <record id="leave_rejection_mail_automatically" model="mail.template">
+            <field name="name">Cancel Leave Request</field>
+            <field name="subject">Cancelled Request: ${object.employee_id.name} - ${object.holiday_status_id.name} ${object.get_duration_display_for_mail()}</field>
+            <field name="email_from">${user.email | safe}</field>
+            <field name="email_to">${object.employee_id.work_email | safe}</field>
+            <field name="model_id" ref="hr_holidays.model_hr_leave"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="xml">
+
+<div>
+    Dear ${object.get_receiver(object.employee_id)},<br/>
+    Your request has been cancelled automatically due to not be approved after 72 hours.<br/>
+    <br/><br/>
+
+    <table>
+        <tr>
+            <td>${object.get_type()}</td>
+            <td></td>                      
+            <td></td>                      
+            <td>${object.get_type_value()}</td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td></td>   
+            <td></td>
+            <td>${object.get_description()}</td>
+        </tr>
+        <tr>
+            <td>Leave Type</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.holiday_status_id.name}</td>
+        </tr>
+        <tr>
+            <td>Duration</td>
+            <td></td>
+            <td></td>   
+            <td> ${object.get_duration_display_for_mail()}</td>
+        </tr>
+        <tr>
+            <td>Start Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_from.strftime('%d/%m/%Y')}</td> 
+        </tr>
+        <tr>
+            <td>End Date</td>
+            <td></td>
+            <td></td>   
+            <td>${object.date_to.strftime('%d/%m/%Y')}</td>
+        </tr>
+    </table>
+
+    <br/>
+    You will find more details here:
+    <div style="margin: 16px 0px 16px 0px;">
+        <a href="/erpvn_hr_leave_management/holiday/view?id=${object.id}"
+            style="padding: 2px 6px; color: #FFFFFF; text-decoration: none; background-color: #5D8DA8; border: 1px solid #5D8DA8;">
+            View Time Off</a>
+    </div>
+
+    <br/><br/>
+    Regards,
+    % if user.employee_id
+        <br/>
+        <p>${user.employee_id.name}</p>
+    % else:
+        <br/>
+        <p>${user.name}</p>
+    % endif
+</div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

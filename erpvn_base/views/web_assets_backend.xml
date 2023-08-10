@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="erpvn_base assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/erpvn_base/static/js/gridjs.umd.js"></script>
+            <script type="text/javascript" src="/erpvn_base/static/js/list_controller.js"/>
+            <script type="text/javascript" src="/erpvn_base/static/js/field_utils.js"></script>
+            <script type="text/javascript" src="/erpvn_base/static/js/many2many_tags_description.js"></script>
+
+            <link rel="stylesheet" href="/erpvn_base/static/css/gridjs.min.css"/>
+            <link rel="stylesheet" href="/erpvn_base/static/css/watermark.css"/>
+        </xpath>
+   </template>
+
+    <template id="assets_common" name="erpvn_base assets_common" inherit_id="web.assets_common">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="erpvn_base/static/js/widgets/data_export.js"></script>
+        </xpath>
+   </template>
+
+</odoo>

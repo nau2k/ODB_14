@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="list assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script src="/erpvn_hr_work_entry/static/src/js/validate_work_entries.js" type="text/javascript"/>
+        </xpath>
+    </template>
+
+</odoo>

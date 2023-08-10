@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mrp_ext_mrp_routing_workcenter_tree_view_inherit" model="ir.ui.view">
+            <field name="name">mrp_ext_mrp_routing_workcenter_tree_view_inherit</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sequence']" position="replace">
+                    <field name="seq" widget="handle"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="before">
+                    <field name="sequence" string="Sequence"/>
+                    <field name="bom_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_routing_workcenter_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.form.view.inherit</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sequence']" position="attributes">
+                    <attribute name="groups">mrp.group_mrp_user</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

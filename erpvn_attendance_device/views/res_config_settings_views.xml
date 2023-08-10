@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.hr.attendance</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="hr_attendance.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='pincode_setting_container']" position="after">
+                    <div class="row mt16 o_settings_container" name="limited_hours_to_get_attendances">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Get Attendances</span>
+                                <span class="fa fa-lg fa-globe" title="Limited Hours To Get Attendances Automatically (Hours)"/>
+                                <div class="text-muted">
+                                    Set limited range hours to get attendances automatically.
+                                </div>
+                                <div class="content-group" title="Limited Hours To Get Attendances Automatically (Hours)">
+                                    <div class="row mt16">
+                                        <div class="col-12">
+                                            <label for="limited_hours_to_get_attendances" string="Limited range to get attendances automatically in" class="o_light_label"/>
+                                            <field class="col-2" name="limited_hours_to_get_attendances"/> hours.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Limited Range In Attendances</span>
+                                <span class="fa fa-lg fa-cutlery" title="The limited range between check in and out (minutes)"/>
+                                <div class="text-muted">
+                                    Set limited minutes range between check in and out attendances.
+                                </div>
+                                <div class="content-group" title="The limited range between check in and out (minutes)">
+                                    <div class="row mt16">
+                                        <div class="col-12">
+                                            <label for="attendance_range_in_minutes" string="The limited range between check in and out in" class="o_light_label"/>
+                                            <field class="col-2" name="attendance_range_in_minutes"/> minutes.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Limited Hours Between Check In And Out</span>
+                                <span class="fa fa-lg fa-globe" title="Limited Hours Between Check In And Check Out (Hours)"/>
+                                <div class="text-muted">
+                                    Set limited range hours to get attendances between check in and check out.
+                                </div>
+                                <div class="content-group" title="Limited Hours Between Check In And Check Out (Hours)">
+                                    <div class="row mt16">
+                                        <div class="col-12">
+                                            <label for="limited_hours_between_in_out" string="Set limited range hours to get attendances between check in and check out" class="o_light_label"/>
+                                            <field class="col-2" name="limited_hours_between_in_out"/> hours.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

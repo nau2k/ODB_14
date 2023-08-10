@@ -1,0 +1,1618 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* erpvn_mrp_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-23 16:54+0000\n"
+"PO-Revision-Date: 2023-05-23 16:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "<span class=\"o_stat_text\">Productivity</span>"
+msgstr "<span class=\"o_stat_text\">Năng suất</span>"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_bom_extra_plan__product_loss
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom_line__product_loss
+msgid "A factor of 0.9 means a loss of 10% within the production process."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__active
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__active
+msgid "Active"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__working_time
+msgid "Actual Time (hh:ss)"
+msgstr "Thời gian thực tế (hh:ss)"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_production.py:0
+#, python-format
+msgid "Add Materials"
+msgstr "Thêm nguyên liệu"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "Add Raw"
+msgstr "Thêm nguyên liệu"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_stock_picking_wizard_form
+msgid ""
+"Add an internal note that will be printed on the Picking Operations sheet"
+msgstr "Thêm một ghi chú nội bộ sẽ được in ra khi có Hoạt động xuất kho"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_production.py:0
+#, python-format
+msgid ""
+"Add some materials to consume before marking these MO(s) as to do:\n"
+"+ "
+msgstr ""
+"Thêm một vài nguyên liệu tiêu thụ trước khi đánh dấu MO cần thực hiện:\n"
+"+ "
+
+#. module: erpvn_mrp_management
+#: model:ir.model.constraint,message:erpvn_mrp_management.constraint_bom_extra_plan_extra_plan_qty_zero
+msgid "All product quantities must be greater or equal to 0."
+msgstr "Tất cả số lượng sản phẩm phải lớn hơn hoặc bằng 0."
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Available"
+msgstr "Sẵn sàng"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "BOM Components"
+msgstr "BoM bán thành phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_bom_extra_plan
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__bom_extra_plan_ids
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_form_view
+msgid "BOM Extra Plan"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.actions.act_window,name:erpvn_mrp_management.bom_extra_plan_action
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_tree_view
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "BOM Extra Plans"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__barcode
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__barcode
+msgid "Barcode"
+msgstr "Mã vạch"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom_line__barcode
+msgid "Barcode used for packaging identification"
+msgstr "Mã vạch dùng để nhận dạng các kiện hàng"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_bom
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_search_view
+msgid "Bill of Material"
+msgstr "Định mức nguyên liệu"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_bom_line
+msgid "Bill of Material Line"
+msgstr "Chi tiết định mức nguyên liệu"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.actions.act_window,help:erpvn_mrp_management.bom_extra_plan_action
+msgid ""
+"Bills of materials line allow you to define the list of required raw\n"
+"                materials used to make a finished product; through a manufacturing\n"
+"                order or a pack of products."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__block_reson_id
+msgid "Block Reason"
+msgstr "Lý do khóa"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/wizards/mrp_bom_selection_wizard.py:0
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__bom_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__bom_id
+#, python-format
+msgid "BoM"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__bom_product_price
+msgid "BoM Price"
+msgstr "Chi phí BoM"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__bom_qty
+msgid "BoM Qty"
+msgstr "SL BoM"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__type
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__bom_type
+msgid "BoM Type"
+msgstr "Kiểu Định mức"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__version
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__version
+msgid "BoM Version"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__boms_count
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__boms_count
+msgid "BoMs Count"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workcenter.py:0
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter__wc_type__b
+#, python-format
+msgid "Both"
+msgstr "Cả hai"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.product_mrp_bom_search_view_inherit
+msgid "Can be Purchase"
+msgstr "Có thể mua"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.product_mrp_bom_search_view_inherit
+msgid "Can be Sold"
+msgstr "Có thể bán"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workorder.py:0
+#, python-format
+msgid "Can not block in %s status!"
+msgstr "Không thể khóa trong trạng thái %s!"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_selection_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_stock_picking_wizard_form
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.wizard_print_picking
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter_productivity__state__cancel
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workorder__state__cancel
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__stock_picking_wizard__state__cancel
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__capacity
+msgid "Capacity"
+msgstr "Năng suất"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_ext_mrp_workcenter_form_view_inherit
+msgid "Capacity Information"
+msgstr "Thông tin năng suất"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workcenter_productivity__capacity
+msgid "Capacity of this worker."
+msgstr "Năng xuất của công nhân này"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__product_uom_category_id
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.product_mrp_bom_tree_view_inherit
+msgid "Category"
+msgstr "Danh mục"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_product__categ_code
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_template__categ_code
+msgid "Category Code"
+msgstr "Mã danh mục"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__child_ids
+msgid "Child Categories"
+msgstr "Danh mục con"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__child_template_ids
+msgid "Child Template Id"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__complete_name
+msgid "Complete Name"
+msgstr "Tên đầy đủ"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_component_line__type__com
+msgid "Component"
+msgstr "Thành phần"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__mrp_component_line_ids
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_component_line_tree_view
+msgid "Component Line"
+msgstr "Line Bán thành phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.ui.menu,name:erpvn_mrp_management.menu_mrp_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__operation_id
+msgid "Consumed in Operation"
+msgstr "Tiêu thụ trong hoạt động"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__partner_id
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_bom_extra_plan__product_uom_category_id
+msgid ""
+"Conversion between Units of Measure can only occur if they belong to the "
+"same category. The conversion will be made based on the ratios."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__productivity_count
+msgid "Count of productivity"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__create_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__create_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__create_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__create_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__create_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__create_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__create_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__create_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__create_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__create_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__create_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__create_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__create_date
+msgid "Created on"
+msgstr "Tạo lúc"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__consumption
+msgid ""
+"Defines if you can consume more or less components than the quantity defined on the BoM:\n"
+"  * Allowed: allowed for all manufacturing users.\n"
+"  * Allowed with warning: allowed for all manufacturing users with summary of consumption differences when closing the manufacturing order.\n"
+"  * Blocked: only a manager can close a manufacturing order when the BoM consumption is not respected."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__ready_to_produce
+msgid ""
+"Defines when a Manufacturing Order is considered as ready to be started"
+msgstr "Xác định khi lệnh sản xuất sẵn sàng để bắt đầu"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__product_uom_qty
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_stock_picking_wizard_form
+msgid "Demand"
+msgstr "Nhu cầu"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/wizards/stock_picking_wizard.py:0
+#, python-format
+msgid "Demand for Product %s invalid."
+msgstr "SL nhu cầu của sản phẩm %s không đúng."
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__location_dest_id
+msgid "Destination Location"
+msgstr "Địa điểm đích"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_routing_workcenter__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_category__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_template__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_type__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__display_name
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_rule__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter_productivity__state__done
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__print_picking_wizard__state__done
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__stock_picking_wizard__state__done
+msgid "Done"
+msgstr "Hoàn tất"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__stock_picking_wizard__state__draft
+msgid "Draft"
+msgstr "Dự thảo"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__error
+msgid "Error"
+msgstr "Lỗi"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Extra Plans"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workorder__state__done
+msgid "Finished"
+msgstr "Đã kết thúc"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__consumption
+msgid "Flexible Consumption"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__is_last_wo
+msgid "For check out in scan MRP."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Forecast"
+msgstr "Dự kiến"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__virtual_available
+msgid "Forecast Qty"
+msgstr "Số lượng dự kiến"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__free_qty
+msgid "Free Qty "
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_routing_workcenter__seq
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_routing_workcenter__sequence
+msgid ""
+"Gives the sequence order when displaying a list of routing Work Centers."
+msgstr ""
+"Chỉ ra trình tự sắp xếp khi hiển thị một danh sách quy trình sản xuất."
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_bom_extra_plan__seq
+#: model:ir.model.fields,help:erpvn_mrp_management.field_bom_extra_plan__sequence
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom_line__seq
+msgid "Gives the sequence order when displaying."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_search_view
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__has_routing
+msgid "Has Routing?"
+msgstr "Có qui trình SX?"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_ext_mrp_workcenter_form_view_inherit
+msgid "Hour(s)"
+msgstr "Giờ (h)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__hours_uom
+msgid "Hours"
+msgstr "Giờ"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workcenter.py:0
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter__wc_type__h
+#, python-format
+msgid "Human"
+msgstr "Con người"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_routing_workcenter__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_category__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_template__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_type__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_rule__id
+msgid "ID"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__product_id
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_routing_workcenter__product_id
+msgid ""
+"If a product variant is defined the BOM is available only for this product."
+msgstr ""
+"Nếu một biến thể sản phẩm được xác định, BoM này chỉ khả dụng cho sản phẩm "
+"này."
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__message_needaction
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__message_has_error
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__active
+msgid ""
+"If the active field is set to False, it will allow you to hide the bills of "
+"material without removing it."
+msgstr ""
+"Nếu bỏ chọn trường Hiệu lực, sẽ cho phép bạn ẩn Định mức nguyên liệu mà "
+"không cần xóa bỏ nó."
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter_productivity__state__progress
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workorder__state__progress
+msgid "In Progress"
+msgstr "Đang thực hiện"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__incoming_qty
+msgid "Incoming"
+msgstr "Đang về"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workorder.py:0
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__is_last_wo
+#, python-format
+msgid "Is Last Work Order?"
+msgstr "Là công việc cuối?"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__is_update_bom
+msgid "Is Update BOM?"
+msgstr "Cần cập nhật?"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workorder.py:0
+#, python-format
+msgid "It has already been unblocked."
+msgstr "Nó đã được mở khoá."
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__item_complete_id
+msgid "Item ID Path"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__item_complete_name
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "Item Path"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_routing_workcenter____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_category____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_template____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_type____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard____last_update
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_rule____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__write_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__write_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__write_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__write_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__write_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__write_uid
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật bởi"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__write_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__write_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__write_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__write_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__write_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__write_date
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lúc"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__time_progressed
+msgid ""
+"Less than 100%, hign capacity.\n"
+"Otherwise, low capacity."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__line_qty
+msgid "Line Qty"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__mo_lv
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__mo_lv
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move__mo_lv
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_reservation__mo_lv
+msgid "Lv"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_production_search_view_inherit
+msgid "MO Level"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_type__mo_grouping_interval
+msgid "MO grouping interval (days)"
+msgstr "Nhóm theo ngày SX"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_type__mo_grouping_max_hour
+msgid "MO grouping max. hour (UTC)"
+msgstr "Nhóm theo giờ SX (UTC)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_bom_selection_wizard
+msgid "MRP BoM Selection Wizard"
+msgstr "Thuật sĩ chọn BoM"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_component_line
+msgid "MRP Component Line"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:res.groups,name:erpvn_mrp_management.group_mrp_leader
+msgid "MRP Leader"
+msgstr "Trưởng nhóm sản xuất"
+
+#. module: erpvn_mrp_management
+#: model:res.groups,name:erpvn_mrp_management.group_mrp_department_manager
+msgid "MRP Manager"
+msgstr "Quản lý sản xuất"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workcenter.py:0
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter__wc_type__m
+#, python-format
+msgid "Machine"
+msgstr "Máy"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__ready_to_produce
+msgid "Manufacturing Readiness"
+msgstr "Sẵn sàng Sản xuất khi"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__is_update_bom
+msgid "Mark BOM as need to be update in cron job"
+msgstr "Đánh dấu BoM cần cập nhật trong tiến trình Cron"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__master_mo_id
+msgid "Master MO"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_ids
+msgid "Messages"
+msgstr "Thông điệp"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__multiple_qty
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__multiple_qty
+msgid "Multi Qty"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_bom_line.py:0
+#, python-format
+msgid "Multiple Quantity must be a positive float."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_workorder_form_view_inherit
+msgid "Name"
+msgstr "Tên"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__production_complete_name
+msgid "Name Path"
+msgstr "Tên Path"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__need_product_price
+msgid "Need Qty Price"
+msgstr "Giá số lượng cần"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Needed"
+msgstr "Đã cần"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_production.py:0
+#, python-format
+msgid "New"
+msgstr "Mới"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.actions.act_window,help:erpvn_mrp_management.bom_extra_plan_action
+msgid "No BoM Line found. Let's create one!"
+msgstr "Không tìm thấy BoM line. Hãy tạo mới nào!"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter_productivity__error__no_error
+msgid "No Error"
+msgstr "Không lỗi"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__note
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_stock_picking_wizard_form
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__note
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/bom_extra_plan.py:0
+#: code:addons/erpvn_mrp_management/models/mrp_bom_line.py:0
+#, python-format
+msgid "Notification"
+msgstr "Thông báo"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "On Hand"
+msgstr "Đang có thực tế"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__on_master_data
+msgid "On Master Data"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_selection_wizard_form_view
+msgid "Open"
+msgstr "Mở"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__picking_type_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__picking_type_id
+msgid "Operation Type"
+msgstr "Kiểu hoạt động"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Operations"
+msgstr "Qui trình sản xuất"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__outgoing_qty
+msgid "Outgoing"
+msgstr "Sắp xuất đi"
+
+#. module: erpvn_mrp_management
+#: model:ir.ui.menu,name:erpvn_mrp_management.menu_mrp_operations
+msgid "Overview"
+msgstr "Tổng quang"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_tree_view
+msgid "Parent BOM"
+msgstr "BoM Cha"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__parent_bom_id
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_search_view
+msgid "Parent BoM"
+msgstr "BoM Cha"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__parent_id
+msgid "Parent MO"
+msgstr "MO cha"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move__parent_production_product_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_reservation__parent_production_product_id
+msgid "Parent MO Product Name"
+msgstr "Tên sản phẩm Mo cha"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__parent_path
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "Parent Path"
+msgstr "Đường dẫn sản phẩm cha"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_form_view
+msgid "Parent Product"
+msgstr "Sản phẩm Cha"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__parent_product_tmpl_id
+msgid "Parent Product Template"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter_productivity__state__pause
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workorder__state__pending
+msgid "Paused"
+msgstr "Đã tạm dừng"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__print_picking_wizard__picking_type__out
+msgid "Picking Component"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_stock_picking_type
+msgid "Picking Type"
+msgstr "Loại giao nhận"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__picking_ids
+msgid "Pickings"
+msgstr "Phiếu lấy hàng"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__print_picking_wizard__picking_type__int
+msgid "Post Finish Good"
+msgstr "Ghi nhận thành phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__price_produce
+msgid "Price Produce"
+msgstr "Chi phí sản xuất"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.wizard_print_picking
+msgid "Print"
+msgstr "In"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_production.py:0
+#: model:ir.actions.server,name:erpvn_mrp_management.action_print_picking_in_mo
+#, python-format
+msgid "Print Picking"
+msgstr "In phiếu lấy hàng"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_print_picking_wizard
+msgid "Print Picking Wizard"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__qty_produced
+msgid "Produced Quantity"
+msgstr "SL đã sản xuất"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__product_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__product_tmpl_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__product_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__product_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_routing_workcenter__product_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__product_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/bom_extra_plan.py:0
+#: code:addons/erpvn_mrp_management/models/mrp_bom_line.py:0
+#, python-format
+msgid "Product %s does not has BoM yet!"
+msgstr "Sản phẩm %s này chưa có BoM!"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Product BOM"
+msgstr "BoM Sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__product_bom_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_selection_wizard__wizard_bom_id
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_tree_view
+msgid "Product BoM"
+msgstr "BoM Sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Product BoMs"
+msgstr "BoM Sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_product_category
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__categ_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__categ_id
+msgid "Product Category"
+msgstr "Nhóm sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_product_template
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__product_tmpl_id
+msgid "Product Template"
+msgstr "Mẫu sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__product_uom_id
+msgid "Product Unit of Measure"
+msgstr "Đơn vị sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_tree_view
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Product UoM"
+msgstr "Đơn vị sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__product_id
+msgid "Product Variant"
+msgstr "Biến thể sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_selection_wizard_form_view
+msgid "Product's BoMs"
+msgstr "Định mức sản phẩm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_category__production_location_id
+msgid "Production Location"
+msgstr "Địa điểm sản xuất"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_production
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__mo_id
+msgid "Production Order"
+msgstr "Lệnh Sản xuất"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_search_view
+msgid "Production Planning"
+msgstr "Kế hoạch sản xuất"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__active
+msgid "Production Ready"
+msgstr "Sản xuất đã sẵn sàng"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_production.py:0
+#, python-format
+msgid "Productivities"
+msgstr "Năng suất"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_workorder_tree_editable_view_inherit_workorder
+msgid "Progressed (%)"
+msgstr "Đã xử lý (%)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__qty_needed
+msgid "Qty Needed"
+msgstr "SL cần"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__qty_available
+msgid "Qty On Hand"
+msgstr "SL thực tế"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__qty_reserved
+msgid "Qty Reversed"
+msgstr "SL đặt trước"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__product_qty
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__product_qty
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__product_qty
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/wizards/stock_picking_wizard.py:0
+#, python-format
+msgid "Quantity Add for Product %s invalid."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__percent_progressed
+msgid "Quantity Progress"
+msgstr "SL đã làm"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_workorder_form_view_inherit
+msgid "Quantity Remain"
+msgstr "SL còn lại"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_component_line__type__raw
+msgid "Raw"
+msgstr "Nguyên liệu"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workorder__state__ready
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__stock_picking_wizard__state__assigned
+msgid "Ready"
+msgstr "Sẵn sàng"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__product_loss
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__product_loss
+msgid "Recovery (%)"
+msgstr "Tỷ lệ đạt (%)"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_bom_line.py:0
+#, python-format
+msgid "Recovery must be a integer and have value between 1 - 100."
+msgstr "Tỷ lệ đạt nên là số nguyên và nằm trong khoản từ 1 - 100."
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_bom.py:0
+#, python-format
+msgid ""
+"Recursion error!  A product with a Bill of Material should not have itself "
+"in its BoM or child BoMs!"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__code
+msgid "Reference"
+msgstr "Mã phiếu"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_bom.py:0
+#, python-format
+msgid "Reference '%s' already existed!"
+msgstr "Tài liệu '%s' này không tồn tại!"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_bom.py:0
+#, python-format
+msgid "Reference is required field!"
+msgstr "Mã định mức là trường bắt buột!"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_stock_picking_wizard__origin
+msgid "Reference of the document"
+msgstr "Tài liệu liên quan"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Reserved"
+msgstr "Đã đặt trước"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__root_item
+msgid "Root Item"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_stock_picking_wizard_form
+msgid "Save"
+msgstr "Lưu"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_production_search_view_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_mrp_production_workorder_form_view_filter
+msgid "Scheduled Date"
+msgstr "Ngày dự kiến"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_production_search_view_inherit
+msgid "Scheduled Date by Date"
+msgstr "Dự kiến theo ngày"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "Scheduled Start Date"
+msgstr "Ngày bắt đầu dự kiến"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "Scheduled Time"
+msgstr "Thời gian dự kiến"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__scheduled_time
+msgid "Scheduled Time (hh:ss)"
+msgstr "Thời gian dự kiến (hh:ss)"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "Scheduled Time All Processes"
+msgstr "Thời gian dự kiến tất cả tiến trình"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/bom_extra_plan.py:0
+#: code:addons/erpvn_mrp_management/models/mrp_bom_line.py:0
+#, python-format
+msgid "Select BoM To Open"
+msgstr "Chọn BoM để mở"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__categ_id
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_production__categ_id
+msgid "Select category for the current product"
+msgstr "Chọn danh mục hiện tại của sản phẩm"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/wizards/mrp_bom_selection_wizard.py:0
+#, python-format
+msgid "Select product BoM to open."
+msgstr "Chọn BoM sản phẩm để mở."
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__seq
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__seq
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_routing_workcenter__seq
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Seq"
+msgstr "TT"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__sequence
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__sequence
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_routing_workcenter__sequence
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__sequence
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__sequence
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.bom_extra_plan_tree_view
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_ext_mrp_routing_workcenter_tree_view_inherit
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__work_shift
+msgid "Shifts/day"
+msgstr "Ca/Ngày"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__origin
+msgid "Source Document"
+msgstr "Tài liệu gốc"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__location_id
+msgid "Source Location"
+msgstr "Địa điểm nguồn"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workorder.py:0
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter_productivity__state
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__state
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__state
+#, python-format
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_stock_move
+msgid "Stock Move"
+msgstr "Hoạt động kho"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_stock_move_wizard
+msgid "Stock Move Wizard"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_picking_wizard__move_ids_without_package
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_stock_picking_wizard_form
+msgid "Stock Moves"
+msgstr "Dịch chuyển kho"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_stock_picking_wizard
+msgid "Stock Picking Wizard"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_stock_rule
+msgid "Stock Rule"
+msgstr "Tuyến cung ứng"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_component_line__type__sub
+msgid "Subcontract"
+msgstr "Gia công ngoài"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__technical_qty
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__technical_qty
+msgid "Technical Qty"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_product_template__template_code
+msgid "Template Code"
+msgstr "Mã bản mẫu"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__template_id
+msgid "Template Id"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.constraint,message:erpvn_mrp_management.constraint_mrp_bom_code_bom_uniq
+msgid "The Reference of the BoM must be unique!"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_stock_picking_type__mo_grouping_max_hour
+msgid ""
+"The maximum hour (between 0 and 23) for considering new manufacturing orders"
+" inside the same interval period, and thus being grouped on the same MO. "
+"IMPORTANT: The hour should be expressed in UTC."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_stock_picking_type__mo_grouping_interval
+msgid ""
+"The number of days for grouping together on the same manufacturing order."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workcenter_productivity__qty_produced
+msgid "The number of products already handled by this worker"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_bom_extra_plan__operation_id
+msgid ""
+"The operation where the components are consumed, or the finished products "
+"created."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_routing_workcenter.py:0
+#, python-format
+msgid "The sequence of a Routing should contain more than 4 numbers"
+msgstr "Số thứ tự của qui trình sản xuất nên có ít nhất 4 chữ số"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_production.py:0
+#, python-format
+msgid "There is no component in production order %(production_name)s!"
+msgstr ""
+"Ở đây không có bán thành phẩm này trong Phiếu sản xuất %(production_name)s!"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_product_product__categ_code
+#: model:ir.model.fields,help:erpvn_mrp_management.field_product_template__categ_code
+msgid ""
+"This field related to category code, for creating customize product variant "
+"in sale order"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_product_category__production_location_id
+msgid ""
+"This stock location will be used, instead of the default one, as the source "
+"location for stock moves generated by manufacturing orders."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_workorder_tree_editable_view_inherit_workorder
+msgid "Time Capacity (%)"
+msgstr "Thời gian năng suất (%)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_bom_extra_plan__time_produce
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__time_produce
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom_line__time_produce
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__bom_time_produce
+msgid "Time Produce (mins)"
+msgstr "Thời gian sản xuất (phút)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__time_progressed
+msgid "Time Progress"
+msgstr "Thời gian xử lý"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__total_working_time
+msgid "Total Actual Time (hh:ss)"
+msgstr "Tổng thời gian thực tế (hh:ss)"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Total Material"
+msgstr "Tổng nguyên liệu"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__total_price_produce
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__total_bom_price
+msgid "Total Price"
+msgstr "Tổng tiền"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__total_scheduled_time
+msgid "Total Scheduled Time (hh:ss)"
+msgstr "Tổng thời gian dự kiến (hh:ss)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__total_time
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_production__bom_total_time
+msgid "Total Time (mins)"
+msgstr "Tổng thời gian (phút)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__total_time_unit
+msgid "Total Time Unit (mins)"
+msgstr "Tổng thời gian (phút)"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__picking_id
+msgid "Transfer"
+msgstr "Phiếu chuyển kho"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__type
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__picking_type
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_ext_mrp_workcenter_form_view_inherit
+msgid "Type"
+msgstr "Loại"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__unit_product_price
+msgid "Unit Price"
+msgstr "Đơn giá"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__product_uom_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_component_line__uom_id
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_stock_move_wizard__product_uom
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.view_stock_picking_wizard_form
+msgid "Unit of Measure"
+msgstr "Đơn vị tính"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_bom_extra_plan__product_uom_id
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__product_uom_id
+msgid ""
+"Unit of Measure (Unit of Measure) is the unit of measurement for the "
+"inventory control"
+msgstr "Đơn vị tính là đơn vị dùng để kiểm soát Tồn kho"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_unread
+msgid "Unread Messages"
+msgstr "Thông điệp chưa đọc"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_bom_line.py:0
+#, python-format
+msgid "Uom category does not macth with template"
+msgstr "Danh mục đơn vị tính không chính xác"
+
+#. module: erpvn_mrp_management
+#: model:ir.actions.server,name:erpvn_mrp_management.action_update_location_production
+msgid "Update Location Production"
+msgstr "Cập nhật địa điểm sản xuất"
+
+#. module: erpvn_mrp_management
+#: model:ir.actions.server,name:erpvn_mrp_management.action_update_progress
+msgid "Update Progress"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workorder.py:0
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__available_capacity
+#, python-format
+msgid "WC Weekly Available Capacity"
+msgstr "Năng suất đang có của Khu vực sản xuất"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workorder.py:0
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__capacity_requirements
+#, python-format
+msgid "WO Capacity Requirements"
+msgstr "Năng suất cần thiết của WO"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__print_picking_wizard__state__waiting
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__stock_picking_wizard__state__confirmed
+msgid "Waiting"
+msgstr "Đang chờ"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__stock_picking_wizard__state__waiting
+msgid "Waiting Another Operation"
+msgstr "Chờ hoạt động khác"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workorder__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_workorder__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__available_capacity
+msgid "Weekly Available"
+msgstr "Tuần đang có"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_ext_mrp_workcenter_tree_view_inherit
+msgid "Weekly Available Capacity"
+msgstr "Năng suất tuần đang có"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,help:erpvn_mrp_management.field_mrp_bom__picking_type_id
+msgid ""
+"When a procurement has a ‘produce’ route with a operation type set, it will "
+"try to create a Manufacturing Order for that product using a BoM of the same"
+" operation type. That allows to define stock rules which trigger different "
+"manufacturing orders with different BoMs."
+msgstr ""
+"Khi nhu cầu cung ứng có tuyến ’sản xuất với một hoạt động được thiết đặt, nó"
+" sẽ cố gắng tạo Lệnh sản xuất cho sản phẩm đó bằng cách sử dụng một BoM cùng"
+" loại hoạt động. Điều đó cho phép xác định quy tắc tồn kho kích hoạt các đơn"
+" đặt hàng sản xuất khác nhau với các BoM khác nhau"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_workcenter
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workingtime_workcenter__workcenter_id
+#: model:ir.model.fields.selection,name:erpvn_mrp_management.selection__mrp_workcenter_productivity__error__work_center
+msgid "Work Center"
+msgstr "Khu vực sản xuất"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workcenter.py:0
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__wc_type
+#, python-format
+msgid "Work Center Type"
+msgstr "Loại khu vực"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_routing_workcenter
+msgid "Work Center Usage"
+msgstr "Sử dụng Năng lực sản xuất"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_workorder
+msgid "Work Order"
+msgstr "Lệnh làm việc"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_workcenter_productivity
+msgid "Workcenter Productivity Log"
+msgstr "Nhật ký sản xuất của Năng lực sản xuất"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Working Time"
+msgstr "Thời gian cần làm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model,name:erpvn_mrp_management.model_mrp_workingtime_workcenter
+msgid "Working Time WorkCenter"
+msgstr "Thời gian làm việc theo khu vực"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_bom_form_view_inherit
+msgid "Working Time WorkCenters"
+msgstr "Thời gian cần làm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_bom__mrp_workingtime_workcenter_ids
+msgid "Working Time Workcenters"
+msgstr "Thời gian cần làm"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__work_days
+msgid "Working days/week"
+msgstr "Ngày làm việc/tuần"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_mrp_workcenter__work_hours
+msgid "Working hours/shift"
+msgstr "Giờ làm việc/Ca"
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_workingtime_workcenter_tree_view
+msgid "Workingtime Workcenters"
+msgstr "Thời gian cần làm"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_production.py:0
+#, python-format
+msgid "You cannot create recursive productions."
+msgstr "Bạn không thể tạo phiếu sản xuất Đệ Qui"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/stock_picking_type.py:0
+#, python-format
+msgid "You have to enter a positive value for interval."
+msgstr "Bạn phải nhập số lượng lớn 0 cho thời gian"
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/stock_picking_type.py:0
+#, python-format
+msgid "You have to enter a valid hour between 0 and 23."
+msgstr "Bạn nên nhập số giờ từ 0 đến 23."
+
+#. module: erpvn_mrp_management
+#: code:addons/erpvn_mrp_management/models/mrp_workorder.py:0
+#, python-format
+msgid ""
+"You need to define at least one unactive productivity loss in the category "
+"'Performance'. Create one from the Manufacturing app, menu: Configuration / "
+"Productivity Losses."
+msgstr ""
+
+#. module: erpvn_mrp_management
+#: model_terms:ir.ui.view,arch_db:erpvn_mrp_management.mrp_management_production_form_view_inherit
+msgid "minutes"
+msgstr "phút"
+
+#. module: erpvn_mrp_management
+#: model:ir.model.fields,field_description:erpvn_mrp_management.field_print_picking_wizard__state
+msgid "state"
+msgstr "tình trạng"

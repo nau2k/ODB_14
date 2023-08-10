@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <record id="mrp_bom_form_view_inherit_from_erpvn_mrp_management" model="ir.ui.view">
+            <field name="name">mrp.bom.form.view.inherit.from.erpvn.mrp.management</field>
+            <field name="model">mrp.bom</field>
+            <field name="inherit_id" ref="erpvn_mrp_management.mrp_bom_form_view_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='operations']/field/tree/field[@name='workcenter_id']" position="after">
+                    <field name="number_of_workers"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

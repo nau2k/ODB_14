@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+
+        <record id="mrp_routing_workcenter_search_view" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.search</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="arch" type="xml">
+                <search string="Search Operations">
+                    <field name="name"/>
+                    <field name="bom_id"/>
+                    <field name="product_id"/>
+                    <field name="department_id"/>
+                    <field name="workcenter_id"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="BoM" name="group_bom_id" context="{'group_by': 'bom_id'}"/>
+						<filter string="Product" name="group_product_id" context="{'group_by': 'product_id'}"/>
+						<filter string="Department" name="group_department_id" context="{'group_by': 'department_id'}"/>
+                        <filter string="WorkCenter" name="group_workcenter_id" context="{'group_by': 'workcenter_id'}"/>
+					</group>
+                    <searchpanel>
+                         <field name="department_id" enable_counters="1"/>
+                         <field name="worksheet_type" select="multi" icon="fa-tags" enable_counters="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record id="mrp_ext_mrp_routing_workcenter_form_view_inherit" model="ir.ui.view">
+            <field name="name">mrp_ext_mrp_routing_workcenter_form_view_inherit</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='workcenter_id']" position="replace">
+                    <field name="department_id" optional="hide"/>
+                    <field name="workcenter_id" context="{'default_company_id': company_id}"/>
+                    <field name="number_of_workers"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp_routing_workcenter_tree_view_inherit" model="ir.ui.view">
+            <field name="name">mrp.routing.workcenter.tree.view.inherit</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='workcenter_id']" position="replace">
+                    <field name="workcenter_id"/>
+                    <field name="number_of_workers"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mrp.mrp_routing_action" model="ir.actions.act_window">
+            <field name="search_view_id" ref="mrp_routing_workcenter_search_view"/>
+        </record>
+
+    </data>
+</odoo>

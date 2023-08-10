@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_root_hr_holidays_hr_work_entry" name="Timesheet"
+        parent="hr_holidays.menu_hr_holidays_root" sequence="30"/>
+
+        <menuitem id="menu_holidays_timesheet_adjustment_request_line" name="Adjustment" parent="menu_root_hr_holidays_hr_work_entry"
+            action="erpvn_hr_work_entry.my_timesheet_adjustment_request_line_action" sequence="20"/>
+
+        <menuitem id="menu_timsheet_report" name="TimeSheet" parent="hr_holidays.menu_hr_holidays_report"
+            action="wizard_open_timesheet_action" sequence="60"/>
+
+        <menuitem id="menu_working_shift_change" name="Shift Change" parent="menu_root_hr_holidays_hr_work_entry"
+            action="action_view_working_shift_change" sequence="70"/>
+
+</odoo>

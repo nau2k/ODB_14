@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="property_rule_overtime_user" model="ir.rule">
+            <field name="name">Staff OverTime</field>
+            <field name="model_id" ref="model_hr_overtime"/>
+            <field name="domain_force">[('create_uid','=',user.id)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('group_hr_overtime_user'))]"/>
+        </record>
+
+        <record id="property_rule_overtime_leader" model="ir.rule">
+            <field name="name">All aprover OverTime</field>
+            <field name="model_id" ref="model_hr_overtime"/>
+            <field name="domain_force">['|',('department_id','child_of',[user.department_id.id]),('department_id','=',user.department_id.id)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('group_hr_overtime_leader'))]"/>
+        </record>
+        
+        <record id="property_rule_overtime_manager" model="ir.rule">
+            <field name="name">Administrator OverTime</field>
+            <field name="model_id" ref="model_hr_overtime"/>
+            <field name="domain_force">[(1,"=",1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="groups" eval="[(4, ref('group_hr_overtime_manager'))]"/>
+        </record>
+        
+    </data>
+</odoo>

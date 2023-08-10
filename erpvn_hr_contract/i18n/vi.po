@@ -1,0 +1,1328 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* erpvn_hr_contract
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-14 03:40+0000\n"
+"PO-Revision-Date: 2022-11-14 03:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid ""
+"<span attrs=\"{'invisible': ['|', ('calendar_mismatch', '=', False), ('state', '!=', 'open')]}\" class=\"fa fa-exclamation-triangle text-danger o_calendar_warning pl-3\">\n"
+"                                </span>\n"
+"                                <span class=\"o_calendar_warning_tooltip text-danger\">\n"
+"                                    Calendar Mismatch : The employee's calendar does not match this contract's calendar. This could lead to unexpected behaviors.\n"
+"                                </span>"
+msgstr ""
+"<span attrs=\"{'invisible': ['|', ('calendar_mismatch', '=', False), ('state', '!=', 'open')]}\" class=\"fa fa-exclamation-triangle text-danger o_calendar_warning pl-3\">\n"
+"                                </span>\n"
+"                                <span class=\"o_calendar_warning_tooltip text-danger\">\n"
+"                                    Lịch không đúng : Lịch của nhân viên này không đúng với lịch của Hợp đồng. Điều này có thể dẫn đến những sự cố không mong muốn.\n"
+"                                </span>"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.erpvn_hr_contract_inherit_view_kanban
+msgid ""
+"<span class=\"fa fa-circle text-success\" role=\"img\" aria-label=\"Present\" title=\"Present\" name=\"presence_present\">\n"
+"                                 </span>"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.erpvn_hr_contract_inherit_view_kanban
+msgid ""
+"<span class=\"fa fa-circle text-warning\" role=\"img\" aria-label=\"To define\" title=\"To define\" name=\"presence_to_define\">\n"
+"                                 </span>"
+msgstr ""
+"<span class=\"fa fa-circle text-warning\" role=\"img\" aria-label=\"Cần chỉ định\" title=\"Cần chỉ định\" name=\"presence_to_define\">\n"
+"                                 </span>"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.erpvn_hr_contract_inherit_view_kanban
+msgid ""
+"<span class=\"fa fa-circle-o text-muted\" role=\"img\" aria-label=\"Absent\" title=\"Absent\" name=\"presence_absent\">\n"
+"                                 </span>"
+msgstr ""
+"<span class=\"fa fa-circle-o text-muted\" role=\"img\" aria-label=\"Vắng\" title=\"Vắng\" name=\"presence_absent\">\n"
+"                                 </span>"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.erpvn_hr_contract_inherit_view_kanban
+msgid ""
+"<span class=\"fa fa-circle-o text-success\" role=\"img\" aria-label=\"Present but not active\" title=\"Present but not active\" name=\"presence_absent_active\">\n"
+"                                 </span>"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_allowance_form
+msgid "<span class=\"o_form_label\">Code</span>"
+msgstr "<span class=\"o_form_label\">Mã</span>"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "<span>/ month</span>"
+msgstr "<span>/ tháng</span>"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "<span>/day</span>"
+msgstr "<span>/ngày</span>"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "<span>/hour</span>"
+msgstr "<span>/giờ</span>"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_needaction
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_needaction
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__active
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__active
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__active
+msgid "Active"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Add %s day from the trial contract(s) \"%s\"."
+msgstr "Thêm %s ngày từ hợp đồng thử việc \"%s\"."
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__allowance_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__allowance_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__wizard_allowance_ids
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Allowance"
+msgstr "Phụ cấp"
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.act_window,name:erpvn_hr_contract.hr_contract_allowance_action
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Allowance List"
+msgstr "Danh sách phụ cấp"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_payroll_structure_type__allowance_ids
+msgid "Allowance Template"
+msgstr "Danh sách phụ cấu mẫu"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__amount
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__amount
+msgid "Amount"
+msgstr "Tiền"
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid ""
+"An employee can only have one running contract at the same time. (Excluding "
+"Draft, Cancelled and Closed contracts)"
+msgstr ""
+"Nhân viên chỉ có thể chạy một hợp đồng trong 1 khoản thời gian nhấn định. (Ngoại trừ "
+"Dự thảo, Đã hủy và Hợp đồng đã đóng)"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__apply_on
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__apply_on
+msgid "Apply on"
+msgstr "Áp dụng"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+msgid "Approve"
+msgstr "Duyệt"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_form_view
+msgid "Archived"
+msgstr "Đã lưu"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_attachment_count
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_attachment_count
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__calendar_mismatch
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__calendar_mismatch
+msgid "Calendar Mismatch"
+msgstr "Lịch không khớp"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.print_option_form_view
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__state__cancel
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__state__cancel
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__sub_state__cancel
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__state__cancel
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_search_inherit
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_search_inherit
+msgid "Close"
+msgstr "Đóng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__state__close
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__state__close
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__sub_state__end
+msgid "Closed"
+msgstr "Đã đóng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__code
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__code
+msgid "Code"
+msgstr "Mã"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__company_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__company_country_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__company_country_id
+msgid "Company country"
+msgstr "Quốc gia công ty"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__contract_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__contract_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__contract_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__contract_id
+#: model:ir.ui.menu,name:erpvn_hr_contract.menu_human_resources_configuration_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+msgid "Contract"
+msgstr "Hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Contract Details"
+msgstr "Chi tiết hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__name
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Contract Reference"
+msgstr "Hợp đồng liên quan"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__contract_time
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__contract_time
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__contract_time
+msgid "Contract Time"
+msgstr "Thời gian hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.act_window,name:erpvn_hr_contract.action_view_hr_contract_type_list_view
+#: model:ir.model,name:erpvn_hr_contract.model_hr_payroll_structure_type
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__contract_type_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__contract_type_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_payroll_structure_type__name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__contract_type_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__contract_type_id
+#: model:ir.ui.menu,name:erpvn_hr_contract.menu_hr_config_hr_contract_type
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_view_form
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_view_search
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_view_tree
+msgid "Contract Type"
+msgstr "Loại hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_tree_view
+msgid "Contract Types"
+msgstr "Loại hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:res.groups,name:erpvn_hr_contract.group_hr_contract_user
+msgid "Contract User"
+msgstr "Người dùng hợp đồng"
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#: code:addons/erpvn_hr_contract/wizards/wizard_hr_contract.py:0
+#, python-format
+msgid "Contract reference %s already exists, please check again"
+msgstr "Hợp đồng liên quan %s đã tồn tại, hãy kiểm tra lại"
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/wizards/wizard_hr_contract.py:0
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#, python-format
+msgid "Create Contract"
+msgstr "Tạo hợp đồng"
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#, python-format
+msgid "Create Subcontract"
+msgstr "Tạo phụ lục hợp đồng"
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Create the contract \"%s\": Add %s day from the trial contract(s) \"%s\"."
+msgstr "Tạo hợp đồng \"%s\": Thêm %s ngày từ hợp đồng thử việc \"%s\"."
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__create_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__create_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o__create_date
+msgid "Created on"
+msgstr "Tạo lúc"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__currency_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__currency_id
+msgid "Currency"
+msgstr "Đơn vị tiền tệ"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__contract_time__current
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__contract_time__current
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__contract_time__current
+msgid "Current"
+msgstr "Hiện tại"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract_allowance__apply_on__daily
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract_allowance__apply_on__daily
+msgid "Daily"
+msgstr "Mỗi ngày"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__over_day
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__over_day
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__over_day
+msgid "Day Wage"
+msgstr "Lương ngày"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract_type__range_type__days
+msgid "Days"
+msgstr "Ngày"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__department_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__department_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_search_inherit
+msgid "Department"
+msgstr "Bộ phận"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__description
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Discard"
+msgstr "Hủy bỏ"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_payroll_structure_type__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__display_name
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_search_inherit
+msgid "Draft"
+msgstr "Dự thảo"
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_hr_employee
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__employee_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__employee_id
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Employee %s has an unexpired contract \n"
+msgstr "Nhân viên %s đã hết hạn hợp đồng \n"
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_hr_contract
+msgid "Employee Contract"
+msgstr "Hợp đồng nhân viên"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee__contract_ids
+msgid "Employee Contracts"
+msgstr "Hợp đồng lao động"
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Employee is required."
+msgstr "Bắt buộc phải có nhân viên."
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.erpvn_hr_contract_inherit_view_kanban
+msgid "Employee's Name"
+msgstr "Tên nhân viên"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__wage
+#: model:ir.model.fields,help:erpvn_hr_contract.field_wizard_hr_subcontract__wage
+msgid "Employee's monthly gross wage."
+msgstr "Lương tối đa mỗi tháng của nhân viên"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__date_end
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__date_end
+msgid "End Date"
+msgstr "Ngày kết thúc"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__date_end
+#: model:ir.model.fields,help:erpvn_hr_contract.field_wizard_hr_subcontract__date_end
+msgid "End date of the contract (if it's a fixed-term contract)."
+msgstr "Ngày kết thúc của hợp đồng (nếu nó là hợp đồng có thời hạn)."
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__trial_date_end
+#: model:ir.model.fields,help:erpvn_hr_contract.field_wizard_hr_subcontract__trial_date_end
+msgid "End date of the trial period (if there is one)."
+msgstr "Ngày kết thúc của thử việc (nếu chỉ có một)."
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__trial_date_end
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__trial_date_end
+msgid "End of Trial Period"
+msgstr "Kết thúc thời gian thử việc"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__state__close
+msgid "Expired"
+msgstr "Hết hạn"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__state__expiring
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__state__expiring
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_search_inherit
+msgid "Expiring"
+msgstr "Sắp hết hạn"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__first_contract_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__first_contract_date
+msgid "First Contract Date"
+msgstr "Ngày hợp đồng đầu tiên"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_follower_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_follower_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_channel_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_channel_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_partner_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_partner_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__date_start
+msgid "From"
+msgstr "Từ"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__contract_time__future
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__contract_time__future
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__contract_time__future
+msgid "Future"
+msgstr "Tương lai"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_payroll_structure_type__sequence
+msgid "Gives the sequence when displaying a list of Contract."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__kanban_state__done
+msgid "Green"
+msgstr "Xanh lá"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__kanban_state__normal
+msgid "Grey"
+msgstr "Xám"
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_hr_contract_allowance
+msgid "HR Contract Allowance"
+msgstr "Phụ cấp hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_hr_contract_type
+msgid "HR Contract Type"
+msgstr "Loại hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__hr_responsible_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__hr_responsible_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__hr_responsible_id
+msgid "HR Responsible"
+msgstr "HR Chịu trách nhiệm"
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.act_window,name:erpvn_hr_contract.action_hr_subcontract
+msgid "HR SubContract"
+msgstr "HR phụ lục hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_hr_subcontract
+msgid "HR Subcontract"
+msgstr "HR phụ lục hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee__health_insurance_no
+msgid "Health Insurance Number"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee__hire_date
+msgid "Hired Date"
+msgstr "Ngày làm việc cuối"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__over_hour
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__over_hour
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__over_hour
+msgid "Hour Wage"
+msgstr "Lương giờ"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract_allowance__apply_on__hourly
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract_allowance__apply_on__hourly
+msgid "Hourly"
+msgstr "Mỗi giờ"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_payroll_structure_type__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o__id
+msgid "ID"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__message_needaction
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__message_unread
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__message_needaction
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__message_unread
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__message_needaction
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__message_has_error
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__message_has_sms_error
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__message_has_error
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__message_has_sms_error
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__message_has_error
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_is_follower
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_is_follower
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__is_hardwork
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__is_hardwork
+msgid "Is Hard Work?"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__is_trial
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__is_trial
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__is_trial
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__is_trial
+msgid "Is Trial?"
+msgstr "Thử việc?"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__job_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__job_id
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__option_create__job
+msgid "Job Position"
+msgstr "Vị trí công việc"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__job_title_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__job_title_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__job_title_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+msgid "Job Title"
+msgstr "Chức danh"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__kanban_state
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__kanban_state
+msgid "Kanban State"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_payroll_structure_type____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance____last_update
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__write_uid
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__write_date
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_main_attachment_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_main_attachment_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "Make data current Contract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_has_error
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_has_error
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract_allowance__apply_on__monthly
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract_allowance__apply_on__monthly
+msgid "Monthly"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Monthly Advantages in Cash"
+msgstr "Phụ cấp mỗi tháng bằng tiền mặt"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract_type__range_type__months
+msgid "Months"
+msgstr "Tháng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__state__draft
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__state__draft
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__sub_state__draft
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__state__draft
+#, python-format
+msgid "New"
+msgstr "Mới"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__no_required_attendance
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__no_required_attendance
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__no_required_attendance
+msgid "No Required Check Fingerprint?"
+msgstr "Không yêu cầu điểm danh?"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__notes
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__notes
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__notice_days
+msgid "Notice Period"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_needaction_counter
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_needaction_counter
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_has_error_counter
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_has_error_counter
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__message_needaction_counter
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__message_needaction_counter
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__message_has_error_counter
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__message_has_error_counter
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__range_days
+msgid "Number of months/days"
+msgstr "Số ngày/tháng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__num_of_range
+msgid "Number of range"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__message_unread_counter
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__message_unread_counter
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_subcontract.py:0
+#, python-format
+msgid "Open Option Print"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.print_option_form_view
+msgid "Option"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_option_print_py3o__option_print
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.print_option_form_view
+msgid "Option print"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Overtime"
+msgstr "Tăng ca"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__contract_time__past
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__contract_time__past
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__contract_time__past
+msgid "Past"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__contract_type_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_search_inherit
+msgid "Payroll Structure Type"
+msgstr "Loại cấu trúc lương"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract__hr_responsible_id
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__hr_responsible_id
+#: model:ir.model.fields,help:erpvn_hr_contract.field_wizard_hr_subcontract__hr_responsible_id
+msgid "Person responsible for validating the employee's contracts."
+msgstr "Người chịu trách nhiệm xác thực hợp đồng của nhân viên."
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+msgid "Position"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.print_option_form_view
+msgid "Print"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_option_print_py3o__option_print__contract
+msgid "Print Contract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.report,name:erpvn_hr_contract.contract_report_py3o
+msgid "Print File Contract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.report,name:erpvn_hr_contract.subcontract_report_py3o
+msgid "Print File Subcontract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.report,name:erpvn_hr_contract.hr_subcontract_job_report_py3o
+msgid "Print File Subcontract position"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.report,name:erpvn_hr_contract.hr_subcontract_salary_report_py3o
+msgid "Print File Subcontract salary"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__subcontract_info__job
+msgid "Print Job"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__subcontract_info__salary
+msgid "Print Salary"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_option_print_py3o__option_print__subcontract
+msgid "Print Subcontract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__subcontract_info__both
+msgid "Print both"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_form_view
+msgid "Range Days"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__range_type
+msgid "Range Type"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__kanban_state__blocked
+msgid "Red"
+msgstr "Đỏ"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+msgid "Reference"
+msgstr "Liên quan"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__activity_user_id
+msgid "Responsible User"
+msgstr "Người chịu trách nhiệm"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__state__open
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__state__open
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__sub_state__run
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__state__open
+msgid "Running"
+msgstr "Đang chạy"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_has_sms_error
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_has_sms_error
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__option_create__salary
+msgid "Salary"
+msgstr "Lương"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__wizard_hr_subcontract__option_create__both
+msgid "Salary & Job Position"
+msgstr "Lương và Vị trí công việc"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Salary Information"
+msgstr "Thông tin Lương"
+
+#. module: erpvn_hr_contract
+#: model:ir.actions.act_window,name:erpvn_hr_contract.action_hr_payroll_structure_type
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__structure_type_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__structure_type_id
+msgid "Salary Structure Type"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Save"
+msgstr "Lưu"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_view_search
+msgid "Search Contract Type"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__option_create
+msgid "Select Subcontract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_payroll_structure_type__sequence
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_view_search
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+msgid "Set To Draft"
+msgstr "Đặt lại dự thảo"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee__social_insurance_no
+msgid "Social Insurance"
+msgstr "Bảo hiểm xã hội"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__date_start
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__date_start
+msgid "Start Date"
+msgstr "Ngày bắt đầu"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__date_start
+#: model:ir.model.fields,help:erpvn_hr_contract.field_wizard_hr_subcontract__date_start
+msgid "Start date of the contract."
+msgstr "Ngày bắt đầu của hợp đồng."
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__state
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__state
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract__state
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__state
+#: model:ir.model.fields,help:erpvn_hr_contract.field_wizard_hr_subcontract__state
+msgid "Status of the contract"
+msgstr "Tình trạng của hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__sub_contract_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__sub_contract_id
+msgid "Sub-Contract"
+msgstr "Phụ lục hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__sub_state
+msgid "Sub-Status"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.ui.menu,name:erpvn_hr_contract.menu_action_hr_subcontract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_search_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_tree_view
+msgid "SubContract"
+msgstr "Phụ lục hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__subcontract_id
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Subcontract"
+msgstr "Phụ lục hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract__subcontract_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__subcontract_ids
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.view_hr_contract_form_inherit
+msgid "Subcontracts"
+msgstr "Phụ lục hợp đồng"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_employee_contract_form_view_inherit
+msgid "Tax - Insurance"
+msgstr "Thuế - Bảo hiểm"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_employee__tax_code
+msgid "Tax Code"
+msgstr "Mã thuế"
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_contract_type_view_form
+msgid "Template Allowance"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_contract__state__termination
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__state__termination
+msgid "Termination"
+msgstr "Nghỉ việc"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_payroll_structure_type__count_working_seniority
+msgid ""
+"The contracts which activate this field will be taken into account the "
+"calculation of working seniority"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid ""
+"The previous contract (ID: %s, %s) must be ended before creating a new "
+"contract."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_employee.py:0
+#, python-format
+msgid ""
+"The previous contract (ID: %s, %s) should be ended before create a new "
+"contract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "This contract is being used. You cannnot delete it."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_employee__hire_date
+msgid ""
+"This field use to calculate the working seniority of an employee, get "
+"stating date of the first contract with contract type with field `Count on "
+"working seniority` activated"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__date_stop
+msgid "To"
+msgstr "Đến"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_unread
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_unread
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__message_unread_counter
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__message_unread_counter
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__visa_expire
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__visa_expire
+msgid "Visa Expire Date"
+msgstr "Ngày hết hạn Visa"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__visa_no
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__visa_no
+msgid "Visa No"
+msgstr "Số Visa"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__wage
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__wage
+msgid "Wage"
+msgstr "Lương"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields.selection,name:erpvn_hr_contract.selection__hr_subcontract__sub_state__wait
+msgid "Waiting"
+msgstr "Đang chờ"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_allowance__website_message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_contract_type__website_message_ids
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_allowance__website_message_ids
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_contract_type__website_message_ids
+#: model:ir.model.fields,help:erpvn_hr_contract.field_hr_subcontract__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract_allowance__wizard_subcontract_id
+msgid "Wizard Contract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_wizard_hr_subcontract
+msgid "Wizard Create HR Subcontract"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_wizard_hr_subcontract_allowance
+msgid "Wizard HR Subcontract Allowance"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model,name:erpvn_hr_contract.model_wizard_option_print_py3o
+msgid "Wizard Option Print Py3o"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__permit_no
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__permit_no
+msgid "Work Permit No"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__resource_calendar_id
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_wizard_hr_subcontract__resource_calendar_id
+msgid "Working Schedule"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_payroll_structure_type__count_working_seniority
+msgid "Working Seniority"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.hr_subcontract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_contract_form_view
+#: model_terms:ir.ui.view,arch_db:erpvn_hr_contract.wizard_hr_subcontract_form_view
+msgid "Yearly Advantages"
+msgstr ""
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid ""
+"You cannot have 2 contracts of an employee overlapped on the same duration."
+msgstr ""
+"Bạn không thể có 2 hợp đồng cho một nhân viên mà trùng khoản thời gian hiệu lực."
+
+#. module: erpvn_hr_contract
+#: code:addons/erpvn_hr_contract/models/hr_contract.py:0
+#, python-format
+msgid "You only can delete draft contract!"
+msgstr "Bạn chỉ có thể xóa hợp đồng Dự thảo!"
+
+#. module: erpvn_hr_contract
+#: model:ir.model.fields,field_description:erpvn_hr_contract.field_hr_subcontract__subcontract_info
+msgid "field_name"
+msgstr ""

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_mrp_workcenter_code" model="ir.sequence">
+            <field name="name">Workcenter Code</field>
+            <field name="code">sequence.workcenter.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">WC-</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="sequence_mrp_production_code" model="ir.sequence">
+            <field name="name">Production Code</field>
+            <field name="code">sequence.mrp.production.code</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">MO%(range_year)s%(month)s-</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="number_next_actual">1</field>
+            <field name="use_date_range">1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="seq_allowance_name" model="ir.sequence">
+            <field name="name">Allowance Name</field>
+            <field name="code">hr.contract.allowance</field>
+            <field name="prefix">Allowance-%(range_year)s%(month)s-</field>
+            <field name="padding">5</field>
+            <field name="number_next">1</field>
+            <field name="company_id" eval="False"/>
+            <field name="use_date_range">True</field>
+        </record>
+</odoo>

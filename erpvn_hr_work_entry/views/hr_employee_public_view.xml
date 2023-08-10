@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="hr_attendance_late_employee_form_inherit" model="ir.ui.view">
+            <field name="name">view.employee.form</field>
+            <field name="model">hr.employee.public</field>
+            <field name="inherit_id" ref="hr.hr_employee_public_view_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button name="action_view_attendance_late_count" type="object" class="oe_stat_button" icon="fa-clock-o">
+                        <field name="attendance_late_count" widget="statinfo" string="Attendance Late"/>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

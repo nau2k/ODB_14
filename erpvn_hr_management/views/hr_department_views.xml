@@ -1,0 +1,66 @@
+<odoo>
+    <data>
+
+        <record id="hr_management_search_view_inherit" model="ir.ui.view">
+            <field name="name">hr.management.search.view.inherit</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <searchpanel>
+                        <field name="parent_id"/>
+                    </searchpanel>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_management_form_view_inherit" model="ir.ui.view">
+            <field name="name">hr.management.form.view.inherit</field>
+            <field name="model">hr.department</field>
+            <field name="inherit_id" ref="hr.view_department_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group" position="after">
+                    <notebook>
+                        <page string="Extra's Info" name="info">
+                            <group>
+                                <field name="sequence"/>
+                                <field name="code"/>
+                            </group>
+                            <field name="note"  placeholder="Add note ...."/>
+                        </page>
+                        <page string="Job Positions" name="job">
+                            <field name="jobs_ids">
+                                <tree create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="name"/>
+                                    <field name="no_of_employee"/>
+                                    <field name="no_of_recruitment"/>
+                                    <field name="expected_employees"/>
+                                    <field name="no_of_hired_employee"/>
+                                    <field name="state"/>
+                                    <field name="company_id" invisible="1"/>
+                                </tree>
+                            </field>
+                            
+                        </page>
+                        <page string="Members" name="member">
+                            <field name="member_ids">
+                                <tree create="true" delete="true" edit="true" editable="bottom">
+                                    <field name="barcode"/>
+                                    <field name="name"/>
+                                    <field name="job_id"/>
+                                    <field name="first_contract_date"/>
+                                    <!-- <field name="hire_date"/> -->
+                                    <field name="parent_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="mail_channel_id"/>
+                </xpath>
+            </field>
+        </record>
+    
+    </data>
+</odoo>
