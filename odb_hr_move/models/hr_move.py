@@ -52,6 +52,10 @@ class HrMove(models.Model):
         #     template_id.with_context(ctx).send_mail(self.id, email_values=email_values)
             
         self.write({'state': 'confirm'})
+        self.write({'state': 'confirm'})
+        self.write({'state': 'confirm'})
+        self.write({'state': 'confirm'})
+        self.write({'state': 'confirm'})
         
         
         
