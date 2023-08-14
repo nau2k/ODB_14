@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <data noupdate="0">
+        <record id="approve_meal_registration_mail_template" model="mail.template">
+            <field name="name">Meal: Approve Registrations</field>
+            <field name="subject">Approve Meal Registrations</field>
+            <field name="model_id" ref="odb_meal_registration.model_hr_meal"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+                <% set receptionist_email = ctx.get('receptionist_email') %>
+                <p> Dear ${receptionist_email},</p>
+                <p>This is the meal registration form for the employees.</p>
+                <br/>
+                <p><strong>Name: </strong>${object.name}</p>
+                <p><strong>Responsible: </strong>${object.employee_id.name}</p>
+                <p><strong>Department: </strong>${object.department_id.name}</p>
+                <p><strong>Dates: </strong>${object.date_start} <strong> To </strong> ${object.date_end} </p>
+                <br/>
+
+                <p>List of employee:</p>
+                <div>
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr class="active">
+                                <th class="text-center" style="vertical-align:middle;" width="80px">
+                                    <strong>Badge ID</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="230px">
+                                    <strong>Employee</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="350px">
+                                    <strong>Department</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>From</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="100px">
+                                    <strong>To</strong>
+                                </th>
+                                <th class="text-center" style="vertical-align:middle;" width="80px">
+                                    <strong>Registry</strong>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% set entries = ctx.get('ctx') %>
+                            %for entry in entries:
+                                <tr>
+                                    <td class="text-center" style="vertical-align:middle;">${entry.barcode or ''}</td>
+                                    <td class="text-center" style="vertical-align:middle;">${entry.employee_id.name or ''}</td>
+                                    <td class="text-center" style="vertical-align:middle;">${entry.department_id.name or ''}</td>
+                                    <td class="text-center" style="vertical-align:middle;">${entry.date_start or ''}</td>
+                                    <td class="text-center" style="vertical-align:middle;">${entry.date_end or ''}</td>        
+                                    <td class="text-center" style="vertical-align:middle;">
+                                        %if entry.is_registry:
+                                            &#10004; 
+                                        %else:
+                                            &#10008;
+                                        %endif
+                                    </td>
+                                </tr>
+                            %endfor
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+
+                <p>Thank you!</p>
+            ]]>
+            </field>
+
+        </record>
+
+
+
+
+
+
+    </data>
+
+
+
+
+</odoo>

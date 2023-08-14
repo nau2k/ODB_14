@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name':  'HR Meal Registration',
-    'summary': 'HR Meal Registration',
+    'name':  'HR Move',
+    'summary': 'HR Move',
     'description': '''
-        + Manager Employee Registry Meal
     ''',
     'category':
     'Human Resources',
@@ -22,10 +21,9 @@
         'security/ir.model.access.csv',
 
         'data/ir_sequence.xml',
-        'data/mail_template.xml',
-
-        'views/hr_meal_views.xml',
+    
+        'views/hr_move_views.xml',
         'views/menu_views.xml',
-        'views/res_config_settings_view.xml',
+ 
     ],
 }

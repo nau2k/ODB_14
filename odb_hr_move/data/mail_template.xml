@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <data noupdate="0">
+        <record id="approve_meal_registration_mail_template" model="mail.template">
+            <field name="name">Meal: Approve Registrations</field>
+            <field name="subject">Approve Meal Registrations</field>
+            <field name="model_id" ref="odb_meal_registration.model_hr_meal"/>
+            <field name="lang">${user.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html">
+        
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -20,6 +20,7 @@ class HrEmployeeInherit(models.Model):
     identification_ward_id = fields.Many2one('res.country.ward', 'ID Ward', domain="[('district_id', '=', identification_district_id)]")
     identification_street  = fields.Char('ID Stress')
 
+
     @api.onchange('country_id')
     def _onchange_country_id(self):
         self.state_id = False

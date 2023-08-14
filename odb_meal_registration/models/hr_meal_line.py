@@ -12,7 +12,7 @@ class HRMealLine(models.Model):
     is_registry = fields.Boolean(default=True,string='Registry') 
     date_start = fields.Date('From', related='meal_id.date_start', store=True)
     date_end = fields.Date('To', related='meal_id.date_end', store=True)
-    state_meals = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirm'), ('approved', 'Approved'),('cancel', 'Cancelled')],  default='draft', related='meal_id.state')
+    state_meals = fields.Selection(related='meal_id.state', store=True)
     state = fields.Selection([('validated', 'Validated'),('duplicated','Duplicate employee'),('cancel', 'Cancelled')], default='validated', string='State')
 
     _sql_constraints = [

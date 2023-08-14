@@ -7,14 +7,25 @@
         <field name="priority" eval="90"/>
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[@name='overtime_settings']" position="inside">
+            <xpath expr="//div[@name='overtime_settings']" position="after">
+                <h2>Meal Registration</h2>
                 <div class="row mt16 o_settings_container" name="odb_meal_registration_settings">
-                    <div class="col-12 col-lg-6 " id="limit_date_end">
+                    <div class="col-12 col-lg-6 o_setting_box" id="limit_date_end">
                         <div class="o_setting_right_pane">
                             <label for="limit_date_end"/>
                             <div class="content-group">
                                 <div class="mt16">
                                     <field name="limit_date_end" default="25" class="oe_inline"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="receptionist_email">
+                        <div class="o_setting_right_pane">
+                            <label for="receptionist_email"/>
+                            <div class="content-group">
+                                <div class="mt16">
+                                    <field name="receptionist_email" class="oe_inline"/>
                                 </div>
                             </div>
                         </div>
