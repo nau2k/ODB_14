@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
-    'name':  'HR Move',
-    'summary': 'HR Move',
+    'name':  'HR Transfer',
+    'summary': 'HR Transfer',
     'description': '''
     ''',
     'category':
@@ -15,17 +15,13 @@
     'application':    False,
     'depends': [
         'erpvn_base', 
-        'erpvn_hr_leave_management',
-        "report_py3o",
+      
     ],
     'data': [
         'security/ir.model.access.csv',
 
-        'data/ir_sequence.xml',
-        'data/mail_template.xml',
-        'data/report_py3o.xml',
-    
-        'views/hr_move_views.xml',
+      
+        'views/hr_transfer_views.xml',
         'views/menu_views.xml',
  
     ],

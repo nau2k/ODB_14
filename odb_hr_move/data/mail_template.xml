@@ -1,15 +1,48 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <data noupdate="0">
-        <record id="approve_meal_registration_mail_template" model="mail.template">
-            <field name="name">Meal: Approve Registrations</field>
-            <field name="subject">Approve Meal Registrations</field>
-            <field name="model_id" ref="odb_meal_registration.model_hr_meal"/>
+        <record id="approve_employee_move_mail_template" model="mail.template">
+            <field name="name">Employee Move: Approve Employee Move</field>
+            <field name="subject">Approve Employee Move</field>
+            <field name="email_from">${user.email or object.employee_id.work_email}</field>
+            <field name="model_id" ref="odb_hr_move.model_hr_move"/>
             <field name="lang">${user.lang}</field>
             <field name="auto_delete" eval="False"/>
-            <field name="body_html">
-        
+            <field name="body_html" type="html">
+                <h3 style="text-align:center;">TỜ TRÌNH/ PROPOSAL</h3>
+                <p style="text-align:center;">Về việc điều chuyển nhân sự/Personnel transfer request </p>
+                <p>Căn cứ theo nhu cầu hoạt động/Based on operational needs</p>
+                <p>Xét theo tình hình thực tế và năng lực của nhân viên/Considering of the current situation and the capabilities of employees</p>
+                <p>Nay Phòng/The <strong>${object.department_id.name}</strong> (departement) đề nghị tiến hành điều chuyển đối với nhân viên sau/hereby proposes the following personnel transfers:</p>
+                <h4>I/ ĐỀ NGHỊ ĐIỀU CHUYỂN/ PROPOSED FOR TRANSFER</h4>
+                <table border="1" cellspacing="0" cellpadding="8" width="100%">
+                    <tr>
+                        <th>Stt/No.</th>
+                        <th>MSNV/ Employee code</th>
+                        <th>Họ và tên/ Full name</th>
+                        <th>Phòng ban hiện tại/ Current dept.</th>
+                        <th>Chức danh hiện tại/ Current job title</th>
+                        <th>Phòng ban sau điều chuyển/ Arrival dept.</th>
+                        <th>Chức danh sau điều chuyển/ Job title after transfer</th>
+                        <th>Ngày hiệu lực/ Effective date</th>
+                    </tr>
+                    <tr>
+                        <td>01.</td>
+                        <td>${object.barcode}</td>
+                        <td>${object.employee_id.name}</td>
+                        <td>${object.department_id.name}</td>
+                        <td>${object.job_id.name}</td>
+                        <td>${object.new_department_id.name}</td>
+                        <td>${object.new_job_id.name}</td>
+                        <td>${object.transfered_date}</td>
+                    </tr>
+                </table>
+                <br/>
+
+                <h4>II/ LÝ DO ĐIỀU CHUYỂN/ REASONS FOR TRANSFER</h4>
+                <p>
+                    <strong>Reson/ Lý do: ${object.reason}</strong>
+                </p>
             </field>
         </record>
     </data>

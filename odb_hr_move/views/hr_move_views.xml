@@ -33,8 +33,8 @@
                         <group string="Current work position">
                             <group>
                                 <field name="employee_id" required="1" options="{'no_create': True,'no_open': True}"  attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="barcode" />
                                 <field name="department_id" />
-                                <field name="employee_type_id" />
                             </group>
                             <group>
                                 <field name="job_id" />
@@ -46,7 +46,6 @@
                         <group string="Move to">
                             <group>
                                 <field name="new_department_id" required="1" options="{'no_create': True,'no_open': True}"  attrs="{'readonly': [('state', '!=', 'draft')]}"  />
-                                <field name="new_employee_type_id" required="1" options="{'no_create': True,'no_open': True}"  attrs="{'readonly': [('state', '!=', 'draft')]}"  />
                             </group>
                             <group>
                                 <field name="new_job_id" required="1" options="{'no_create': True,'no_open': True}" attrs="{'readonly': [('state', '!=', 'draft')]}" />
@@ -74,9 +73,9 @@
             <field name="arch" type="xml">
                 <tree expand ='1'>
                     <field name="name" />
+                    <field name="barcode" />
                     <field name="employee_id" />
                     <field name="new_department_id" />
-                    <field name="new_employee_type_id" />
                     <field name="new_job_id" />
                     <field name="new_title_id" />
                     <field name="new_job_title" />

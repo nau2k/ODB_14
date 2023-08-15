@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="menu_hr_transfer" name="Employee Transfer" sequence="50" parent="hr.menu_hr_employee_payroll" action="action_hr_transfer"/>
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2016 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="hr_move_report_py3o" model="ir.actions.report">
+        <field name="name">Transfer Proposal Report</field>
+        <field name="type">ir.actions.report</field>
+        <field name="model">hr.move</field>
+        <field name="report_name">py3o_transfer_proposal</field>
+        <field name="report_type">py3o</field>
+        <field name="py3o_filetype">odt</field>
+        <field name="module">odb_hr_move</field>
+        <field name="py3o_template_fallback">report/transfer_proposal.odt</field>
+        <field name="binding_model_id" ref="odb_hr_move.model_hr_move" />
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
